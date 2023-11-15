@@ -116,6 +116,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\databridge.cs" />
+    <Compile Include="Classes\userData.cs" />
     <Compile Include="Forms\ActivateUser.cs">
       <SubType>Form</SubType>
     </Compile>
