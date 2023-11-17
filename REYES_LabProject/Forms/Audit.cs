@@ -12,8 +12,6 @@ namespace REYES_LabProject.Forms
 {
     public partial class Audit : Form
     {
-        public string username;
-        public string userrole;
         public Audit()
         {
             InitializeComponent();
@@ -27,8 +25,6 @@ namespace REYES_LabProject.Forms
         private void back_btn_Click(object sender, EventArgs e)
         {
             Dashboard dashboard = new Dashboard();
-            dashboard.userrole = userrole;
-            dashboard.username = username;
             Program.OpenNewForm(dashboard);
             this.Close();
         }

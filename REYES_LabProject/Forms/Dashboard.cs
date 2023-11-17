@@ -1,4 +1,5 @@
-﻿using REYES_LabProject.Forms;
+﻿using REYES_LabProject.Classes;
+using REYES_LabProject.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,8 +14,6 @@ namespace REYES_LabProject
 {
     public partial class Dashboard : Form
     {
-        public string username;
-        public string userrole;
         public int timerValue = 0;
 
         private Point lastMousePosition;
@@ -27,10 +26,11 @@ namespace REYES_LabProject
         private void MAIN_Load(object sender, EventArgs e)
         {
             timer1.Start();
-            usernameDisplay_txt.Text = username;
-            roleDisplay_txt.Text = userrole;
 
-            if(userrole != "Admin")
+            roleDisplay_txt.Text = databridge.dataState.userrole;
+            usernameDisplay_txt.Text = databridge.dataState.username;
+
+            if(roleDisplay_txt.Text != "Admin")
             {
                 RemoveToolStripMenuItemByText("Admin");
             }
@@ -89,8 +89,6 @@ namespace REYES_LabProject
         private void activateUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ActivateUser frm = new ActivateUser();
-            frm.userrole = userrole;
-            frm.username = username;
             Program.OpenNewForm(frm);
             this.Close();
         }
@@ -98,8 +96,6 @@ namespace REYES_LabProject
         private void auditLogToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Audit frm = new Audit();
-            frm.userrole = userrole;
-            frm.username = username;
             Program.OpenNewForm(frm);
             this.Close();
         }

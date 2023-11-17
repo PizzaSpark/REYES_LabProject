@@ -1,4 +1,5 @@
-﻿using System;
+﻿using REYES_LabProject.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -38,7 +39,7 @@ namespace REYES_LabProject
             string username = username_txt.Text;
             string password = password_txt.Text;
             string hashedPassword = toolFunctions.CalculateMD5Hash(password);
-            //datawaiter.nameShared.name = "Uwu";
+
             if (attempts >= 3)
             {
                 MessageBox.Show("You have reached the maximum number of attempts. Please try again later.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -52,8 +53,8 @@ namespace REYES_LabProject
                 else
                 {
                     Dashboard dashboard = new Dashboard();
-                    dashboard.userrole = sqlFunctions.GetUserRole(username);
-                    dashboard.username = username;
+                    databridge.dataState.userrole = sqlFunctions.GetUserRole(username);
+                    databridge.dataState.username = username;
                     Program.OpenNewForm(dashboard);
                     this.Close();
                 }

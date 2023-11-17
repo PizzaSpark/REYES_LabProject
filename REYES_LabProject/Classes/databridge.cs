@@ -8,6 +8,6 @@ namespace REYES_LabProject.Classes
 {
     internal class databridge
     {
-        public static userData dataShare { get; set; } = new userData();
+        public static userData dataState { get; set; } = new userData();
     }
 }

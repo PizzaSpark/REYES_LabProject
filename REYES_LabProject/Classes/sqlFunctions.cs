@@ -66,6 +66,57 @@ namespace REYES_LabProject
             }
         }
 
+        public static bool InsertRoom(string number, string type, string price)
+        {
+            try
+            {
+                connection.Open();
+
+                string insertQuery = "INSERT INTO tbl_room (room_number, room_type, room_price) VALUES (@room_number, @room_type, @room_price)";
+
+                using (MySqlCommand cmd = new MySqlCommand(insertQuery, connection))
+                {
+                    cmd.Parameters.AddWithValue("@room_number", number);
+                    cmd.Parameters.AddWithValue("@room_type", type);
+                    cmd.Parameters.AddWithValue("@room_price", price);
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        // Record inserted successfully
+                        return true;
+                    }
+                    else
+                    {
+                        // Insertion failed
+                        return false;
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                // Handle MySQL database-related exceptions
+                Console.WriteLine($"MySQL Exception: {ex.Message}");
+                return false; // or re-throw the exception if needed
+            }
+            catch (Exception ex)
+            {
+                // Handle other exceptions
+                Console.WriteLine($"Exception: {ex.Message}");
+                return false; // or re-throw the exception if needed
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+
+                connection.Dispose();
+            }
+        }
+
         public static string GetUserRole(string username)
         {
             try
@@ -465,6 +516,86 @@ namespace REYES_LabProject
                     else
                     {
                         Console.WriteLine("Audit data not inserted.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+
+                connection.Dispose();
+            }
+        }
+
+        public static void DeleteRowByPrimaryKey(string tableName, string primaryKeyColumnName, int primaryKeyValue)
+        {
+            string query = $"DELETE FROM {tableName} WHERE {primaryKeyColumnName} = @primaryKeyValue";
+
+            try
+            {
+                connection.Open();
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@primaryKeyValue", primaryKeyValue);
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        Console.WriteLine("Row deleted successfully.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Row not found or not deleted.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+
+                connection.Dispose();
+            }
+        }
+
+        public static void UpdateRoom(int room_id, string room_number, string room_type, string room_price)
+        {
+            string query = "UPDATE tbl_room SET room_number = @roomNumber, room_type = @roomType, room_price = @roomPrice WHERE room_id = @roomId";
+
+            try
+            {
+                connection.Open();
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@roomNumber", room_number);
+                    command.Parameters.AddWithValue("@roomType", room_type);
+                    command.Parameters.AddWithValue("@roomPrice", room_price);
+                    command.Parameters.AddWithValue("@roomId", room_id);
+
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        Console.WriteLine("Room updated successfully.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Room not found or not updated.");
                     }
                 }
             }
