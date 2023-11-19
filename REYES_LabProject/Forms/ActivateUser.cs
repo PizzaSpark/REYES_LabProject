@@ -14,6 +14,8 @@ namespace REYES_LabProject.Forms
     {
         public string username;
         public string userrole;
+        public int isactive;
+        public int timerValue;
         public ActivateUser()
         {
             InitializeComponent();
@@ -21,11 +23,15 @@ namespace REYES_LabProject.Forms
 
         private void ActivateUser_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = sqlFunctions.GetInactiveUsers();
+            timer1.Start();
+            isactive = 0;
+            dataGridView1.DataSource = sqlFunctions.GetInactiveUsers(isactive);
         }
 
         private void clear_btn_Click(object sender, EventArgs e)
         {
+            timerValue = 0;
+
             userId_txt.Clear();
             userName_txt.Clear();
             userIsactive_txt.Clear();
@@ -36,9 +42,11 @@ namespace REYES_LabProject.Forms
         {
             try
             {
+                timerValue = 0;
+
                 int userId = int.Parse(userId_txt.Text);
-                sqlFunctions.ActivateUser(userId);
-                dataGridView1.DataSource = sqlFunctions.GetInactiveUsers();
+                sqlFunctions.ActivateUser(userId, 1);
+                dataGridView1.DataSource = sqlFunctions.GetInactiveUsers(isactive);
 
                 string userRole = sqlFunctions.GetUserRole(userId);
 
@@ -57,21 +65,30 @@ namespace REYES_LabProject.Forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error idk wot", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error: {ex}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.RowIndex < dataGridView1.Rows.Count)
+            try
             {
-                DataGridViewRow selectedRow = dataGridView1.Rows[e.RowIndex];
-                // Assuming that the DataGridView columns are named user_id, user_name, user_isactive, and user_role
-                userId_txt.Text = selectedRow.Cells["user_id"].Value.ToString();
-                userName_txt.Text = selectedRow.Cells["user_name"].Value.ToString();
-                userIsactive_txt.Text = selectedRow.Cells["user_isactive"].Value.ToString();
-                userRole_txt.Text = selectedRow.Cells["user_role"].Value.ToString();
+                timerValue = 0;
+
+                if (e.RowIndex >= 0 && e.RowIndex < dataGridView1.Rows.Count)
+                {
+                    DataGridViewRow selectedRow = dataGridView1.Rows[e.RowIndex];
+                    // Assuming that the DataGridView columns are named user_id, user_name, user_isactive, and user_role
+                    userId_txt.Text = selectedRow.Cells["user_id"].Value.ToString();
+                    userName_txt.Text = selectedRow.Cells["user_name"].Value.ToString();
+                    userIsactive_txt.Text = selectedRow.Cells["user_isactive"].Value.ToString();
+                    userRole_txt.Text = selectedRow.Cells["user_role"].Value.ToString();
+                }
+            } 
+            catch(Exception ex)
+            {
+                MessageBox.Show($"Error: {ex}");
             }
         }
 
@@ -80,6 +97,57 @@ namespace REYES_LabProject.Forms
             Dashboard dashboard = new Dashboard();
             Program.OpenNewForm(dashboard);
             this.Close();
+        }
+
+        private void deactivate_btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                timerValue = 0;
+
+                int userId = int.Parse(userId_txt.Text);
+                sqlFunctions.ActivateUser(userId, 2);
+                dataGridView1.DataSource = sqlFunctions.GetInactiveUsers(isactive);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void viewDeactivated_btn_Click(object sender, EventArgs e)
+        {
+            timerValue = 0;
+
+            isactive = 0;
+        }
+
+        private void viewActivated_btn_Click(object sender, EventArgs e)
+        {
+            timerValue = 0;
+
+            isactive = 1;
+        }
+
+        private void viewSuspended_btn_Click(object sender, EventArgs e)
+        {
+            timerValue = 0;
+
+            isactive = 2;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            timerValue++;
+
+            if (timerValue >= 60)
+            {
+                MessageBox.Show("You have timed out.");
+
+                Login frm = new Login();
+                Program.OpenNewForm(frm);
+                this.Close();
+            }
         }
     }
 }

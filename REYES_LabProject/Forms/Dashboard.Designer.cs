@@ -36,21 +36,23 @@
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.activateUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.auditLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.manageRoomsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.manageAssignedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.manageDoctorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.managePatientsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageMedicalRecordsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageBillingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.auditLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.backupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.restoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.doctorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editBillingToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.editMedicalRecordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editAssignedToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.managePatientsListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.manageMedicalRecordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.manageBillingToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewDoctorsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.viewAuditToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.patientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewMedicalRecordsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewBillingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewDoctorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewMedicalRecordsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.manageBillsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -61,11 +63,12 @@
             this.dateDisplay_txt = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel5 = new System.Windows.Forms.ToolStripStatusLabel();
             this.timerDisplay_txt = new System.Windows.Forms.ToolStripStatusLabel();
-            this.manageDoctorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.managePatientsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.backupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.restoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.patientsListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.userIdDisplay_txt = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel6 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.categoryIdDisplay_txt = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel7 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.categoryNameDisplay_txt = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -80,7 +83,7 @@
             this.patientToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(704, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1070, 28);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -97,19 +100,21 @@
             // userInfoToolStripMenuItem
             // 
             this.userInfoToolStripMenuItem.Name = "userInfoToolStripMenuItem";
-            this.userInfoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.userInfoToolStripMenuItem.Text = "Edit My Info";
+            this.userInfoToolStripMenuItem.Size = new System.Drawing.Size(148, 26);
+            this.userInfoToolStripMenuItem.Text = "Edit Info";
+            this.userInfoToolStripMenuItem.Click += new System.EventHandler(this.userInfoToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(151, 26);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(148, 26);
             this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(151, 26);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(148, 26);
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
@@ -117,14 +122,11 @@
             // 
             this.adminToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.activateUserToolStripMenuItem,
-            this.addUserToolStripMenuItem,
-            this.auditLogToolStripMenuItem,
-            this.manageRoomsToolStripMenuItem,
-            this.manageAssignedToolStripMenuItem,
-            this.manageMedicalRecordsToolStripMenuItem,
-            this.manageBillingToolStripMenuItem,
             this.manageDoctorsToolStripMenuItem,
             this.managePatientsToolStripMenuItem,
+            this.manageMedicalRecordsToolStripMenuItem,
+            this.manageBillingToolStripMenuItem,
+            this.auditLogToolStripMenuItem,
             this.backupToolStripMenuItem,
             this.restoreToolStripMenuItem});
             this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
@@ -135,14 +137,36 @@
             // 
             this.activateUserToolStripMenuItem.Name = "activateUserToolStripMenuItem";
             this.activateUserToolStripMenuItem.Size = new System.Drawing.Size(260, 26);
-            this.activateUserToolStripMenuItem.Text = "Activate User";
+            this.activateUserToolStripMenuItem.Text = "User Activation";
             this.activateUserToolStripMenuItem.Click += new System.EventHandler(this.activateUserToolStripMenuItem_Click);
             // 
-            // addUserToolStripMenuItem
+            // manageDoctorsToolStripMenuItem
             // 
-            this.addUserToolStripMenuItem.Name = "addUserToolStripMenuItem";
-            this.addUserToolStripMenuItem.Size = new System.Drawing.Size(260, 26);
-            this.addUserToolStripMenuItem.Text = "Manage Users";
+            this.manageDoctorsToolStripMenuItem.Name = "manageDoctorsToolStripMenuItem";
+            this.manageDoctorsToolStripMenuItem.Size = new System.Drawing.Size(260, 26);
+            this.manageDoctorsToolStripMenuItem.Text = "Manage Doctors";
+            this.manageDoctorsToolStripMenuItem.Click += new System.EventHandler(this.manageDoctorsToolStripMenuItem_Click);
+            // 
+            // managePatientsToolStripMenuItem
+            // 
+            this.managePatientsToolStripMenuItem.Name = "managePatientsToolStripMenuItem";
+            this.managePatientsToolStripMenuItem.Size = new System.Drawing.Size(260, 26);
+            this.managePatientsToolStripMenuItem.Text = "Manage Patients";
+            this.managePatientsToolStripMenuItem.Click += new System.EventHandler(this.managePatientsToolStripMenuItem_Click);
+            // 
+            // manageMedicalRecordsToolStripMenuItem
+            // 
+            this.manageMedicalRecordsToolStripMenuItem.Name = "manageMedicalRecordsToolStripMenuItem";
+            this.manageMedicalRecordsToolStripMenuItem.Size = new System.Drawing.Size(260, 26);
+            this.manageMedicalRecordsToolStripMenuItem.Text = "Manage Medical Records";
+            this.manageMedicalRecordsToolStripMenuItem.Click += new System.EventHandler(this.manageMedicalRecordsToolStripMenuItem_Click);
+            // 
+            // manageBillingToolStripMenuItem
+            // 
+            this.manageBillingToolStripMenuItem.Name = "manageBillingToolStripMenuItem";
+            this.manageBillingToolStripMenuItem.Size = new System.Drawing.Size(260, 26);
+            this.manageBillingToolStripMenuItem.Text = "Manage Billing";
+            this.manageBillingToolStripMenuItem.Click += new System.EventHandler(this.manageBillingToolStripMenuItem_Click);
             // 
             // auditLogToolStripMenuItem
             // 
@@ -151,93 +175,97 @@
             this.auditLogToolStripMenuItem.Text = "Audit Log";
             this.auditLogToolStripMenuItem.Click += new System.EventHandler(this.auditLogToolStripMenuItem_Click);
             // 
-            // manageRoomsToolStripMenuItem
+            // backupToolStripMenuItem
             // 
-            this.manageRoomsToolStripMenuItem.Name = "manageRoomsToolStripMenuItem";
-            this.manageRoomsToolStripMenuItem.Size = new System.Drawing.Size(260, 26);
-            this.manageRoomsToolStripMenuItem.Text = "Manage Rooms";
+            this.backupToolStripMenuItem.Name = "backupToolStripMenuItem";
+            this.backupToolStripMenuItem.Size = new System.Drawing.Size(260, 26);
+            this.backupToolStripMenuItem.Text = "Backup";
+            this.backupToolStripMenuItem.Click += new System.EventHandler(this.backupToolStripMenuItem_Click);
             // 
-            // manageAssignedToolStripMenuItem
+            // restoreToolStripMenuItem
             // 
-            this.manageAssignedToolStripMenuItem.Name = "manageAssignedToolStripMenuItem";
-            this.manageAssignedToolStripMenuItem.Size = new System.Drawing.Size(260, 26);
-            this.manageAssignedToolStripMenuItem.Text = "Manage Assigned";
-            // 
-            // manageMedicalRecordsToolStripMenuItem
-            // 
-            this.manageMedicalRecordsToolStripMenuItem.Name = "manageMedicalRecordsToolStripMenuItem";
-            this.manageMedicalRecordsToolStripMenuItem.Size = new System.Drawing.Size(260, 26);
-            this.manageMedicalRecordsToolStripMenuItem.Text = "Manage Medical Records";
-            // 
-            // manageBillingToolStripMenuItem
-            // 
-            this.manageBillingToolStripMenuItem.Name = "manageBillingToolStripMenuItem";
-            this.manageBillingToolStripMenuItem.Size = new System.Drawing.Size(260, 26);
-            this.manageBillingToolStripMenuItem.Text = "Manage Billing";
+            this.restoreToolStripMenuItem.Name = "restoreToolStripMenuItem";
+            this.restoreToolStripMenuItem.Size = new System.Drawing.Size(260, 26);
+            this.restoreToolStripMenuItem.Text = "Restore";
+            this.restoreToolStripMenuItem.Click += new System.EventHandler(this.restoreToolStripMenuItem_Click);
             // 
             // doctorToolStripMenuItem
             // 
             this.doctorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.editBillingToolStripMenuItem1,
-            this.editMedicalRecordToolStripMenuItem,
-            this.editAssignedToolStripMenuItem1,
-            this.viewAuditToolStripMenuItem1,
-            this.patientsListToolStripMenuItem});
+            this.managePatientsListToolStripMenuItem,
+            this.manageMedicalRecordToolStripMenuItem,
+            this.manageBillingToolStripMenuItem1,
+            this.viewDoctorsToolStripMenuItem1,
+            this.viewAuditToolStripMenuItem1});
             this.doctorToolStripMenuItem.Name = "doctorToolStripMenuItem";
             this.doctorToolStripMenuItem.Size = new System.Drawing.Size(69, 24);
             this.doctorToolStripMenuItem.Text = "Doctor";
             // 
-            // editBillingToolStripMenuItem1
+            // managePatientsListToolStripMenuItem
             // 
-            this.editBillingToolStripMenuItem1.Name = "editBillingToolStripMenuItem1";
-            this.editBillingToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
-            this.editBillingToolStripMenuItem1.Text = "Edit Billing";
+            this.managePatientsListToolStripMenuItem.Name = "managePatientsListToolStripMenuItem";
+            this.managePatientsListToolStripMenuItem.Size = new System.Drawing.Size(260, 26);
+            this.managePatientsListToolStripMenuItem.Text = "Manage Patients";
+            this.managePatientsListToolStripMenuItem.Click += new System.EventHandler(this.managePatientsListToolStripMenuItem_Click);
             // 
-            // editMedicalRecordToolStripMenuItem
+            // manageMedicalRecordToolStripMenuItem
             // 
-            this.editMedicalRecordToolStripMenuItem.Name = "editMedicalRecordToolStripMenuItem";
-            this.editMedicalRecordToolStripMenuItem.Size = new System.Drawing.Size(251, 26);
-            this.editMedicalRecordToolStripMenuItem.Text = "Patient Medical Records";
+            this.manageMedicalRecordToolStripMenuItem.Name = "manageMedicalRecordToolStripMenuItem";
+            this.manageMedicalRecordToolStripMenuItem.Size = new System.Drawing.Size(260, 26);
+            this.manageMedicalRecordToolStripMenuItem.Text = "Manage Medical Records";
+            this.manageMedicalRecordToolStripMenuItem.Click += new System.EventHandler(this.manageMedicalRecordToolStripMenuItem_Click);
             // 
-            // editAssignedToolStripMenuItem1
+            // manageBillingToolStripMenuItem1
             // 
-            this.editAssignedToolStripMenuItem1.Name = "editAssignedToolStripMenuItem1";
-            this.editAssignedToolStripMenuItem1.Size = new System.Drawing.Size(251, 26);
-            this.editAssignedToolStripMenuItem1.Text = "Assign Patients";
+            this.manageBillingToolStripMenuItem1.Name = "manageBillingToolStripMenuItem1";
+            this.manageBillingToolStripMenuItem1.Size = new System.Drawing.Size(260, 26);
+            this.manageBillingToolStripMenuItem1.Text = "Manage Billing";
+            this.manageBillingToolStripMenuItem1.Click += new System.EventHandler(this.manageBillingToolStripMenuItem1_Click);
+            // 
+            // viewDoctorsToolStripMenuItem1
+            // 
+            this.viewDoctorsToolStripMenuItem1.Name = "viewDoctorsToolStripMenuItem1";
+            this.viewDoctorsToolStripMenuItem1.Size = new System.Drawing.Size(260, 26);
+            this.viewDoctorsToolStripMenuItem1.Text = "View Doctors";
+            this.viewDoctorsToolStripMenuItem1.Click += new System.EventHandler(this.viewDoctorsToolStripMenuItem1_Click);
             // 
             // viewAuditToolStripMenuItem1
             // 
             this.viewAuditToolStripMenuItem1.Name = "viewAuditToolStripMenuItem1";
-            this.viewAuditToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.viewAuditToolStripMenuItem1.Size = new System.Drawing.Size(260, 26);
             this.viewAuditToolStripMenuItem1.Text = "View Audit";
+            this.viewAuditToolStripMenuItem1.Click += new System.EventHandler(this.viewAuditToolStripMenuItem1_Click);
             // 
             // patientToolStripMenuItem
             // 
             this.patientToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.viewDoctorsToolStripMenuItem,
             this.viewMedicalRecordsToolStripMenuItem,
-            this.viewBillingToolStripMenuItem,
-            this.viewDoctorsToolStripMenuItem});
+            this.manageBillsToolStripMenuItem});
             this.patientToolStripMenuItem.Name = "patientToolStripMenuItem";
             this.patientToolStripMenuItem.Size = new System.Drawing.Size(68, 24);
             this.patientToolStripMenuItem.Text = "Patient";
             // 
-            // viewMedicalRecordsToolStripMenuItem
-            // 
-            this.viewMedicalRecordsToolStripMenuItem.Name = "viewMedicalRecordsToolStripMenuItem";
-            this.viewMedicalRecordsToolStripMenuItem.Size = new System.Drawing.Size(226, 26);
-            this.viewMedicalRecordsToolStripMenuItem.Text = "My Medical Records";
-            // 
-            // viewBillingToolStripMenuItem
-            // 
-            this.viewBillingToolStripMenuItem.Name = "viewBillingToolStripMenuItem";
-            this.viewBillingToolStripMenuItem.Size = new System.Drawing.Size(226, 26);
-            this.viewBillingToolStripMenuItem.Text = "Pay Bills";
-            // 
             // viewDoctorsToolStripMenuItem
             // 
             this.viewDoctorsToolStripMenuItem.Name = "viewDoctorsToolStripMenuItem";
-            this.viewDoctorsToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.viewDoctorsToolStripMenuItem.Size = new System.Drawing.Size(238, 26);
             this.viewDoctorsToolStripMenuItem.Text = "View Doctors";
+            this.viewDoctorsToolStripMenuItem.Click += new System.EventHandler(this.viewDoctorsToolStripMenuItem_Click);
+            // 
+            // viewMedicalRecordsToolStripMenuItem
+            // 
+            this.viewMedicalRecordsToolStripMenuItem.Name = "viewMedicalRecordsToolStripMenuItem";
+            this.viewMedicalRecordsToolStripMenuItem.Size = new System.Drawing.Size(238, 26);
+            this.viewMedicalRecordsToolStripMenuItem.Text = "View Medical Records";
+            this.viewMedicalRecordsToolStripMenuItem.Click += new System.EventHandler(this.viewMedicalRecordsToolStripMenuItem_Click);
+            // 
+            // manageBillsToolStripMenuItem
+            // 
+            this.manageBillsToolStripMenuItem.Name = "manageBillsToolStripMenuItem";
+            this.manageBillsToolStripMenuItem.Size = new System.Drawing.Size(238, 26);
+            this.manageBillsToolStripMenuItem.Text = "Manage Bills";
+            this.manageBillsToolStripMenuItem.Click += new System.EventHandler(this.manageBillsToolStripMenuItem_Click);
             // 
             // timer1
             // 
@@ -248,6 +276,10 @@
             // 
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel4,
+            this.userIdDisplay_txt,
+            this.toolStripStatusLabel6,
+            this.categoryIdDisplay_txt,
             this.toolStripStatusLabel1,
             this.usernameDisplay_txt,
             this.toolStripStatusLabel3,
@@ -255,10 +287,12 @@
             this.toolStripStatusLabel2,
             this.dateDisplay_txt,
             this.toolStripStatusLabel5,
-            this.timerDisplay_txt});
+            this.timerDisplay_txt,
+            this.toolStripStatusLabel7,
+            this.categoryNameDisplay_txt});
             this.statusStrip1.Location = new System.Drawing.Point(0, 517);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(704, 26);
+            this.statusStrip1.Size = new System.Drawing.Size(1070, 26);
             this.statusStrip1.TabIndex = 9;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -314,41 +348,50 @@
             this.timerDisplay_txt.Size = new System.Drawing.Size(15, 20);
             this.timerDisplay_txt.Text = "-";
             // 
-            // manageDoctorsToolStripMenuItem
+            // toolStripStatusLabel4
             // 
-            this.manageDoctorsToolStripMenuItem.Name = "manageDoctorsToolStripMenuItem";
-            this.manageDoctorsToolStripMenuItem.Size = new System.Drawing.Size(260, 26);
-            this.manageDoctorsToolStripMenuItem.Text = "Manage Doctors";
+            this.toolStripStatusLabel4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
+            this.toolStripStatusLabel4.Size = new System.Drawing.Size(57, 20);
+            this.toolStripStatusLabel4.Text = "UserID";
             // 
-            // managePatientsToolStripMenuItem
+            // userIdDisplay_txt
             // 
-            this.managePatientsToolStripMenuItem.Name = "managePatientsToolStripMenuItem";
-            this.managePatientsToolStripMenuItem.Size = new System.Drawing.Size(260, 26);
-            this.managePatientsToolStripMenuItem.Text = "Manage Patients";
+            this.userIdDisplay_txt.Name = "userIdDisplay_txt";
+            this.userIdDisplay_txt.Size = new System.Drawing.Size(15, 20);
+            this.userIdDisplay_txt.Text = "-";
             // 
-            // backupToolStripMenuItem
+            // toolStripStatusLabel6
             // 
-            this.backupToolStripMenuItem.Name = "backupToolStripMenuItem";
-            this.backupToolStripMenuItem.Size = new System.Drawing.Size(260, 26);
-            this.backupToolStripMenuItem.Text = "Backup";
+            this.toolStripStatusLabel6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripStatusLabel6.Name = "toolStripStatusLabel6";
+            this.toolStripStatusLabel6.Size = new System.Drawing.Size(89, 20);
+            this.toolStripStatusLabel6.Text = "CategoryID";
             // 
-            // restoreToolStripMenuItem
+            // categoryIdDisplay_txt
             // 
-            this.restoreToolStripMenuItem.Name = "restoreToolStripMenuItem";
-            this.restoreToolStripMenuItem.Size = new System.Drawing.Size(260, 26);
-            this.restoreToolStripMenuItem.Text = "Restore";
+            this.categoryIdDisplay_txt.Name = "categoryIdDisplay_txt";
+            this.categoryIdDisplay_txt.Size = new System.Drawing.Size(15, 20);
+            this.categoryIdDisplay_txt.Text = "-";
             // 
-            // patientsListToolStripMenuItem
+            // toolStripStatusLabel7
             // 
-            this.patientsListToolStripMenuItem.Name = "patientsListToolStripMenuItem";
-            this.patientsListToolStripMenuItem.Size = new System.Drawing.Size(251, 26);
-            this.patientsListToolStripMenuItem.Text = "Patients List";
+            this.toolStripStatusLabel7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripStatusLabel7.Name = "toolStripStatusLabel7";
+            this.toolStripStatusLabel7.Size = new System.Drawing.Size(112, 20);
+            this.toolStripStatusLabel7.Text = "Categoryname";
+            // 
+            // categoryNameDisplay_txt
+            // 
+            this.categoryNameDisplay_txt.Name = "categoryNameDisplay_txt";
+            this.categoryNameDisplay_txt.Size = new System.Drawing.Size(15, 20);
+            this.categoryNameDisplay_txt.Text = "-";
             // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(704, 543);
+            this.ClientSize = new System.Drawing.Size(1070, 543);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -376,12 +419,11 @@
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem doctorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem patientToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editBillingToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem editMedicalRecordToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editAssignedToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem manageBillingToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem manageMedicalRecordToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewAuditToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem viewMedicalRecordsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem viewBillingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem manageBillsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewDoctorsToolStripMenuItem;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
@@ -394,16 +436,20 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel5;
         private System.Windows.Forms.ToolStripStatusLabel timerDisplay_txt;
         private System.Windows.Forms.ToolStripMenuItem activateUserToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem addUserToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem auditLogToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem manageRoomsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem manageAssignedToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageMedicalRecordsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageBillingToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem manageDoctorsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem managePatientsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem backupToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem restoreToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem patientsListToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem managePatientsListToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem managePatientsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewDoctorsToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem manageDoctorsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel4;
+        private System.Windows.Forms.ToolStripStatusLabel userIdDisplay_txt;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel6;
+        private System.Windows.Forms.ToolStripStatusLabel categoryIdDisplay_txt;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel7;
+        private System.Windows.Forms.ToolStripStatusLabel categoryNameDisplay_txt;
     }
 }

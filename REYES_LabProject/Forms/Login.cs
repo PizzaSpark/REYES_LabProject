@@ -50,11 +50,18 @@ namespace REYES_LabProject
                 {
                     MessageBox.Show("Account not yet activated. Please contact your administator", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                else if (sqlFunctions.IsSuspended(username))
+                {
+                    MessageBox.Show("Account suspended for self actions. Please contact your administator", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
                 else
                 {
                     Dashboard dashboard = new Dashboard();
                     databridge.dataState.userrole = sqlFunctions.GetUserRole(username);
                     databridge.dataState.username = username;
+                    databridge.dataState.userid = int.Parse(sqlFunctions.GetUserId(username));
+                    databridge.dataState.categoryid = int.Parse(sqlFunctions.GetCategoryId(databridge.dataState.userid, username));
+                    databridge.dataState.categoryname = sqlFunctions.GetCategoryName(databridge.dataState.userid, username);
                     Program.OpenNewForm(dashboard);
                     this.Close();
                 }

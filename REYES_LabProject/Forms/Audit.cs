@@ -12,6 +12,7 @@ namespace REYES_LabProject.Forms
 {
     public partial class Audit : Form
     {
+        public int timerValue = 0;
         public Audit()
         {
             InitializeComponent();
@@ -19,6 +20,7 @@ namespace REYES_LabProject.Forms
 
         private void Audit_Load(object sender, EventArgs e)
         {
+            timer1.Start();
             dataGridView1.DataSource = sqlFunctions.GetTableData("tbl_audit");
         }
 
@@ -27,6 +29,20 @@ namespace REYES_LabProject.Forms
             Dashboard dashboard = new Dashboard();
             Program.OpenNewForm(dashboard);
             this.Close();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            timerValue++;
+
+            if (timerValue >= 60)
+            {
+                MessageBox.Show("You have timed out.");
+
+                Login frm = new Login();
+                Program.OpenNewForm(frm);
+                this.Close();
+            }
         }
     }
 }

@@ -29,10 +29,24 @@ namespace REYES_LabProject
 
             roleDisplay_txt.Text = databridge.dataState.userrole;
             usernameDisplay_txt.Text = databridge.dataState.username;
+            userIdDisplay_txt.Text = databridge.dataState.userid.ToString();
+            categoryIdDisplay_txt.Text = databridge.dataState.categoryid.ToString();
+            categoryNameDisplay_txt.Text = databridge.dataState.categoryname;
 
-            if(roleDisplay_txt.Text != "Admin")
+            if (roleDisplay_txt.Text == "Admin")
+            {
+                RemoveToolStripMenuItemByText("Doctor");
+                RemoveToolStripMenuItemByText("Patient");
+            }
+            else if(roleDisplay_txt.Text == "Doctor")
             {
                 RemoveToolStripMenuItemByText("Admin");
+                RemoveToolStripMenuItemByText("Patient");
+            } 
+            else
+            {
+                RemoveToolStripMenuItemByText("Admin");
+                RemoveToolStripMenuItemByText("Doctor");
             }
         }
 
@@ -51,11 +65,13 @@ namespace REYES_LabProject
         private void timer1_Tick(object sender, EventArgs e)
         {
             dateDisplay_txt.Text = DateTime.Now.ToString();
-            timerValue++;
             timerDisplay_txt.Text = timerValue.ToString();
+            timerValue++;
 
             if (timerValue >= 60)
             {
+                MessageBox.Show("You have timed out.");
+
                 Login frm = new Login();
                 Program.OpenNewForm(frm);
                 this.Close();
@@ -79,12 +95,32 @@ namespace REYES_LabProject
             }
         }
 
+        //
+        // SETTINGS TAB
+        //
+
+        private void userInfoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EditInfo frm = new EditInfo();
+            Program.OpenNewForm(frm);
+            this.Close();
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This system is developed by Sean Godric F. Reyes in requirements of IAS");
+        }
+
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Login frm = new Login();
             Program.OpenNewForm(frm);
             this.Close();
         }
+
+        //
+        // ADMIN TAB
+        //
 
         private void activateUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -93,9 +129,111 @@ namespace REYES_LabProject
             this.Close();
         }
 
+        private void manageDoctorsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ManageDoctors frm = new ManageDoctors();
+            Program.OpenNewForm(frm);
+            this.Close();
+        }
+
+        private void managePatientsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ManagePatients frm = new ManagePatients();
+            Program.OpenNewForm(frm);
+            this.Close();
+        }
+
+        private void manageMedicalRecordsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ManageMedicalRecords frm = new ManageMedicalRecords();
+            Program.OpenNewForm(frm);
+            this.Close();
+        }
+
+        private void manageBillingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ManageBilling frm = new ManageBilling();
+            Program.OpenNewForm(frm);
+            this.Close();
+        }
+
         private void auditLogToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Audit frm = new Audit();
+            Program.OpenNewForm(frm);
+            this.Close();
+        }
+
+        private void backupToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // DO BACKUP HAAHAHHAHAHAHAHAA
+        }
+
+        private void restoreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // DO RESTORE AHIDASKFDKASLFNSDKFNSDG HAAHAHHAHAHAHAHAA
+        }
+
+        //
+        // DOCTORS TAB
+        //
+
+        private void managePatientsListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ManagePatients frm = new ManagePatients();
+            Program.OpenNewForm(frm);
+            this.Close();
+        }
+
+        private void manageMedicalRecordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ManageMedicalRecords frm = new ManageMedicalRecords();
+            Program.OpenNewForm(frm);
+            this.Close();
+        }
+
+        private void manageBillingToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ManageBilling frm = new ManageBilling();
+            Program.OpenNewForm(frm);
+            this.Close();
+        }
+
+        private void viewDoctorsToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ManageDoctors frm = new ManageDoctors();
+            Program.OpenNewForm(frm);
+            this.Close();
+        }
+
+        private void viewAuditToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Audit frm = new Audit();
+            Program.OpenNewForm(frm);
+            this.Close();
+        }
+
+        //
+        // PATIENTS TAB
+        //
+
+        private void viewDoctorsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ManageDoctors frm = new ManageDoctors();
+            Program.OpenNewForm(frm);
+            this.Close();
+        }
+
+        private void viewMedicalRecordsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ManageMedicalRecords frm = new ManageMedicalRecords();
+            Program.OpenNewForm(frm);
+            this.Close();
+        }
+
+        private void manageBillsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ManageBilling frm = new ManageBilling();
             Program.OpenNewForm(frm);
             this.Close();
         }

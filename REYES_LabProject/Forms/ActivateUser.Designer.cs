@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.userId_txt = new System.Windows.Forms.TextBox();
@@ -40,6 +41,11 @@
             this.clear_btn = new System.Windows.Forms.Button();
             this.activate_btn = new System.Windows.Forms.Button();
             this.back_btn = new System.Windows.Forms.Button();
+            this.deactivate_btn = new System.Windows.Forms.Button();
+            this.viewActivated_btn = new System.Windows.Forms.Button();
+            this.viewDeactivated_btn = new System.Windows.Forms.Button();
+            this.viewSuspended_btn = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -144,7 +150,7 @@
             // 
             // back_btn
             // 
-            this.back_btn.Location = new System.Drawing.Point(180, 189);
+            this.back_btn.Location = new System.Drawing.Point(585, 189);
             this.back_btn.Name = "back_btn";
             this.back_btn.Size = new System.Drawing.Size(75, 23);
             this.back_btn.TabIndex = 11;
@@ -152,11 +158,60 @@
             this.back_btn.UseVisualStyleBackColor = true;
             this.back_btn.Click += new System.EventHandler(this.back_btn_Click);
             // 
+            // deactivate_btn
+            // 
+            this.deactivate_btn.Location = new System.Drawing.Point(177, 189);
+            this.deactivate_btn.Name = "deactivate_btn";
+            this.deactivate_btn.Size = new System.Drawing.Size(97, 23);
+            this.deactivate_btn.TabIndex = 12;
+            this.deactivate_btn.Text = "Suspend";
+            this.deactivate_btn.UseVisualStyleBackColor = true;
+            this.deactivate_btn.Click += new System.EventHandler(this.deactivate_btn_Click);
+            // 
+            // viewActivated_btn
+            // 
+            this.viewActivated_btn.Location = new System.Drawing.Point(384, 57);
+            this.viewActivated_btn.Name = "viewActivated_btn";
+            this.viewActivated_btn.Size = new System.Drawing.Size(141, 23);
+            this.viewActivated_btn.TabIndex = 13;
+            this.viewActivated_btn.Text = "View Activated";
+            this.viewActivated_btn.UseVisualStyleBackColor = true;
+            this.viewActivated_btn.Click += new System.EventHandler(this.viewActivated_btn_Click);
+            // 
+            // viewDeactivated_btn
+            // 
+            this.viewDeactivated_btn.Location = new System.Drawing.Point(384, 28);
+            this.viewDeactivated_btn.Name = "viewDeactivated_btn";
+            this.viewDeactivated_btn.Size = new System.Drawing.Size(141, 23);
+            this.viewDeactivated_btn.TabIndex = 14;
+            this.viewDeactivated_btn.Text = "View Deactivated";
+            this.viewDeactivated_btn.UseVisualStyleBackColor = true;
+            this.viewDeactivated_btn.Click += new System.EventHandler(this.viewDeactivated_btn_Click);
+            // 
+            // viewSuspended_btn
+            // 
+            this.viewSuspended_btn.Location = new System.Drawing.Point(384, 86);
+            this.viewSuspended_btn.Name = "viewSuspended_btn";
+            this.viewSuspended_btn.Size = new System.Drawing.Size(141, 23);
+            this.viewSuspended_btn.TabIndex = 15;
+            this.viewSuspended_btn.Text = "View Suspended";
+            this.viewSuspended_btn.UseVisualStyleBackColor = true;
+            this.viewSuspended_btn.Click += new System.EventHandler(this.viewSuspended_btn_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // ActivateUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(672, 479);
+            this.Controls.Add(this.viewSuspended_btn);
+            this.Controls.Add(this.viewDeactivated_btn);
+            this.Controls.Add(this.viewActivated_btn);
+            this.Controls.Add(this.deactivate_btn);
             this.Controls.Add(this.back_btn);
             this.Controls.Add(this.activate_btn);
             this.Controls.Add(this.clear_btn);
@@ -193,5 +248,10 @@
         private System.Windows.Forms.Button clear_btn;
         private System.Windows.Forms.Button activate_btn;
         private System.Windows.Forms.Button back_btn;
+        private System.Windows.Forms.Button deactivate_btn;
+        private System.Windows.Forms.Button viewActivated_btn;
+        private System.Windows.Forms.Button viewDeactivated_btn;
+        private System.Windows.Forms.Button viewSuspended_btn;
+        private System.Windows.Forms.Timer timer1;
     }
 }

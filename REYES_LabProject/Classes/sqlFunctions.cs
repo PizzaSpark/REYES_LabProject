@@ -66,57 +66,6 @@ namespace REYES_LabProject
             }
         }
 
-        public static bool InsertRoom(string number, string type, string price)
-        {
-            try
-            {
-                connection.Open();
-
-                string insertQuery = "INSERT INTO tbl_room (room_number, room_type, room_price) VALUES (@room_number, @room_type, @room_price)";
-
-                using (MySqlCommand cmd = new MySqlCommand(insertQuery, connection))
-                {
-                    cmd.Parameters.AddWithValue("@room_number", number);
-                    cmd.Parameters.AddWithValue("@room_type", type);
-                    cmd.Parameters.AddWithValue("@room_price", price);
-
-                    int rowsAffected = cmd.ExecuteNonQuery();
-
-                    if (rowsAffected > 0)
-                    {
-                        // Record inserted successfully
-                        return true;
-                    }
-                    else
-                    {
-                        // Insertion failed
-                        return false;
-                    }
-                }
-            }
-            catch (MySqlException ex)
-            {
-                // Handle MySQL database-related exceptions
-                Console.WriteLine($"MySQL Exception: {ex.Message}");
-                return false; // or re-throw the exception if needed
-            }
-            catch (Exception ex)
-            {
-                // Handle other exceptions
-                Console.WriteLine($"Exception: {ex.Message}");
-                return false; // or re-throw the exception if needed
-            }
-            finally
-            {
-                if (connection.State == ConnectionState.Open)
-                {
-                    connection.Close();
-                }
-
-                connection.Dispose();
-            }
-        }
-
         public static string GetUserRole(string username)
         {
             try
@@ -166,6 +115,286 @@ namespace REYES_LabProject
             }
         }
 
+        public static string GetUserId(string username)
+        {
+            try
+            {
+                connection.Open();
+
+                string selectQuery = "SELECT user_id FROM tbl_user WHERE user_name = @username";
+
+                using (MySqlCommand cmd = new MySqlCommand(selectQuery, connection))
+                {
+                    cmd.Parameters.AddWithValue("@username", username);
+
+                    object result = cmd.ExecuteScalar();
+
+                    if (result != null)
+                    {
+                        // Username found, return the role as a string
+                        return result.ToString();
+                    }
+                    else
+                    {
+                        // Username not found
+                        return "User not found";
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                // Handle MySQL database-related exceptions
+                Console.WriteLine($"MySQL Exception: {ex.Message}");
+                return "Error" + ex; // or re-throw the exception if needed
+            }
+            catch (Exception ex)
+            {
+                // Handle other exceptions
+                Console.WriteLine($"Exception: {ex.Message}");
+                return "Error" + ex; // or re-throw the exception if needed
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+
+                connection.Dispose();
+            }
+        }
+
+        public static string GetCategoryId(int user_id, string username)
+        {
+            try
+            {
+                connection.Open();
+
+                string selectQuery = "";
+
+                if (GetUserRole(username) == "Admin")
+                {
+                    selectQuery = "SELECT admin_id FROM tbl_admin WHERE user_id = @user_id";
+                }
+                else if (GetUserRole(username) == "Doctor")
+                {
+                    selectQuery = "SELECT doctor_id FROM tbl_doctor WHERE user_id = @user_id";
+                } 
+                else
+                {
+                    selectQuery = "SELECT patient_id FROM tbl_patient WHERE user_id = @user_id";
+                }
+
+
+                using (MySqlCommand cmd = new MySqlCommand(selectQuery, connection))
+                {
+                    cmd.Parameters.AddWithValue("@user_id", user_id);
+
+                    object result = cmd.ExecuteScalar();
+
+                    if (result != null)
+                    {
+                        // Username found, return the role as a string
+                        return result.ToString();
+                    }
+                    else
+                    {
+                        // Username not found
+                        return "User not found";
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                // Handle MySQL database-related exceptions
+                Console.WriteLine($"MySQL Exception: {ex.Message}");
+                return "Error" + ex; // or re-throw the exception if needed
+            }
+            catch (Exception ex)
+            {
+                // Handle other exceptions
+                Console.WriteLine($"Exception: {ex.Message}");
+                return "Error" + ex; // or re-throw the exception if needed
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+
+                connection.Dispose();
+            }
+        }
+
+        public static string GetCategoryName(int user_id, string username)
+        {
+            try
+            {
+                connection.Open();
+
+                string selectQuery = "";
+
+                if (GetUserRole(username) == "Admin")
+                {
+                    selectQuery = "SELECT admin_name FROM tbl_admin WHERE user_id = @user_id";
+                }
+                else if (GetUserRole(username) == "Doctor")
+                {
+                    selectQuery = "SELECT doctor_name FROM tbl_doctor WHERE user_id = @user_id";
+                }
+                else
+                {
+                    selectQuery = "SELECT patient_name FROM tbl_patient WHERE user_id = @user_id";
+                }
+
+
+                using (MySqlCommand cmd = new MySqlCommand(selectQuery, connection))
+                {
+                    cmd.Parameters.AddWithValue("@user_id", user_id);
+
+                    object result = cmd.ExecuteScalar();
+
+                    if (result != null)
+                    {
+                        // Username found, return the role as a string
+                        return result.ToString();
+                    }
+                    else
+                    {
+                        // Username not found
+                        return "User not found";
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                // Handle MySQL database-related exceptions
+                Console.WriteLine($"MySQL Exception: {ex.Message}");
+                return "Error" + ex; // or re-throw the exception if needed
+            }
+            catch (Exception ex)
+            {
+                // Handle other exceptions
+                Console.WriteLine($"Exception: {ex.Message}");
+                return "Error" + ex; // or re-throw the exception if needed
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+
+                connection.Dispose();
+            }
+        }
+
+        public static DataTable GetTableData(string tableName)
+        {
+            DataTable dataTable = new DataTable();
+            string query = $"SELECT * FROM {tableName}";
+
+            try
+            {
+                connection.Open();
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter(command))
+                    {
+                        adapter.Fill(dataTable);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+
+                connection.Dispose();
+            }
+
+            return dataTable;
+        }
+
+        public static DataTable GetInactiveUsers(int isactive)
+        {
+            DataTable dataTable = new DataTable();
+            string query = $"SELECT user_id, user_name, user_isactive, user_role FROM tbl_user WHERE user_isactive = {isactive.ToString()}";
+
+            try
+            {
+                connection.Open();
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter(command))
+                    {
+                        adapter.Fill(dataTable);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+
+                connection.Dispose();
+            }
+
+            return dataTable;
+        }
+
+        public static string GetUserRole(int userId)
+        {
+            string query = "SELECT user_role FROM tbl_user WHERE user_id = @userId";
+            string userRole = null;
+
+            try
+            {
+                connection.Open();
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@userId", userId);
+                    object result = command.ExecuteScalar();
+
+                    if (result != null)
+                    {
+                        userRole = result.ToString();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+
+                connection.Dispose();
+            }
+
+            return userRole;
+        }
+
         public static bool IsActive(string username)
         {
             try
@@ -187,6 +416,59 @@ namespace REYES_LabProject
                             // Check the isactive column value
                             int isActiveValue = reader.GetInt32("user_isactive");
                             return isActiveValue == 1;
+                        }
+                        else
+                        {
+                            // Username not found
+                            return false;
+                        }
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                // Handle MySQL database-related exceptions
+                Console.WriteLine($"MySQL Exception: {ex.Message}");
+                return false;
+            }
+            catch (Exception ex)
+            {
+                // Handle other exceptions
+                Console.WriteLine($"Exception: {ex.Message}");
+                return false;
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+
+                connection.Dispose();
+            }
+        }
+
+        public static bool IsSuspended(string username)
+        {
+            try
+            {
+                connection.Open();
+
+                // SQL query to retrieve the isactive value for the given username
+                string query = "SELECT user_isactive FROM tbl_user WHERE user_name = @username";
+
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@username", username);
+
+
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            // Check the isactive column value
+                            int isActiveValue = reader.GetInt32("user_isactive");
+                            return isActiveValue == 2;
                         }
                         else
                         {
@@ -312,77 +594,9 @@ namespace REYES_LabProject
 
         }
 
-        public static DataTable GetTableData(string tableName)
+        public static void ActivateUser(int userId, int activate)
         {
-            DataTable dataTable = new DataTable();
-            string query = $"SELECT * FROM {tableName}";
-
-            try
-            {
-                connection.Open();
-
-                using (MySqlCommand command = new MySqlCommand(query, connection))
-                {
-                    using (MySqlDataAdapter adapter = new MySqlDataAdapter(command))
-                    {
-                        adapter.Fill(dataTable);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error: " + ex.Message);
-            }
-            finally
-            {
-                if (connection.State == ConnectionState.Open)
-                {
-                    connection.Close();
-                }
-
-                connection.Dispose();
-            }
-
-            return dataTable;
-        }
-
-        public static DataTable GetInactiveUsers()
-        {
-            DataTable dataTable = new DataTable();
-            string query = "SELECT user_id, user_name, user_isactive, user_role FROM tbl_user WHERE user_isactive = 0";
-
-            try
-            {
-                connection.Open();
-
-                using (MySqlCommand command = new MySqlCommand(query, connection))
-                {
-                    using (MySqlDataAdapter adapter = new MySqlDataAdapter(command))
-                    {
-                        adapter.Fill(dataTable);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error: " + ex.Message);
-            }
-            finally
-            {
-                if (connection.State == ConnectionState.Open)
-                {
-                    connection.Close();
-                }
-
-                connection.Dispose();
-            }
-
-            return dataTable;
-        }
-
-        public static void ActivateUser(int userId)
-        {
-            string query = "UPDATE tbl_user SET user_isactive = 1 WHERE user_id = @user_id";
+            string query = "UPDATE tbl_user SET user_isactive = @activate WHERE user_id = @user_id";
 
             try
             {
@@ -391,15 +605,16 @@ namespace REYES_LabProject
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@user_id", userId);
+                    command.Parameters.AddWithValue("@activate", activate);
                     int rowsAffected = command.ExecuteNonQuery();
 
                     if (rowsAffected > 0)
                     {
-                        MessageBox.Show("User activated successfully.");
+                        MessageBox.Show("User updated successfully.");
                     }
                     else
                     {
-                        MessageBox.Show("User not found or already activated.");
+                        MessageBox.Show("User not found.");
                     }
                 }
             }
@@ -416,43 +631,6 @@ namespace REYES_LabProject
 
                 connection.Dispose();
             }
-        }
-
-        public static string GetUserRole(int userId)
-        {
-            string query = "SELECT user_role FROM tbl_user WHERE user_id = @userId";
-            string userRole = null;
-
-            try
-            {
-                connection.Open();
-
-                using (MySqlCommand command = new MySqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@userId", userId);
-                    object result = command.ExecuteScalar();
-
-                    if (result != null)
-                    {
-                        userRole = result.ToString();
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error: " + ex.Message);
-            }
-            finally
-            {
-                if (connection.State == ConnectionState.Open)
-                {
-                    connection.Close();
-                }
-
-                connection.Dispose();
-            }
-
-            return userRole;
         }
 
         public static void InsertUserIdIntoTable(string tableName, int userId)
@@ -572,9 +750,9 @@ namespace REYES_LabProject
             }
         }
 
-        public static void UpdateRoom(int room_id, string room_number, string room_type, string room_price)
+        public static void UpdateUsername(int userid, string username)
         {
-            string query = "UPDATE tbl_room SET room_number = @roomNumber, room_type = @roomType, room_price = @roomPrice WHERE room_id = @roomId";
+            string query = "UPDATE tbl_user SET user_name = @username WHERE user_id = @user_id";
 
             try
             {
@@ -582,20 +760,18 @@ namespace REYES_LabProject
 
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@roomNumber", room_number);
-                    command.Parameters.AddWithValue("@roomType", room_type);
-                    command.Parameters.AddWithValue("@roomPrice", room_price);
-                    command.Parameters.AddWithValue("@roomId", room_id);
+                    command.Parameters.AddWithValue("@username", username);
+                    command.Parameters.AddWithValue("@user_id", userid);
 
                     int rowsAffected = command.ExecuteNonQuery();
 
                     if (rowsAffected > 0)
                     {
-                        Console.WriteLine("Room updated successfully.");
+                        Console.WriteLine("Username updated successfully.");
                     }
                     else
                     {
-                        Console.WriteLine("Room not found or not updated.");
+                        Console.WriteLine("Username not updated.");
                     }
                 }
             }
@@ -614,6 +790,437 @@ namespace REYES_LabProject
             }
         }
 
+        public static void UpdateDisplayname(int userid, string displayname)
+        {
+            string query = "";
+
+            if (GetUserRole(userid) == "Admin")
+            {
+                query = "UPDATE tbl_admin SET admin_name = @displayname WHERE user_id = @user_id";
+            }
+            else if(GetUserRole(userid) == "Doctor")
+            {
+                query = "UPDATE tbl_doctor SET doctor_name = @displayname WHERE user_id = @user_id";
+            } 
+            else
+            {
+                query = "UPDATE tbl_patient SET patient_name = @displayname WHERE user_id = @user_id";
+            }
+
+            try
+            {
+                connection.Open();
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@displayname", displayname);
+                    command.Parameters.AddWithValue("@user_id", userid);
+
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        Console.WriteLine("Displayname updated successfully.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Displayname not updated.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+
+                connection.Dispose();
+            }
+        }
+
+        public static void UpdateUserFromDoctor(int doctor_id, int user_id, string doctor_name)
+        {
+            string query = "UPDATE tbl_doctor SET user_id = @userId, doctor_name = @doctor_name WHERE doctor_id = @doctorId";
+
+            try
+            {
+                connection.Open();
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@userId", user_id);
+                    command.Parameters.AddWithValue("@doctor_name", doctor_name);
+                    command.Parameters.AddWithValue("@doctorId", doctor_id);
+
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        Console.WriteLine("User information updated successfully for doctor_id: " + doctor_id);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Doctor not found or user information not updated.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+
+                connection.Dispose();
+            }
+        }
+
+        public static void UpdateUserFromPatient(int patient_id, int user_id, string patient_name)
+        {
+            string query = "UPDATE tbl_patient SET user_id = @userId, patient_name = @doctor_name WHERE patient_id = @patientId";
+
+            try
+            {
+                connection.Open();
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@userId", user_id);
+                    command.Parameters.AddWithValue("@doctor_name", patient_name);
+                    command.Parameters.AddWithValue("@doctorId", patient_id);
+
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        Console.WriteLine("User information updated successfully for patient_id: " + patient_id);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Patient not found or user information not updated.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+
+                connection.Dispose();
+            }
+        }
+
+        public static void AddMedicalRecord(int record_id, int patient_id, int doctor_id, string record_date, string record_diagnosis, string record_prescription, string record_treatmentplan)
+        {
+            string query = "INSERT INTO tbl_medical_record (record_id, patient_id, doctor_id, record_date, record_diagnosis, record_prescription, record_treatmentplan) VALUES (@recordId, @patientId, @doctorId, @recordDate, @recordDiagnosis, @recordPrescription, @recordTreatmentPlan)";
+
+            try
+            {
+                connection.Open();
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@recordId", record_id);
+                    command.Parameters.AddWithValue("@patientId", patient_id);
+                    command.Parameters.AddWithValue("@doctorId", doctor_id);
+                    command.Parameters.AddWithValue("@recordDate", record_date);
+                    command.Parameters.AddWithValue("@recordDiagnosis", record_diagnosis);
+                    command.Parameters.AddWithValue("@recordPrescription", record_prescription);
+                    command.Parameters.AddWithValue("@recordTreatmentPlan", record_treatmentplan);
+
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        Console.WriteLine("Medical record added successfully.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Medical record not added.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+
+                connection.Dispose();
+            }
+        }
+
+        public static void DeleteMedicalRecord(int record_id)
+        {
+            string query = "DELETE FROM tbl_medical_record WHERE record_id = @recordId";
+
+            try
+            {
+                connection.Open();
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@recordId", record_id);
+
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        Console.WriteLine("Medical record deleted successfully.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Medical record not found or not deleted.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+
+                connection.Dispose();
+            }
+        }
+
+        public static void UpdateMedicalRecord(int record_id, int patient_id, int doctor_id, string record_date, string record_diagnosis, string record_prescription, string record_treatmentplan)
+        {
+            string query = "UPDATE tbl_medical_record SET patient_id = @patientId, doctor_id = @doctorId, record_date = @recordDate, record_diagnosis = @recordDiagnosis, record_prescription = @recordPrescription, record_treatmentplan = @recordTreatmentPlan WHERE record_id = @recordId";
+
+            try
+            {
+                connection.Open();
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@patientId", patient_id);
+                    command.Parameters.AddWithValue("@doctorId", doctor_id);
+                    command.Parameters.AddWithValue("@recordDate", record_date);
+                    command.Parameters.AddWithValue("@recordDiagnosis", record_diagnosis);
+                    command.Parameters.AddWithValue("@recordPrescription", record_prescription);
+                    command.Parameters.AddWithValue("@recordTreatmentPlan", record_treatmentplan);
+                    command.Parameters.AddWithValue("@recordId", record_id);
+
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        Console.WriteLine("Medical record updated successfully.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Medical record not found or not updated.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+
+                connection.Dispose();
+            }
+        }
+
+        public static void AddBilling(int billing_id, int patient_id, int doctor_id, int record_id, string billing_date, string billing_total, string billing_paymentstatus)
+        {
+            string query = "INSERT INTO tbl_billing (billing_id, patient_id, doctor_id, record_id, billing_date, billing_total, billing_paymentstatus) VALUES (@billingId, @patientId, @doctorId, @recordId, @billingDate, @billingTotal, @billingPaymentStatus)";
+
+            try
+            {
+                connection.Open();
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@billingId", billing_id);
+                    command.Parameters.AddWithValue("@patientId", patient_id);
+                    command.Parameters.AddWithValue("@doctorId", doctor_id);
+                    command.Parameters.AddWithValue("@recordId", record_id);
+                    command.Parameters.AddWithValue("@billingDate", billing_date);
+                    command.Parameters.AddWithValue("@billingTotal", billing_total);
+                    command.Parameters.AddWithValue("@billingPaymentStatus", billing_paymentstatus);
+
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        Console.WriteLine("Billing record added successfully.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Billing record not added.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+
+                connection.Dispose();
+            }
+        }
+
+        public static void UpdateBilling(int billing_id, int patient_id, int doctor_id, int record_id, string billing_date, string billing_total, string billing_paymentstatus)
+        {
+            string query = "UPDATE tbl_billing SET patient_id = @patientId, doctor_id = @doctorId, record_id = @recordId, billing_date = @billingDate, billing_total = @billingTotal, billing_paymentstatus = @billingPaymentStatus WHERE billing_id = @billingId";
+
+            try
+            {
+                connection.Open();
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@patientId", patient_id);
+                    command.Parameters.AddWithValue("@doctorId", doctor_id);
+                    command.Parameters.AddWithValue("@recordId", record_id);
+                    command.Parameters.AddWithValue("@billingDate", billing_date);
+                    command.Parameters.AddWithValue("@billingTotal", billing_total);
+                    command.Parameters.AddWithValue("@billingPaymentStatus", billing_paymentstatus);
+                    command.Parameters.AddWithValue("@billingId", billing_id);
+
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        Console.WriteLine("Billing record updated successfully.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Billing record not found or not updated.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+
+                connection.Dispose();
+            }
+        }
+
+        public static void DeleteBilling(int billing_id)
+        {
+            string query = "DELETE FROM tbl_billing WHERE billing_id = @billingId";
+
+            try
+            {
+                connection.Open();
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@billingId", billing_id);
+
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        Console.WriteLine("Billing record deleted successfully.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Billing record not found or not deleted.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+
+                connection.Dispose();
+            }
+        }
+
+        public static void MarkBillingAsPaid(int billing_id)
+        {
+            string query = "UPDATE tbl_billing SET billing_paymentstatus = 'PAID' WHERE billing_id = @billingId";
+
+            try
+            {
+                connection.Open();
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@billingId", billing_id);
+
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        Console.WriteLine("Billing record marked as PAID successfully.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Billing record not found or not updated.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+
+                connection.Dispose();
+            }
+        }
 
     }
 }

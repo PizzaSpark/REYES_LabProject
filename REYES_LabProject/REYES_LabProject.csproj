@@ -130,6 +130,12 @@
     <Compile Include="Forms\Audit.Designer.cs">
       <DependentUpon>Audit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\EditInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditInfo.Designer.cs">
+      <DependentUpon>EditInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,23 +148,29 @@
     <Compile Include="Forms\Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ManageAssigned.cs">
+    <Compile Include="Forms\ManageBilling.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ManageAssigned.Designer.cs">
-      <DependentUpon>ManageAssigned.cs</DependentUpon>
+    <Compile Include="Forms\ManageBilling.Designer.cs">
+      <DependentUpon>ManageBilling.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ManageRooms.cs">
+    <Compile Include="Forms\ManageMedicalRecords.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ManageRooms.Designer.cs">
-      <DependentUpon>ManageRooms.cs</DependentUpon>
+    <Compile Include="Forms\ManageMedicalRecords.Designer.cs">
+      <DependentUpon>ManageMedicalRecords.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ManageUsers.cs">
+    <Compile Include="Forms\ManagePatients.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ManageUsers.Designer.cs">
-      <DependentUpon>ManageUsers.cs</DependentUpon>
+    <Compile Include="Forms\ManagePatients.Designer.cs">
+      <DependentUpon>ManagePatients.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ManageDoctors.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ManageDoctors.Designer.cs">
+      <DependentUpon>ManageDoctors.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -176,20 +188,26 @@
     <EmbeddedResource Include="Forms\Audit.resx">
       <DependentUpon>Audit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditInfo.resx">
+      <DependentUpon>EditInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ManageAssigned.resx">
-      <DependentUpon>ManageAssigned.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\ManageBilling.resx">
+      <DependentUpon>ManageBilling.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ManageRooms.resx">
-      <DependentUpon>ManageRooms.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\ManageMedicalRecords.resx">
+      <DependentUpon>ManageMedicalRecords.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ManageUsers.resx">
-      <DependentUpon>ManageUsers.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\ManagePatients.resx">
+      <DependentUpon>ManagePatients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ManageDoctors.resx">
+      <DependentUpon>ManageDoctors.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
