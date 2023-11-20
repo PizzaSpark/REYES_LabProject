@@ -27,10 +27,11 @@ DROP TABLE IF EXISTS `tbl_admin`;
 CREATE TABLE `tbl_admin` (
   `admin_id` int NOT NULL AUTO_INCREMENT,
   `user_id` int NOT NULL,
+  `admin_name` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`admin_id`),
   KEY `fk_tbl_admin_tbl_user_idx` (`user_id`),
   CONSTRAINT `fk_tbl_admin_tbl_user` FOREIGN KEY (`user_id`) REFERENCES `tbl_user` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,39 +40,8 @@ CREATE TABLE `tbl_admin` (
 
 LOCK TABLES `tbl_admin` WRITE;
 /*!40000 ALTER TABLE `tbl_admin` DISABLE KEYS */;
-INSERT INTO `tbl_admin` VALUES (8,2);
+INSERT INTO `tbl_admin` VALUES (9,6,'EKOOOO');
 /*!40000 ALTER TABLE `tbl_admin` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `tbl_assigned`
---
-
-DROP TABLE IF EXISTS `tbl_assigned`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `tbl_assigned` (
-  `assigned_id` int NOT NULL,
-  `patient_id` int NOT NULL,
-  `doctor_id` int NOT NULL,
-  `room_id` int NOT NULL,
-  PRIMARY KEY (`assigned_id`),
-  KEY `fk_tbl_assigned_tbl_patient1_idx` (`patient_id`),
-  KEY `fk_tbl_assigned_tbl_doctor1_idx` (`doctor_id`),
-  KEY `fk_tbl_assigned_tbl_room1_idx` (`room_id`),
-  CONSTRAINT `fk_tbl_assigned_tbl_doctor1` FOREIGN KEY (`doctor_id`) REFERENCES `tbl_doctor` (`doctor_id`),
-  CONSTRAINT `fk_tbl_assigned_tbl_patient1` FOREIGN KEY (`patient_id`) REFERENCES `tbl_patient` (`patient_id`),
-  CONSTRAINT `fk_tbl_assigned_tbl_room1` FOREIGN KEY (`room_id`) REFERENCES `tbl_room` (`room_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `tbl_assigned`
---
-
-LOCK TABLES `tbl_assigned` WRITE;
-/*!40000 ALTER TABLE `tbl_assigned` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tbl_assigned` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -89,7 +59,7 @@ CREATE TABLE `tbl_audit` (
   PRIMARY KEY (`audit_id`),
   KEY `fk_tbl_audit_tbl_user1_idx` (`audit_user_id`),
   CONSTRAINT `fk_tbl_audit_tbl_user1` FOREIGN KEY (`audit_user_id`) REFERENCES `tbl_user` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -98,6 +68,7 @@ CREATE TABLE `tbl_audit` (
 
 LOCK TABLES `tbl_audit` WRITE;
 /*!40000 ALTER TABLE `tbl_audit` DISABLE KEYS */;
+INSERT INTO `tbl_audit` VALUES (1,5,'logged in','20/11/2023 4:11:54 pm'),(2,5,'logged out','20/11/2023 4:12:10 pm');
 /*!40000 ALTER TABLE `tbl_audit` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -112,13 +83,16 @@ CREATE TABLE `tbl_billing` (
   `billing_id` int NOT NULL AUTO_INCREMENT,
   `patient_id` int NOT NULL,
   `doctor_id` int NOT NULL,
+  `record_id` int NOT NULL,
   `billing_date` varchar(45) DEFAULT NULL,
   `billing_total` varchar(45) DEFAULT NULL,
   `billing_paymentstatus` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`billing_id`),
   KEY `fk_tbl_billing_tbl_doctor1_idx` (`doctor_id`),
   KEY `fk_tbl_billing_tbl_patient1_idx` (`patient_id`),
+  KEY `fk_tbl_billing_tbl_medical_record1_idx` (`record_id`),
   CONSTRAINT `fk_tbl_billing_tbl_doctor1` FOREIGN KEY (`doctor_id`) REFERENCES `tbl_doctor` (`doctor_id`),
+  CONSTRAINT `fk_tbl_billing_tbl_medical_record1` FOREIGN KEY (`record_id`) REFERENCES `tbl_medical_record` (`record_id`),
   CONSTRAINT `fk_tbl_billing_tbl_patient1` FOREIGN KEY (`patient_id`) REFERENCES `tbl_patient` (`patient_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -146,7 +120,7 @@ CREATE TABLE `tbl_doctor` (
   PRIMARY KEY (`doctor_id`),
   KEY `fk_tbl_doctor_tbl_user1_idx` (`user_id`),
   CONSTRAINT `fk_tbl_doctor_tbl_user1` FOREIGN KEY (`user_id`) REFERENCES `tbl_user` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -155,7 +129,7 @@ CREATE TABLE `tbl_doctor` (
 
 LOCK TABLES `tbl_doctor` WRITE;
 /*!40000 ALTER TABLE `tbl_doctor` DISABLE KEYS */;
-INSERT INTO `tbl_doctor` VALUES (2,3,NULL),(3,4,NULL);
+INSERT INTO `tbl_doctor` VALUES (5,7,'Maddie');
 /*!40000 ALTER TABLE `tbl_doctor` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -205,7 +179,7 @@ CREATE TABLE `tbl_patient` (
   PRIMARY KEY (`patient_id`),
   KEY `fk_tbl_patient_tbl_user1_idx` (`user_id`),
   CONSTRAINT `fk_tbl_patient_tbl_user1` FOREIGN KEY (`user_id`) REFERENCES `tbl_user` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -214,32 +188,8 @@ CREATE TABLE `tbl_patient` (
 
 LOCK TABLES `tbl_patient` WRITE;
 /*!40000 ALTER TABLE `tbl_patient` DISABLE KEYS */;
+INSERT INTO `tbl_patient` VALUES (1,8,NULL);
 /*!40000 ALTER TABLE `tbl_patient` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `tbl_room`
---
-
-DROP TABLE IF EXISTS `tbl_room`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `tbl_room` (
-  `room_id` int NOT NULL AUTO_INCREMENT,
-  `room_number` varchar(45) DEFAULT NULL,
-  `room_type` varchar(45) DEFAULT NULL,
-  `room_price` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`room_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `tbl_room`
---
-
-LOCK TABLES `tbl_room` WRITE;
-/*!40000 ALTER TABLE `tbl_room` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tbl_room` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -256,7 +206,7 @@ CREATE TABLE `tbl_user` (
   `user_isactive` int DEFAULT '0',
   `user_role` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -265,7 +215,7 @@ CREATE TABLE `tbl_user` (
 
 LOCK TABLES `tbl_user` WRITE;
 /*!40000 ALTER TABLE `tbl_user` DISABLE KEYS */;
-INSERT INTO `tbl_user` VALUES (1,'test','098f6bcd4621d373cade4e832627b4f6',1,'Admin'),(2,'admin','3225cb195fc2b6c5fd8d1fce48994e6c',1,'Admin'),(3,'doctor','6ce4be7607d13b0bf3119d47b62404c1',1,'Doctor'),(4,'elmo','1d41af41ca1e5d3be0455b39c3221667',1,'Doctor');
+INSERT INTO `tbl_user` VALUES (5,'admin','471e6604ad6b4f9b85a81305feefb4f7',1,'Admin'),(6,'eko','48f6653b9e739014ddc7782df9a2d7c8',1,'Admin'),(7,'donna','83e926426234a579128e08b488e8e0c3',1,'Doctor'),(8,'shane','c02a4c2e497494764881b390fd6dd55f',1,'Patient');
 /*!40000 ALTER TABLE `tbl_user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -286,4 +236,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-11-18  0:29:25
+-- Dump completed on 2023-11-20 16:13:13
