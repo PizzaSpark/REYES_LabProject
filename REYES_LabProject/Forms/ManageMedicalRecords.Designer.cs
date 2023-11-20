@@ -230,6 +230,7 @@
             this.back_btn.TabIndex = 88;
             this.back_btn.Text = "back";
             this.back_btn.UseVisualStyleBackColor = true;
+            this.back_btn.Click += new System.EventHandler(this.back_btn_Click);
             // 
             // timer1
             // 

@@ -143,5 +143,12 @@ namespace REYES_LabProject.Forms
                 this.Close();
             }
         }
+
+        private void back_btn_Click(object sender, EventArgs e)
+        {
+            Dashboard frm = new Dashboard();
+            Program.OpenNewForm(frm);
+            this.Close();
+        }
     }
 }

@@ -610,7 +610,7 @@ namespace REYES_LabProject
 
         public static void InsertAuditData(int userId, string auditContext)
         {
-            string query = "INSERT INTO tbl_audit (user_id, audit_context, audit_datetime) VALUES (@userId, @auditContext, @auditDateTime)";
+            string query = "INSERT INTO tbl_audit (audit_user_id, audit_context, audit_datetime) VALUES (@userId, @auditContext, @auditDateTime)";
             string auditDateTime = DateTime.Now.ToString();
 
             try

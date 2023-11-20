@@ -74,5 +74,25 @@ namespace REYES_LabProject.Forms
                 this.Close();
             }
         }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                timerValue = 0;
+                if (e.RowIndex >= 0 && e.RowIndex < dataGridView1.Rows.Count)
+                {
+                    DataGridViewRow selectedRow = dataGridView1.Rows[e.RowIndex];
+
+                    patientId_txt.Text = selectedRow.Cells["patient_id"].Value.ToString();
+                    userId_txt.Text = selectedRow.Cells["user_id"].Value.ToString();
+                    patientName_txt.Text = selectedRow.Cells["patient_name"].Value.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex}");
+            }
+        }
     }
 }
