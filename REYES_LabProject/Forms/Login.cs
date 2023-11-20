@@ -57,11 +57,14 @@ namespace REYES_LabProject
                 else
                 {
                     Dashboard dashboard = new Dashboard();
-                    databridge.dataState.userrole = sqlFunctions.GetUserRole(username);
-                    databridge.dataState.username = username;
                     databridge.dataState.userid = int.Parse(sqlFunctions.GetUserId(username));
-                    databridge.dataState.categoryid = int.Parse(sqlFunctions.GetCategoryId(databridge.dataState.userid, username));
-                    databridge.dataState.categoryname = sqlFunctions.GetCategoryName(databridge.dataState.userid, username);
+                    databridge.dataState.userrole = sqlFunctions.GetUserRole(databridge.dataState.userid);
+                    databridge.dataState.username = username;
+                    databridge.dataState.roleid = sqlFunctions.GetRoleIdForUser(databridge.dataState.userid);
+                    databridge.dataState.rolename = sqlFunctions.GetRoleNameForUser(databridge.dataState.userid);
+
+                    sqlFunctions.InsertAuditData(databridge.dataState.userid, $"logged in");
+
                     Program.OpenNewForm(dashboard);
                     this.Close();
                 }

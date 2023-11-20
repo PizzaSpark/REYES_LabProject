@@ -82,7 +82,8 @@ namespace REYES_LabProject.Forms
                 string status = billingPaymentstatus_cmb.Text;
 
                 sqlFunctions.AddBilling(bid, pid, did, rid, date, total, status);
-            } 
+                sqlFunctions.InsertAuditData(databridge.dataState.userid, $"added billing");
+            }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error: {ex}");
@@ -97,6 +98,7 @@ namespace REYES_LabProject.Forms
                 int bid = int.Parse(billingId_txt.Text);
 
                 sqlFunctions.DeleteBilling(bid);
+                sqlFunctions.InsertAuditData(databridge.dataState.userid, $"deleted billing");
             }
             catch (Exception ex)
             {
@@ -118,6 +120,7 @@ namespace REYES_LabProject.Forms
                 string status = billingPaymentstatus_cmb.Text;
 
                 sqlFunctions.UpdateBilling(bid, pid, did, rid, date, total, status);
+                sqlFunctions.InsertAuditData(databridge.dataState.userid, $"updated billing");
             }
             catch (Exception ex)
             {
@@ -133,6 +136,7 @@ namespace REYES_LabProject.Forms
                 int bid = int.Parse(billingId_txt.Text);
 
                 sqlFunctions.MarkBillingAsPaid(bid);
+                sqlFunctions.InsertAuditData(databridge.dataState.userid, $"paid billing");
             }
             catch (Exception ex)
             {

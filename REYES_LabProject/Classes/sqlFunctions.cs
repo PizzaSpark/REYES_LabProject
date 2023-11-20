@@ -66,55 +66,6 @@ namespace REYES_LabProject
             }
         }
 
-        public static string GetUserRole(string username)
-        {
-            try
-            {
-                connection.Open();
-
-                string selectQuery = "SELECT user_role FROM tbl_user WHERE user_name = @username";
-
-                using (MySqlCommand cmd = new MySqlCommand(selectQuery, connection))
-                {
-                    cmd.Parameters.AddWithValue("@username", username);
-
-                    object result = cmd.ExecuteScalar();
-
-                    if (result != null)
-                    {
-                        // Username found, return the role as a string
-                        return result.ToString();
-                    }
-                    else
-                    {
-                        // Username not found
-                        return "User not found";
-                    }
-                }
-            }
-            catch (MySqlException ex)
-            {
-                // Handle MySQL database-related exceptions
-                Console.WriteLine($"MySQL Exception: {ex.Message}");
-                return "Error" + ex; // or re-throw the exception if needed
-            }
-            catch (Exception ex)
-            {
-                // Handle other exceptions
-                Console.WriteLine($"Exception: {ex.Message}");
-                return "Error" + ex; // or re-throw the exception if needed
-            }
-            finally
-            {
-                if (connection.State == ConnectionState.Open)
-                {
-                    connection.Close();
-                }
-
-                connection.Dispose();
-            }
-        }
-
         public static string GetUserId(string username)
         {
             try
@@ -164,57 +115,47 @@ namespace REYES_LabProject
             }
         }
 
-        public static string GetCategoryId(int user_id, string username)
+        public static int GetRoleIdForUser(int userId)
         {
+            string adminQuery = "SELECT admin_id FROM tbl_admin WHERE user_id = @userId";
+            string doctorQuery = "SELECT doctor_id FROM tbl_doctor WHERE user_id = @userId";
+            string patientQuery = "SELECT patient_id FROM tbl_patient WHERE user_id = @userId";
+
             try
             {
                 connection.Open();
 
-                string selectQuery = "";
-
-                if (GetUserRole(username) == "Admin")
+                using (MySqlCommand adminCommand = new MySqlCommand(adminQuery, connection))
+                using (MySqlCommand doctorCommand = new MySqlCommand(doctorQuery, connection))
+                using (MySqlCommand patientCommand = new MySqlCommand(patientQuery, connection))
                 {
-                    selectQuery = "SELECT admin_id FROM tbl_admin WHERE user_id = @user_id";
-                }
-                else if (GetUserRole(username) == "Doctor")
-                {
-                    selectQuery = "SELECT doctor_id FROM tbl_doctor WHERE user_id = @user_id";
-                } 
-                else
-                {
-                    selectQuery = "SELECT patient_id FROM tbl_patient WHERE user_id = @user_id";
-                }
+                    adminCommand.Parameters.AddWithValue("@userId", userId);
+                    doctorCommand.Parameters.AddWithValue("@userId", userId);
+                    patientCommand.Parameters.AddWithValue("@userId", userId);
 
+                    object adminResult = adminCommand.ExecuteScalar();
+                    object doctorResult = doctorCommand.ExecuteScalar();
+                    object patientResult = patientCommand.ExecuteScalar();
 
-                using (MySqlCommand cmd = new MySqlCommand(selectQuery, connection))
-                {
-                    cmd.Parameters.AddWithValue("@user_id", user_id);
-
-                    object result = cmd.ExecuteScalar();
-
-                    if (result != null)
+                    if (adminResult != null)
                     {
-                        // Username found, return the role as a string
-                        return result.ToString();
+                        return (int)adminResult;
                     }
-                    else
+
+                    if (doctorResult != null)
                     {
-                        // Username not found
-                        return "User not found";
+                        return (int)doctorResult;
+                    }
+
+                    if (patientResult != null)
+                    {
+                        return (int)patientResult;
                     }
                 }
-            }
-            catch (MySqlException ex)
-            {
-                // Handle MySQL database-related exceptions
-                Console.WriteLine($"MySQL Exception: {ex.Message}");
-                return "Error" + ex; // or re-throw the exception if needed
             }
             catch (Exception ex)
             {
-                // Handle other exceptions
-                Console.WriteLine($"Exception: {ex.Message}");
-                return "Error" + ex; // or re-throw the exception if needed
+                Console.WriteLine("Error: " + ex.Message);
             }
             finally
             {
@@ -225,59 +166,52 @@ namespace REYES_LabProject
 
                 connection.Dispose();
             }
+
+            // Return a default value (you may want to handle this differently based on your needs)
+            return -1;
         }
 
-        public static string GetCategoryName(int user_id, string username)
+        public static string GetRoleNameForUser(int userId)
         {
+            string adminQuery = "SELECT admin_name FROM tbl_admin WHERE user_id = @userId";
+            string doctorQuery = "SELECT doctor_name FROM tbl_doctor WHERE user_id = @userId";
+            string patientQuery = "SELECT patient_name FROM tbl_patient WHERE user_id = @userId";
+
             try
             {
                 connection.Open();
 
-                string selectQuery = "";
-
-                if (GetUserRole(username) == "Admin")
+                using (MySqlCommand adminCommand = new MySqlCommand(adminQuery, connection))
+                using (MySqlCommand doctorCommand = new MySqlCommand(doctorQuery, connection))
+                using (MySqlCommand patientCommand = new MySqlCommand(patientQuery, connection))
                 {
-                    selectQuery = "SELECT admin_name FROM tbl_admin WHERE user_id = @user_id";
-                }
-                else if (GetUserRole(username) == "Doctor")
-                {
-                    selectQuery = "SELECT doctor_name FROM tbl_doctor WHERE user_id = @user_id";
-                }
-                else
-                {
-                    selectQuery = "SELECT patient_name FROM tbl_patient WHERE user_id = @user_id";
-                }
+                    adminCommand.Parameters.AddWithValue("@userId", userId);
+                    doctorCommand.Parameters.AddWithValue("@userId", userId);
+                    patientCommand.Parameters.AddWithValue("@userId", userId);
 
+                    object adminResult = adminCommand.ExecuteScalar();
+                    object doctorResult = doctorCommand.ExecuteScalar();
+                    object patientResult = patientCommand.ExecuteScalar();
 
-                using (MySqlCommand cmd = new MySqlCommand(selectQuery, connection))
-                {
-                    cmd.Parameters.AddWithValue("@user_id", user_id);
-
-                    object result = cmd.ExecuteScalar();
-
-                    if (result != null)
+                    if (adminResult != null)
                     {
-                        // Username found, return the role as a string
-                        return result.ToString();
+                        return adminResult.ToString();
                     }
-                    else
+
+                    if (doctorResult != null)
                     {
-                        // Username not found
-                        return "User not found";
+                        return doctorResult.ToString();
+                    }
+
+                    if (patientResult != null)
+                    {
+                        return patientResult.ToString();
                     }
                 }
-            }
-            catch (MySqlException ex)
-            {
-                // Handle MySQL database-related exceptions
-                Console.WriteLine($"MySQL Exception: {ex.Message}");
-                return "Error" + ex; // or re-throw the exception if needed
             }
             catch (Exception ex)
             {
-                // Handle other exceptions
-                Console.WriteLine($"Exception: {ex.Message}");
-                return "Error" + ex; // or re-throw the exception if needed
+                Console.WriteLine("Error: " + ex.Message);
             }
             finally
             {
@@ -288,6 +222,9 @@ namespace REYES_LabProject
 
                 connection.Dispose();
             }
+
+            // Return a default value or handle it based on your needs
+            return null;
         }
 
         public static DataTable GetTableData(string tableName)

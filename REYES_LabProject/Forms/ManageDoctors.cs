@@ -46,6 +46,7 @@ namespace REYES_LabProject.Forms
                 timerValue = 0;
                 sqlFunctions.UpdateUserFromDoctor(int.Parse(doctorId_txt.Text), int.Parse(userId_txt.Text), doctorName_txt.Text);
                 dataGridView1.DataSource = sqlFunctions.GetTableData("tbl_patient");
+                sqlFunctions.InsertAuditData(databridge.dataState.userid, $"updated doctor info");
 
             }
             catch (Exception ex)

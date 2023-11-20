@@ -1,4 +1,5 @@
-﻿using System;
+﻿using REYES_LabProject.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -49,7 +50,7 @@ namespace REYES_LabProject.Forms
                 dataGridView1.DataSource = sqlFunctions.GetInactiveUsers(isactive);
 
                 string userRole = sqlFunctions.GetUserRole(userId);
-
+                sqlFunctions.InsertAuditData(databridge.dataState.userid, $"activated userID {userId}");
                 if (userRole == "Admin")
                 {
                     sqlFunctions.InsertUserIdIntoTable("tbl_admin", userId);

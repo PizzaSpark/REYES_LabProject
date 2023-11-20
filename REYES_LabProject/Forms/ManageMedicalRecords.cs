@@ -82,7 +82,9 @@ namespace REYES_LabProject.Forms
                 string plan = recordTreatmentplan_txt.Text;
 
                 sqlFunctions.AddMedicalRecord(rid, pid, did, date, diagnosis, prescription, plan);
-            } 
+                sqlFunctions.InsertAuditData(databridge.dataState.userid, $"updated medical records");
+
+            }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error: {ex}");
@@ -98,6 +100,7 @@ namespace REYES_LabProject.Forms
                 int rid = int.Parse(recordId_txt.Text);
 
                 sqlFunctions.DeleteMedicalRecord(rid);
+                sqlFunctions.InsertAuditData(databridge.dataState.userid, $"deleted medical record");
             }
             catch (Exception ex)
             {
@@ -119,6 +122,7 @@ namespace REYES_LabProject.Forms
                 string plan = recordTreatmentplan_txt.Text;
 
                 sqlFunctions.UpdateMedicalRecord(rid, pid, did, date, diagnosis, prescription, plan);
+                sqlFunctions.InsertAuditData(databridge.dataState.userid, $"updated medical record");
             }
             catch (Exception ex)
             {

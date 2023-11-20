@@ -14,8 +14,8 @@ namespace REYES_LabProject.Classes
 
         public int userid { get; set; }
 
-        public int categoryid { get; set; }
+        public int roleid { get; set; }
 
-        public string categoryname { get; set; }
+        public string rolename { get; set; }
     }
 }

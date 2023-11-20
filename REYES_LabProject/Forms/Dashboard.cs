@@ -30,8 +30,8 @@ namespace REYES_LabProject
             roleDisplay_txt.Text = databridge.dataState.userrole;
             usernameDisplay_txt.Text = databridge.dataState.username;
             userIdDisplay_txt.Text = databridge.dataState.userid.ToString();
-            categoryIdDisplay_txt.Text = databridge.dataState.categoryid.ToString();
-            categoryNameDisplay_txt.Text = databridge.dataState.categoryname;
+            categoryIdDisplay_txt.Text = databridge.dataState.roleid.ToString();
+            categoryNameDisplay_txt.Text = databridge.dataState.rolename;
 
             if (roleDisplay_txt.Text == "Admin")
             {
@@ -113,6 +113,8 @@ namespace REYES_LabProject
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            sqlFunctions.InsertAuditData(databridge.dataState.userid, $"logged out");
+
             Login frm = new Login();
             Program.OpenNewForm(frm);
             this.Close();

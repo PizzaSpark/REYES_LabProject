@@ -24,10 +24,10 @@ namespace REYES_LabProject.Forms
         {
             timer1.Start();
             userId_txt.Text = databridge.dataState.userid.ToString();
-            categoryId_txt.Text = databridge.dataState.categoryid.ToString();
+            categoryId_txt.Text = databridge.dataState.roleid.ToString();
             username_txt.Text = databridge.dataState.username;
             role_txt.Text = databridge.dataState.userrole;
-            displayname_txt.Text = databridge.dataState.categoryname;
+            displayname_txt.Text = databridge.dataState.rolename;
         }
 
         private void save_btn_Click(object sender, EventArgs e)
@@ -37,7 +37,9 @@ namespace REYES_LabProject.Forms
             sqlFunctions.UpdateDisplayname(databridge.dataState.userid, displayname_txt.Text);
 
             databridge.dataState.username = username_txt.Text;
-            databridge.dataState.categoryname = displayname_txt.Text;
+            databridge.dataState.rolename = displayname_txt.Text;
+
+            sqlFunctions.InsertAuditData(databridge.dataState.userid, $"updated their name");
         }
 
         private void back_btn_Click(object sender, EventArgs e)
