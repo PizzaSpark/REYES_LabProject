@@ -55,6 +55,10 @@
             this.manageBillsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.userIdDisplay_txt = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel6 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.categoryIdDisplay_txt = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.usernameDisplay_txt = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -63,10 +67,6 @@
             this.dateDisplay_txt = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel5 = new System.Windows.Forms.ToolStripStatusLabel();
             this.timerDisplay_txt = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.userIdDisplay_txt = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel6 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.categoryIdDisplay_txt = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel7 = new System.Windows.Forms.ToolStripStatusLabel();
             this.categoryNameDisplay_txt = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
@@ -278,23 +278,49 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel4,
             this.userIdDisplay_txt,
-            this.toolStripStatusLabel6,
-            this.categoryIdDisplay_txt,
             this.toolStripStatusLabel1,
             this.usernameDisplay_txt,
             this.toolStripStatusLabel3,
             this.roleDisplay_txt,
+            this.toolStripStatusLabel6,
+            this.categoryIdDisplay_txt,
+            this.toolStripStatusLabel7,
+            this.categoryNameDisplay_txt,
             this.toolStripStatusLabel2,
             this.dateDisplay_txt,
             this.toolStripStatusLabel5,
-            this.timerDisplay_txt,
-            this.toolStripStatusLabel7,
-            this.categoryNameDisplay_txt});
+            this.timerDisplay_txt});
             this.statusStrip1.Location = new System.Drawing.Point(0, 517);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(1070, 26);
             this.statusStrip1.TabIndex = 9;
             this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel4
+            // 
+            this.toolStripStatusLabel4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
+            this.toolStripStatusLabel4.Size = new System.Drawing.Size(57, 20);
+            this.toolStripStatusLabel4.Text = "UserID";
+            // 
+            // userIdDisplay_txt
+            // 
+            this.userIdDisplay_txt.Name = "userIdDisplay_txt";
+            this.userIdDisplay_txt.Size = new System.Drawing.Size(15, 20);
+            this.userIdDisplay_txt.Text = "-";
+            // 
+            // toolStripStatusLabel6
+            // 
+            this.toolStripStatusLabel6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripStatusLabel6.Name = "toolStripStatusLabel6";
+            this.toolStripStatusLabel6.Size = new System.Drawing.Size(56, 20);
+            this.toolStripStatusLabel6.Text = "RoleID";
+            // 
+            // categoryIdDisplay_txt
+            // 
+            this.categoryIdDisplay_txt.Name = "categoryIdDisplay_txt";
+            this.categoryIdDisplay_txt.Size = new System.Drawing.Size(15, 20);
+            this.categoryIdDisplay_txt.Text = "-";
             // 
             // toolStripStatusLabel1
             // 
@@ -348,38 +374,12 @@
             this.timerDisplay_txt.Size = new System.Drawing.Size(15, 20);
             this.timerDisplay_txt.Text = "-";
             // 
-            // toolStripStatusLabel4
-            // 
-            this.toolStripStatusLabel4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
-            this.toolStripStatusLabel4.Size = new System.Drawing.Size(57, 20);
-            this.toolStripStatusLabel4.Text = "UserID";
-            // 
-            // userIdDisplay_txt
-            // 
-            this.userIdDisplay_txt.Name = "userIdDisplay_txt";
-            this.userIdDisplay_txt.Size = new System.Drawing.Size(15, 20);
-            this.userIdDisplay_txt.Text = "-";
-            // 
-            // toolStripStatusLabel6
-            // 
-            this.toolStripStatusLabel6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripStatusLabel6.Name = "toolStripStatusLabel6";
-            this.toolStripStatusLabel6.Size = new System.Drawing.Size(89, 20);
-            this.toolStripStatusLabel6.Text = "CategoryID";
-            // 
-            // categoryIdDisplay_txt
-            // 
-            this.categoryIdDisplay_txt.Name = "categoryIdDisplay_txt";
-            this.categoryIdDisplay_txt.Size = new System.Drawing.Size(15, 20);
-            this.categoryIdDisplay_txt.Text = "-";
-            // 
             // toolStripStatusLabel7
             // 
             this.toolStripStatusLabel7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripStatusLabel7.Name = "toolStripStatusLabel7";
-            this.toolStripStatusLabel7.Size = new System.Drawing.Size(112, 20);
-            this.toolStripStatusLabel7.Text = "Categoryname";
+            this.toolStripStatusLabel7.Size = new System.Drawing.Size(79, 20);
+            this.toolStripStatusLabel7.Text = "Rolename";
             // 
             // categoryNameDisplay_txt
             // 
