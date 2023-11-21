@@ -1159,5 +1159,83 @@ namespace REYES_LabProject
             }
         }
 
+        public static string GetPrimaryKeyColumnName(string tableName)
+        {
+            string primaryKeyColumnName = null;
+
+            try
+            {
+                string query = @"SELECT COLUMN_NAME
+                        FROM INFORMATION_SCHEMA.COLUMNS
+                        WHERE TABLE_SCHEMA = 'db_hospital'
+                          AND TABLE_NAME = @tableName
+                          AND COLUMN_KEY = 'PRI'";
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@tableName", tableName);
+
+                    object result = command.ExecuteScalar();
+
+                    if (result != null)
+                    {
+                        primaryKeyColumnName = result.ToString();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+
+            return primaryKeyColumnName;
+        }
+
+        public static DataTable GetDataByPrimaryKey(string tableName, int primaryKeyId)
+        {
+            DataTable dataTable = new DataTable();
+
+            try
+            {
+                connection.Open();
+
+                // Get the primary key column name
+                string primaryKeyColumnName = GetPrimaryKeyColumnName(tableName);
+
+                if (string.IsNullOrEmpty(primaryKeyColumnName))
+                {
+                    MessageBox.Show($"Table '{tableName}' doesn't have a primary key column.");
+                    return dataTable;
+                }
+
+                // Use the primary key column name to fetch data
+                //string query = $"SELECT * FROM {tableName} WHERE {primaryKeyColumnName} = @primaryKeyId";
+                string query = $"CALL GetDataFromUserId('{tableName}', '{primaryKeyColumnName}', {primaryKeyId})";
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    //command.Parameters.AddWithValue("@primaryKeyId", primaryKeyId);
+
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter(command))
+                    {
+                        adapter.Fill(dataTable);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+
+                connection.Dispose();
+            }
+
+            return dataTable;
+        }
     }
 }

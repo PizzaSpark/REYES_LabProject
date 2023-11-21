@@ -36,7 +36,7 @@ namespace REYES_LabProject
             bool hasCapital = Regex.IsMatch(input, "[A-Z]");
             bool hasSmall = Regex.IsMatch(input, "[a-z]");
             bool hasDigit = Regex.IsMatch(input, @"\d");
-            bool hasSpecialChar = Regex.IsMatch(input, "[?!_]");
+            bool hasSpecialChar = Regex.IsMatch(input, "[?!_#]");
 
             // Check if all criteria are met
             return hasCapital && hasSmall && hasDigit && hasSpecialChar;

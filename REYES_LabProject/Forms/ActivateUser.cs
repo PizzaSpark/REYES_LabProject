@@ -150,5 +150,18 @@ namespace REYES_LabProject.Forms
                 this.Close();
             }
         }
+
+        private void search_ptb_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int search = int.Parse(searchid_txt.Text);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex}");
+            }
+        }
     }
 }

@@ -46,7 +46,11 @@
             this.viewDeactivated_btn = new System.Windows.Forms.Button();
             this.viewSuspended_btn = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.search_ptb = new System.Windows.Forms.PictureBox();
+            this.searchid_txt = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.search_ptb)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -170,7 +174,7 @@
             // 
             // viewActivated_btn
             // 
-            this.viewActivated_btn.Location = new System.Drawing.Point(384, 57);
+            this.viewActivated_btn.Location = new System.Drawing.Point(359, 160);
             this.viewActivated_btn.Name = "viewActivated_btn";
             this.viewActivated_btn.Size = new System.Drawing.Size(141, 23);
             this.viewActivated_btn.TabIndex = 13;
@@ -180,7 +184,7 @@
             // 
             // viewDeactivated_btn
             // 
-            this.viewDeactivated_btn.Location = new System.Drawing.Point(384, 28);
+            this.viewDeactivated_btn.Location = new System.Drawing.Point(359, 131);
             this.viewDeactivated_btn.Name = "viewDeactivated_btn";
             this.viewDeactivated_btn.Size = new System.Drawing.Size(141, 23);
             this.viewDeactivated_btn.TabIndex = 14;
@@ -190,7 +194,7 @@
             // 
             // viewSuspended_btn
             // 
-            this.viewSuspended_btn.Location = new System.Drawing.Point(384, 86);
+            this.viewSuspended_btn.Location = new System.Drawing.Point(359, 189);
             this.viewSuspended_btn.Name = "viewSuspended_btn";
             this.viewSuspended_btn.Size = new System.Drawing.Size(141, 23);
             this.viewSuspended_btn.TabIndex = 15;
@@ -203,11 +207,41 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // search_ptb
+            // 
+            this.search_ptb.Image = global::REYES_LabProject.Properties.Resources.search_icon;
+            this.search_ptb.Location = new System.Drawing.Point(637, 28);
+            this.search_ptb.Name = "search_ptb";
+            this.search_ptb.Size = new System.Drawing.Size(22, 22);
+            this.search_ptb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.search_ptb.TabIndex = 16;
+            this.search_ptb.TabStop = false;
+            this.search_ptb.Click += new System.EventHandler(this.search_ptb_Click);
+            // 
+            // searchid_txt
+            // 
+            this.searchid_txt.Location = new System.Drawing.Point(531, 28);
+            this.searchid_txt.Name = "searchid_txt";
+            this.searchid_txt.Size = new System.Drawing.Size(100, 22);
+            this.searchid_txt.TabIndex = 17;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(528, 9);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(66, 16);
+            this.label5.TabIndex = 18;
+            this.label5.Text = "search_id";
+            // 
             // ActivateUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(672, 479);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.searchid_txt);
+            this.Controls.Add(this.search_ptb);
             this.Controls.Add(this.viewSuspended_btn);
             this.Controls.Add(this.viewDeactivated_btn);
             this.Controls.Add(this.viewActivated_btn);
@@ -229,6 +263,7 @@
             this.Text = "ActivateUser";
             this.Load += new System.EventHandler(this.ActivateUser_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.search_ptb)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -253,5 +288,8 @@
         private System.Windows.Forms.Button viewDeactivated_btn;
         private System.Windows.Forms.Button viewSuspended_btn;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.PictureBox search_ptb;
+        private System.Windows.Forms.TextBox searchid_txt;
+        private System.Windows.Forms.Label label5;
     }
 }
