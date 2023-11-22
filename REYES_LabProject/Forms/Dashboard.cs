@@ -70,6 +70,7 @@ namespace REYES_LabProject
 
             if (timerValue >= 60)
             {
+                timer1.Stop();
                 MessageBox.Show("You have timed out.");
 
                 Login frm = new Login();
@@ -169,6 +170,8 @@ namespace REYES_LabProject
         private void backupToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // DO BACKUP HAAHAHHAHAHAHAHAA
+    
+
         }
 
         private void restoreToolStripMenuItem_Click(object sender, EventArgs e)

@@ -48,15 +48,19 @@
             this.capslockConfirm_indicator = new System.Windows.Forms.Label();
             this.role_cmb = new System.Windows.Forms.ComboBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.passwordEye_ptb)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.confirmPasswordEye_ptb)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(200, 159);
+            this.label1.Location = new System.Drawing.Point(208, 226);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(0, 25);
             this.label1.TabIndex = 2;
@@ -65,7 +69,8 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(57, 414);
+            this.label3.ForeColor = System.Drawing.Color.DarkCyan;
+            this.label3.Location = new System.Drawing.Point(123, 499);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(149, 25);
             this.label3.TabIndex = 19;
@@ -75,7 +80,8 @@
             // 
             this.signin_txt.AutoSize = true;
             this.signin_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.signin_txt.Location = new System.Drawing.Point(213, 414);
+            this.signin_txt.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.signin_txt.Location = new System.Drawing.Point(279, 499);
             this.signin_txt.Name = "signin_txt";
             this.signin_txt.Size = new System.Drawing.Size(67, 25);
             this.signin_txt.TabIndex = 6;
@@ -87,7 +93,7 @@
             this.capslock_indicator.AutoSize = true;
             this.capslock_indicator.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.capslock_indicator.ForeColor = System.Drawing.Color.Red;
-            this.capslock_indicator.Location = new System.Drawing.Point(301, 148);
+            this.capslock_indicator.Location = new System.Drawing.Point(309, 215);
             this.capslock_indicator.Name = "capslock_indicator";
             this.capslock_indicator.Size = new System.Drawing.Size(107, 18);
             this.capslock_indicator.TabIndex = 17;
@@ -95,19 +101,21 @@
             // 
             // register_btn
             // 
+            this.register_btn.BackColor = System.Drawing.Color.DarkCyan;
             this.register_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.register_btn.Location = new System.Drawing.Point(62, 462);
+            this.register_btn.ForeColor = System.Drawing.SystemColors.Control;
+            this.register_btn.Location = new System.Drawing.Point(310, 448);
             this.register_btn.Name = "register_btn";
             this.register_btn.Size = new System.Drawing.Size(97, 38);
             this.register_btn.TabIndex = 5;
             this.register_btn.Text = "Create";
-            this.register_btn.UseVisualStyleBackColor = true;
+            this.register_btn.UseVisualStyleBackColor = false;
             this.register_btn.Click += new System.EventHandler(this.register_btn_Click);
             // 
             // passwordEye_ptb
             // 
             this.passwordEye_ptb.Image = global::REYES_LabProject.Properties.Resources.closedEye;
-            this.passwordEye_ptb.Location = new System.Drawing.Point(415, 169);
+            this.passwordEye_ptb.Location = new System.Drawing.Point(423, 236);
             this.passwordEye_ptb.Name = "passwordEye_ptb";
             this.passwordEye_ptb.Size = new System.Drawing.Size(30, 30);
             this.passwordEye_ptb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -119,7 +127,8 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(57, 131);
+            this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label2.Location = new System.Drawing.Point(65, 198);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(98, 25);
             this.label2.TabIndex = 13;
@@ -128,7 +137,7 @@
             // password_txt
             // 
             this.password_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.password_txt.Location = new System.Drawing.Point(62, 169);
+            this.password_txt.Location = new System.Drawing.Point(70, 236);
             this.password_txt.Name = "password_txt";
             this.password_txt.PasswordChar = '*';
             this.password_txt.Size = new System.Drawing.Size(346, 30);
@@ -140,7 +149,8 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(57, 43);
+            this.label4.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label4.Location = new System.Drawing.Point(65, 110);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(102, 25);
             this.label4.TabIndex = 11;
@@ -149,7 +159,7 @@
             // username_txt
             // 
             this.username_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.username_txt.Location = new System.Drawing.Point(62, 81);
+            this.username_txt.Location = new System.Drawing.Point(70, 148);
             this.username_txt.Name = "username_txt";
             this.username_txt.Size = new System.Drawing.Size(346, 30);
             this.username_txt.TabIndex = 1;
@@ -157,7 +167,7 @@
             // confirmPasswordEye_ptb
             // 
             this.confirmPasswordEye_ptb.Image = global::REYES_LabProject.Properties.Resources.closedEye;
-            this.confirmPasswordEye_ptb.Location = new System.Drawing.Point(415, 255);
+            this.confirmPasswordEye_ptb.Location = new System.Drawing.Point(423, 322);
             this.confirmPasswordEye_ptb.Name = "confirmPasswordEye_ptb";
             this.confirmPasswordEye_ptb.Size = new System.Drawing.Size(30, 30);
             this.confirmPasswordEye_ptb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -169,7 +179,8 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(57, 217);
+            this.label5.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label5.Location = new System.Drawing.Point(65, 284);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(171, 25);
             this.label5.TabIndex = 22;
@@ -178,7 +189,7 @@
             // confirmPassword_txt
             // 
             this.confirmPassword_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.confirmPassword_txt.Location = new System.Drawing.Point(62, 255);
+            this.confirmPassword_txt.Location = new System.Drawing.Point(70, 322);
             this.confirmPassword_txt.Name = "confirmPassword_txt";
             this.confirmPassword_txt.PasswordChar = '*';
             this.confirmPassword_txt.Size = new System.Drawing.Size(346, 30);
@@ -190,7 +201,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(200, 245);
+            this.label6.Location = new System.Drawing.Point(208, 312);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(0, 25);
             this.label6.TabIndex = 20;
@@ -199,7 +210,8 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(57, 302);
+            this.label7.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label7.Location = new System.Drawing.Point(65, 369);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(51, 25);
             this.label7.TabIndex = 25;
@@ -210,7 +222,7 @@
             this.capslockConfirm_indicator.AutoSize = true;
             this.capslockConfirm_indicator.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.capslockConfirm_indicator.ForeColor = System.Drawing.Color.Red;
-            this.capslockConfirm_indicator.Location = new System.Drawing.Point(301, 234);
+            this.capslockConfirm_indicator.Location = new System.Drawing.Point(309, 301);
             this.capslockConfirm_indicator.Name = "capslockConfirm_indicator";
             this.capslockConfirm_indicator.Size = new System.Drawing.Size(107, 18);
             this.capslockConfirm_indicator.TabIndex = 26;
@@ -225,7 +237,7 @@
             "Admin",
             "Doctor",
             "Patient"});
-            this.role_cmb.Location = new System.Drawing.Point(62, 337);
+            this.role_cmb.Location = new System.Drawing.Point(70, 404);
             this.role_cmb.Name = "role_cmb";
             this.role_cmb.Size = new System.Drawing.Size(346, 33);
             this.role_cmb.TabIndex = 4;
@@ -237,11 +249,48 @@
             this.imageList1.Images.SetKeyName(0, "closedEye.png");
             this.imageList1.Images.SetKeyName(1, "openEye.png");
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(503, -1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(409, 536);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 27;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("MS UI Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.DarkCyan;
+            this.label8.Location = new System.Drawing.Point(102, 49);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(284, 28);
+            this.label8.TabIndex = 29;
+            this.label8.Text = "Best Medicare for You!";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("MS UI Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label9.Location = new System.Drawing.Point(110, 9);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(267, 40);
+            this.label9.TabIndex = 28;
+            this.label9.Text = "paSEAN Care! ";
+            // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(553, 533);
+            this.ClientSize = new System.Drawing.Size(912, 533);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.role_cmb);
             this.Controls.Add(this.capslockConfirm_indicator);
             this.Controls.Add(this.label7);
@@ -259,6 +308,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.username_txt);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
             this.Name = "Register";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -267,6 +317,7 @@
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Register_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.passwordEye_ptb)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.confirmPasswordEye_ptb)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -292,5 +343,8 @@
         private System.Windows.Forms.Label capslockConfirm_indicator;
         private System.Windows.Forms.ComboBox role_cmb;
         private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
     }
 }
