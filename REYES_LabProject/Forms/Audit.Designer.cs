@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Audit));
             this.back_btn = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
@@ -37,22 +38,25 @@
             // 
             // back_btn
             // 
-            this.back_btn.Location = new System.Drawing.Point(626, 12);
+            this.back_btn.BackColor = System.Drawing.Color.DarkCyan;
+            this.back_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.back_btn.ForeColor = System.Drawing.SystemColors.Control;
+            this.back_btn.Location = new System.Drawing.Point(812, 25);
             this.back_btn.Name = "back_btn";
-            this.back_btn.Size = new System.Drawing.Size(75, 23);
+            this.back_btn.Size = new System.Drawing.Size(84, 39);
             this.back_btn.TabIndex = 12;
             this.back_btn.Text = "Back";
-            this.back_btn.UseVisualStyleBackColor = true;
+            this.back_btn.UseVisualStyleBackColor = false;
             this.back_btn.Click += new System.EventHandler(this.back_btn_Click);
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 57);
+            this.dataGridView1.Location = new System.Drawing.Point(137, 107);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(689, 410);
+            this.dataGridView1.Size = new System.Drawing.Size(670, 374);
             this.dataGridView1.TabIndex = 13;
             // 
             // timer1
@@ -64,9 +68,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(713, 479);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(935, 574);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.back_btn);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Audit";
             this.Text = "Audit";
             this.Load += new System.EventHandler(this.Audit_Load);
