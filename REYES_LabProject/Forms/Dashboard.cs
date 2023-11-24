@@ -171,6 +171,7 @@ namespace REYES_LabProject
         {
             try
             {
+                sqlFunctions.BackupDatabase();
 
             } catch (Exception ex)
             {
@@ -182,7 +183,15 @@ namespace REYES_LabProject
 
         private void restoreToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // DO RESTORE AHIDASKFDKASLFNSDKFNSDG HAAHAHHAHAHAHAHAA
+            try
+            {
+                sqlFunctions.RestoreDatabase();
+
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
 
         //
