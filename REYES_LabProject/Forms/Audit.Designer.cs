@@ -75,6 +75,7 @@
             this.Controls.Add(this.back_btn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Audit";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Audit";
             this.Load += new System.EventHandler(this.Audit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

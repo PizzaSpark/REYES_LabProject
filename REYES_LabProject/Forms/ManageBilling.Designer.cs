@@ -328,6 +328,7 @@
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ManageBilling";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ManageBilling";
             this.Load += new System.EventHandler(this.ManageBilling_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

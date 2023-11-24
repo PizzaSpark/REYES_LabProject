@@ -182,6 +182,7 @@
             this.Controls.Add(this.label3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ManageDoctors";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ViewDoctors";
             this.Load += new System.EventHandler(this.ManageDoctors_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

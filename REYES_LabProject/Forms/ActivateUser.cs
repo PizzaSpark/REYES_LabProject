@@ -121,6 +121,8 @@ namespace REYES_LabProject.Forms
             timerValue = 0;
 
             isactive = 0;
+            dataGridView1.DataSource = sqlFunctions.GetInactiveUsers(isactive);
+
         }
 
         private void viewActivated_btn_Click(object sender, EventArgs e)
@@ -128,6 +130,8 @@ namespace REYES_LabProject.Forms
             timerValue = 0;
 
             isactive = 1;
+            dataGridView1.DataSource = sqlFunctions.GetInactiveUsers(isactive);
+
         }
 
         private void viewSuspended_btn_Click(object sender, EventArgs e)
@@ -135,6 +139,8 @@ namespace REYES_LabProject.Forms
             timerValue = 0;
 
             isactive = 2;
+            dataGridView1.DataSource = sqlFunctions.GetInactiveUsers(isactive);
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)

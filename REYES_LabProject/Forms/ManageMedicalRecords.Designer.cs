@@ -311,6 +311,7 @@
             this.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ManageMedicalRecords";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ManageMedicalRecords";
             this.Load += new System.EventHandler(this.ManageMedicalRecords_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

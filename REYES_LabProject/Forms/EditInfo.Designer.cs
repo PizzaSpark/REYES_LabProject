@@ -200,6 +200,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EditInfo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditInfo";
             this.Load += new System.EventHandler(this.EditInfo_Load);
             this.ResumeLayout(false);
