@@ -175,7 +175,7 @@ namespace REYES_LabProject
 
             } catch (Exception ex)
             {
-
+                MessageBox.Show("YAHOO");
             }
     
 
@@ -190,7 +190,7 @@ namespace REYES_LabProject
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show("YAHOO");
             }
         }
 
