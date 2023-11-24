@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -1236,6 +1237,92 @@ namespace REYES_LabProject
             }
 
             return dataTable;
+        }
+
+        public static void BackupDatabase()
+        {
+            string Server = "localhost";
+            string Database = "db_hospital";
+            string User = "root";
+            string Password = "root";
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            string mysqlDumpPath = @"C:\Program Files\MySQL\MySQL Server 8.0\bin\mysqldump.exe";
+            try
+            {
+                // Show the save file dialog to get the backup file path
+                saveFileDialog.Filter = "SQL Files (.sql)|.sql|All Files (.)|.";
+                saveFileDialog.FileName = "backup.sql";
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string backupFilePath = saveFileDialog.FileName;
+
+                    // Build the mysqldump command
+                    string command = $"--host={Server} --user={User} --password={Password} --databases {Database} --result-file={backupFilePath}";
+
+                    // Execute the mysqldump command
+                    ProcessStartInfo processStartInfo = new ProcessStartInfo(mysqlDumpPath, command)
+                    {
+                        CreateNoWindow = true,
+                        UseShellExecute = false,
+                        RedirectStandardOutput = true
+                    };
+
+                    Process process = new Process { StartInfo = processStartInfo };
+                    process.Start();
+
+                    string output = process.StandardOutput.ReadToEnd(); // Read standard output
+                    process.WaitForExit();
+
+                    MessageBox.Show("Backup completed successfully.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error during backup: {ex.Message}");
+            }
+        }
+
+        public static void RestoreDatabase()
+        {
+            string Server = "localhost";
+            string Database = "db_hospital";
+            string User = "root";
+            string Password = "root";
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            string mysqlPath = @"C:\Program Files\MySQL\MySQL Server 8.0\bin\mysql.exe";
+            try
+            {
+                openFileDialog.Filter = "SQL Files (.sql)|.sql|All Files (.)|*.*";
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string restoreFilePath = openFileDialog.FileName;
+                    string command = $"--host={Server} --user={User} --password={Password} --database {Database}";
+
+                    ProcessStartInfo processStartInfo = new ProcessStartInfo(mysqlPath, command)
+                    {
+                        CreateNoWindow = true,
+                        UseShellExecute = false,
+                        RedirectStandardInput = true
+                    };
+
+                    Process process = new Process { StartInfo = processStartInfo };
+                    process.Start();
+
+                    string sqlFileContent = File.ReadAllText(restoreFilePath);
+                    process.StandardInput.WriteLine(sqlFileContent);
+                    process.StandardInput.Close();
+                    process.WaitForExit();
+
+                    MessageBox.Show("Restore completed successfully.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error during restore: {ex.Message}");
+            }
         }
     }
 }

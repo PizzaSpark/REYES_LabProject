@@ -201,9 +201,9 @@
             // 
             this.viewActivated_btn.BackColor = System.Drawing.Color.DarkCyan;
             this.viewActivated_btn.ForeColor = System.Drawing.SystemColors.Control;
-            this.viewActivated_btn.Location = new System.Drawing.Point(524, 133);
+            this.viewActivated_btn.Location = new System.Drawing.Point(499, 133);
             this.viewActivated_btn.Name = "viewActivated_btn";
-            this.viewActivated_btn.Size = new System.Drawing.Size(129, 37);
+            this.viewActivated_btn.Size = new System.Drawing.Size(154, 37);
             this.viewActivated_btn.TabIndex = 13;
             this.viewActivated_btn.Text = "View Activated";
             this.viewActivated_btn.UseVisualStyleBackColor = false;
@@ -213,9 +213,9 @@
             // 
             this.viewDeactivated_btn.BackColor = System.Drawing.Color.DarkCyan;
             this.viewDeactivated_btn.ForeColor = System.Drawing.SystemColors.Control;
-            this.viewDeactivated_btn.Location = new System.Drawing.Point(524, 98);
+            this.viewDeactivated_btn.Location = new System.Drawing.Point(499, 98);
             this.viewDeactivated_btn.Name = "viewDeactivated_btn";
-            this.viewDeactivated_btn.Size = new System.Drawing.Size(129, 37);
+            this.viewDeactivated_btn.Size = new System.Drawing.Size(154, 37);
             this.viewDeactivated_btn.TabIndex = 14;
             this.viewDeactivated_btn.Text = "View Deactivated";
             this.viewDeactivated_btn.UseVisualStyleBackColor = false;
@@ -225,9 +225,9 @@
             // 
             this.viewSuspended_btn.BackColor = System.Drawing.Color.DarkCyan;
             this.viewSuspended_btn.ForeColor = System.Drawing.SystemColors.Control;
-            this.viewSuspended_btn.Location = new System.Drawing.Point(524, 168);
+            this.viewSuspended_btn.Location = new System.Drawing.Point(499, 168);
             this.viewSuspended_btn.Name = "viewSuspended_btn";
-            this.viewSuspended_btn.Size = new System.Drawing.Size(129, 37);
+            this.viewSuspended_btn.Size = new System.Drawing.Size(154, 37);
             this.viewSuspended_btn.TabIndex = 15;
             this.viewSuspended_btn.Text = "View Suspended";
             this.viewSuspended_btn.UseVisualStyleBackColor = false;
