@@ -107,8 +107,17 @@ namespace REYES_LabProject.Forms
                 timerValue = 0;
 
                 int userId = int.Parse(userId_txt.Text);
-                sqlFunctions.ActivateUser(userId, 2);
-                dataGridView1.DataSource = sqlFunctions.GetInactiveUsers(isactive);
+
+                if(userIsactive_txt.Text == "0")
+                {
+                    MessageBox.Show("User must be activated first before getting suspended");
+                }
+                else
+                {
+                    sqlFunctions.ActivateUser(userId, 2);
+                    dataGridView1.DataSource = sqlFunctions.GetInactiveUsers(isactive);
+                }
+         
             }
             catch (Exception ex)
             {
@@ -163,10 +172,30 @@ namespace REYES_LabProject.Forms
             {
                 int search = int.Parse(searchid_txt.Text);
 
+                dataGridView1.DataSource = sqlFunctions.GetDataByPrimaryKey("tbl_user",search);
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error: {ex}");
+            }
+        }
+
+        private void unsuspend_btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                timerValue = 0;
+
+                int userId = int.Parse(userId_txt.Text);
+                sqlFunctions.ActivateUser(userId, 1);
+                dataGridView1.DataSource = sqlFunctions.GetInactiveUsers(isactive);
+
+                sqlFunctions.InsertAuditData(databridge.dataState.userid, $"unsuspended userID {userId}");
+               
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
