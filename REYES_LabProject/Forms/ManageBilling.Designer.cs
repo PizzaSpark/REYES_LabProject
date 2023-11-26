@@ -52,13 +52,17 @@
             this.back_btn = new System.Windows.Forms.Button();
             this.pay_btn = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label8 = new System.Windows.Forms.Label();
+            this.searchid_txt = new System.Windows.Forms.TextBox();
+            this.search_ptb = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.search_ptb)).BeginInit();
             this.SuspendLayout();
             // 
             // billingDate_dtp
             // 
             this.billingDate_dtp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.billingDate_dtp.Location = new System.Drawing.Point(409, 150);
+            this.billingDate_dtp.Location = new System.Drawing.Point(407, 186);
             this.billingDate_dtp.Name = "billingDate_dtp";
             this.billingDate_dtp.Size = new System.Drawing.Size(269, 28);
             this.billingDate_dtp.TabIndex = 64;
@@ -69,7 +73,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label6.Location = new System.Drawing.Point(206, 125);
+            this.label6.Location = new System.Drawing.Point(204, 161);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(182, 22);
             this.label6.TabIndex = 62;
@@ -78,7 +82,7 @@
             // billingTotal_txt
             // 
             this.billingTotal_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.billingTotal_txt.Location = new System.Drawing.Point(41, 150);
+            this.billingTotal_txt.Location = new System.Drawing.Point(39, 186);
             this.billingTotal_txt.Name = "billingTotal_txt";
             this.billingTotal_txt.Size = new System.Drawing.Size(141, 28);
             this.billingTotal_txt.TabIndex = 61;
@@ -89,7 +93,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label7.Location = new System.Drawing.Point(39, 125);
+            this.label7.Location = new System.Drawing.Point(37, 161);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(100, 22);
             this.label7.TabIndex = 60;
@@ -153,7 +157,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label4.Location = new System.Drawing.Point(405, 125);
+            this.label4.Location = new System.Drawing.Point(403, 161);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(101, 22);
             this.label4.TabIndex = 53;
@@ -162,7 +166,7 @@
             // doctorId_txt
             // 
             this.doctorId_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.doctorId_txt.Location = new System.Drawing.Point(534, 66);
+            this.doctorId_txt.Location = new System.Drawing.Point(532, 102);
             this.doctorId_txt.Name = "doctorId_txt";
             this.doctorId_txt.Size = new System.Drawing.Size(139, 28);
             this.doctorId_txt.TabIndex = 52;
@@ -173,7 +177,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label3.Location = new System.Drawing.Point(530, 41);
+            this.label3.Location = new System.Drawing.Point(528, 77);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(84, 22);
             this.label3.TabIndex = 51;
@@ -182,7 +186,7 @@
             // patientId_txt
             // 
             this.patientId_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.patientId_txt.Location = new System.Drawing.Point(210, 66);
+            this.patientId_txt.Location = new System.Drawing.Point(208, 102);
             this.patientId_txt.Name = "patientId_txt";
             this.patientId_txt.Size = new System.Drawing.Size(131, 28);
             this.patientId_txt.TabIndex = 50;
@@ -193,7 +197,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label2.Location = new System.Drawing.Point(206, 41);
+            this.label2.Location = new System.Drawing.Point(204, 77);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(88, 22);
             this.label2.TabIndex = 49;
@@ -202,7 +206,7 @@
             // recordId_txt
             // 
             this.recordId_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.recordId_txt.Location = new System.Drawing.Point(369, 66);
+            this.recordId_txt.Location = new System.Drawing.Point(367, 102);
             this.recordId_txt.Name = "recordId_txt";
             this.recordId_txt.Size = new System.Drawing.Size(134, 28);
             this.recordId_txt.TabIndex = 48;
@@ -213,7 +217,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label1.Location = new System.Drawing.Point(48, 41);
+            this.label1.Location = new System.Drawing.Point(46, 77);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 22);
             this.label1.TabIndex = 47;
@@ -233,7 +237,7 @@
             // billingId_txt
             // 
             this.billingId_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.billingId_txt.Location = new System.Drawing.Point(45, 66);
+            this.billingId_txt.Location = new System.Drawing.Point(43, 102);
             this.billingId_txt.Name = "billingId_txt";
             this.billingId_txt.Size = new System.Drawing.Size(133, 28);
             this.billingId_txt.TabIndex = 66;
@@ -244,7 +248,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label5.Location = new System.Drawing.Point(365, 41);
+            this.label5.Location = new System.Drawing.Point(363, 77);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(85, 22);
             this.label5.TabIndex = 65;
@@ -257,7 +261,7 @@
             this.billingPaymentstatus_cmb.Items.AddRange(new object[] {
             "UNPAID",
             "PAID"});
-            this.billingPaymentstatus_cmb.Location = new System.Drawing.Point(210, 150);
+            this.billingPaymentstatus_cmb.Location = new System.Drawing.Point(208, 186);
             this.billingPaymentstatus_cmb.Name = "billingPaymentstatus_cmb";
             this.billingPaymentstatus_cmb.Size = new System.Drawing.Size(131, 30);
             this.billingPaymentstatus_cmb.TabIndex = 67;
@@ -293,6 +297,39 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label8.Location = new System.Drawing.Point(553, 4);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(88, 22);
+            this.label8.TabIndex = 92;
+            this.label8.Text = "search_id";
+            // 
+            // searchid_txt
+            // 
+            this.searchid_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchid_txt.Location = new System.Drawing.Point(556, 36);
+            this.searchid_txt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.searchid_txt.Name = "searchid_txt";
+            this.searchid_txt.Size = new System.Drawing.Size(100, 28);
+            this.searchid_txt.TabIndex = 91;
+            // 
+            // search_ptb
+            // 
+            this.search_ptb.BackColor = System.Drawing.Color.Transparent;
+            this.search_ptb.Image = global::REYES_LabProject.Properties.Resources.search_icon;
+            this.search_ptb.Location = new System.Drawing.Point(689, 36);
+            this.search_ptb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.search_ptb.Name = "search_ptb";
+            this.search_ptb.Size = new System.Drawing.Size(21, 22);
+            this.search_ptb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.search_ptb.TabIndex = 90;
+            this.search_ptb.TabStop = false;
+            // 
             // ManageBilling
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -300,6 +337,9 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(739, 597);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.searchid_txt);
+            this.Controls.Add(this.search_ptb);
             this.Controls.Add(this.pay_btn);
             this.Controls.Add(this.back_btn);
             this.Controls.Add(this.billingPaymentstatus_cmb);
@@ -327,6 +367,7 @@
             this.Text = "ManageBilling";
             this.Load += new System.EventHandler(this.ManageBilling_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.search_ptb)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -356,5 +397,8 @@
         private System.Windows.Forms.Button back_btn;
         private System.Windows.Forms.Button pay_btn;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox searchid_txt;
+        private System.Windows.Forms.PictureBox search_ptb;
     }
 }

@@ -47,12 +47,8 @@
             this.viewDeactivated_btn = new System.Windows.Forms.Button();
             this.viewSuspended_btn = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.search_ptb = new System.Windows.Forms.PictureBox();
-            this.searchid_txt = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.unsuspend_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.search_ptb)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -255,40 +251,6 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // search_ptb
-            // 
-            this.search_ptb.BackColor = System.Drawing.Color.Transparent;
-            this.search_ptb.Image = global::REYES_LabProject.Properties.Resources.search_icon;
-            this.search_ptb.Location = new System.Drawing.Point(637, 34);
-            this.search_ptb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.search_ptb.Name = "search_ptb";
-            this.search_ptb.Size = new System.Drawing.Size(21, 22);
-            this.search_ptb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.search_ptb.TabIndex = 16;
-            this.search_ptb.TabStop = false;
-            this.search_ptb.Click += new System.EventHandler(this.search_ptb_Click);
-            // 
-            // searchid_txt
-            // 
-            this.searchid_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchid_txt.Location = new System.Drawing.Point(531, 34);
-            this.searchid_txt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.searchid_txt.Name = "searchid_txt";
-            this.searchid_txt.Size = new System.Drawing.Size(100, 28);
-            this.searchid_txt.TabIndex = 17;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label5.Location = new System.Drawing.Point(528, 9);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(88, 22);
-            this.label5.TabIndex = 18;
-            this.label5.Text = "search_id";
-            // 
             // unsuspend_btn
             // 
             this.unsuspend_btn.BackColor = System.Drawing.Color.DarkCyan;
@@ -310,9 +272,6 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(681, 550);
             this.Controls.Add(this.unsuspend_btn);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.searchid_txt);
-            this.Controls.Add(this.search_ptb);
             this.Controls.Add(this.viewSuspended_btn);
             this.Controls.Add(this.viewDeactivated_btn);
             this.Controls.Add(this.viewActivated_btn);
@@ -336,7 +295,6 @@
             this.Text = "ActivateUser";
             this.Load += new System.EventHandler(this.ActivateUser_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.search_ptb)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -361,9 +319,6 @@
         private System.Windows.Forms.Button viewDeactivated_btn;
         private System.Windows.Forms.Button viewSuspended_btn;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.PictureBox search_ptb;
-        private System.Windows.Forms.TextBox searchid_txt;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button unsuspend_btn;
     }
 }

@@ -51,7 +51,11 @@
             this.recordDate_dtp = new System.Windows.Forms.DateTimePicker();
             this.back_btn = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label5 = new System.Windows.Forms.Label();
+            this.searchid_txt = new System.Windows.Forms.TextBox();
+            this.search_ptb = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.search_ptb)).BeginInit();
             this.SuspendLayout();
             // 
             // update_btn
@@ -275,6 +279,39 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label5.Location = new System.Drawing.Point(633, 15);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(88, 22);
+            this.label5.TabIndex = 91;
+            this.label5.Text = "search_id";
+            // 
+            // searchid_txt
+            // 
+            this.searchid_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchid_txt.Location = new System.Drawing.Point(636, 47);
+            this.searchid_txt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.searchid_txt.Name = "searchid_txt";
+            this.searchid_txt.Size = new System.Drawing.Size(100, 28);
+            this.searchid_txt.TabIndex = 90;
+            // 
+            // search_ptb
+            // 
+            this.search_ptb.BackColor = System.Drawing.Color.Transparent;
+            this.search_ptb.Image = global::REYES_LabProject.Properties.Resources.search_icon;
+            this.search_ptb.Location = new System.Drawing.Point(769, 47);
+            this.search_ptb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.search_ptb.Name = "search_ptb";
+            this.search_ptb.Size = new System.Drawing.Size(21, 22);
+            this.search_ptb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.search_ptb.TabIndex = 89;
+            this.search_ptb.TabStop = false;
+            // 
             // ManageMedicalRecords
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -282,6 +319,9 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(818, 609);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.searchid_txt);
+            this.Controls.Add(this.search_ptb);
             this.Controls.Add(this.back_btn);
             this.Controls.Add(this.recordDate_dtp);
             this.Controls.Add(this.recordPrescription_txt);
@@ -309,6 +349,7 @@
             this.Text = "ManageMedicalRecords";
             this.Load += new System.EventHandler(this.ManageMedicalRecords_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.search_ptb)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -337,5 +378,8 @@
         private System.Windows.Forms.DateTimePicker recordDate_dtp;
         private System.Windows.Forms.Button back_btn;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox searchid_txt;
+        private System.Windows.Forms.PictureBox search_ptb;
     }
 }

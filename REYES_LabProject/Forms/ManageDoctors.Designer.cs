@@ -41,7 +41,11 @@
             this.doctorId_txt = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label5 = new System.Windows.Forms.Label();
+            this.searchid_txt = new System.Windows.Forms.TextBox();
+            this.search_ptb = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.search_ptb)).BeginInit();
             this.SuspendLayout();
             // 
             // back_btn
@@ -86,7 +90,7 @@
             // userId_txt
             // 
             this.userId_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userId_txt.Location = new System.Drawing.Point(481, 71);
+            this.userId_txt.Location = new System.Drawing.Point(480, 94);
             this.userId_txt.Name = "userId_txt";
             this.userId_txt.Size = new System.Drawing.Size(150, 30);
             this.userId_txt.TabIndex = 59;
@@ -97,7 +101,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label6.Location = new System.Drawing.Point(476, 43);
+            this.label6.Location = new System.Drawing.Point(475, 66);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(76, 25);
             this.label6.TabIndex = 58;
@@ -106,7 +110,7 @@
             // doctorName_txt
             // 
             this.doctorName_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.doctorName_txt.Location = new System.Drawing.Point(318, 71);
+            this.doctorName_txt.Location = new System.Drawing.Point(317, 94);
             this.doctorName_txt.Name = "doctorName_txt";
             this.doctorName_txt.Size = new System.Drawing.Size(142, 30);
             this.doctorName_txt.TabIndex = 57;
@@ -117,7 +121,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label7.Location = new System.Drawing.Point(318, 43);
+            this.label7.Location = new System.Drawing.Point(317, 66);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(126, 25);
             this.label7.TabIndex = 56;
@@ -138,7 +142,7 @@
             // 
             this.doctorId_txt.Enabled = false;
             this.doctorId_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.doctorId_txt.Location = new System.Drawing.Point(153, 71);
+            this.doctorId_txt.Location = new System.Drawing.Point(152, 94);
             this.doctorId_txt.Name = "doctorId_txt";
             this.doctorId_txt.ReadOnly = true;
             this.doctorId_txt.Size = new System.Drawing.Size(144, 30);
@@ -150,7 +154,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label3.Location = new System.Drawing.Point(153, 43);
+            this.label3.Location = new System.Drawing.Point(152, 66);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(92, 25);
             this.label3.TabIndex = 53;
@@ -161,6 +165,39 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label5.Location = new System.Drawing.Point(622, 6);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(88, 22);
+            this.label5.TabIndex = 74;
+            this.label5.Text = "search_id";
+            // 
+            // searchid_txt
+            // 
+            this.searchid_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchid_txt.Location = new System.Drawing.Point(625, 38);
+            this.searchid_txt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.searchid_txt.Name = "searchid_txt";
+            this.searchid_txt.Size = new System.Drawing.Size(100, 28);
+            this.searchid_txt.TabIndex = 73;
+            // 
+            // search_ptb
+            // 
+            this.search_ptb.BackColor = System.Drawing.Color.Transparent;
+            this.search_ptb.Image = global::REYES_LabProject.Properties.Resources.search_icon;
+            this.search_ptb.Location = new System.Drawing.Point(758, 38);
+            this.search_ptb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.search_ptb.Name = "search_ptb";
+            this.search_ptb.Size = new System.Drawing.Size(21, 22);
+            this.search_ptb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.search_ptb.TabIndex = 72;
+            this.search_ptb.TabStop = false;
+            // 
             // ManageDoctors
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -168,6 +205,9 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(791, 509);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.searchid_txt);
+            this.Controls.Add(this.search_ptb);
             this.Controls.Add(this.back_btn);
             this.Controls.Add(this.update_btn);
             this.Controls.Add(this.clear_btn);
@@ -184,6 +224,7 @@
             this.Text = "ViewDoctors";
             this.Load += new System.EventHandler(this.ManageDoctors_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.search_ptb)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -202,5 +243,8 @@
         private System.Windows.Forms.TextBox doctorId_txt;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox searchid_txt;
+        private System.Windows.Forms.PictureBox search_ptb;
     }
 }
