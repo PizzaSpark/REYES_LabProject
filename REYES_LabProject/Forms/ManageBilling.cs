@@ -134,9 +134,16 @@ namespace REYES_LabProject.Forms
                 string total = billingTotal_txt.Text;
                 string status = billingPaymentstatus_cmb.Text;
 
-                sqlFunctions.UpdateBilling(bid, pid, did, rid, date, total, status);
-                sqlFunctions.InsertAuditData(databridge.dataState.userid, $"updated billing");
-                filterTable(databridge.dataState.userrole);
+                if (toolFunctions.StringSanitizer(total, status))
+                {
+                    MessageBox.Show("You can't do that oh oh");
+                }
+                else
+                {
+                    sqlFunctions.UpdateBilling(bid, pid, did, rid, date, total, status);
+                    sqlFunctions.InsertAuditData(databridge.dataState.userid, $"updated billing");
+                    filterTable(databridge.dataState.userrole);
+                }
             }
             catch (Exception ex)
             {

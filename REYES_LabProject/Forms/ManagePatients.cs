@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -44,9 +45,18 @@ namespace REYES_LabProject.Forms
             try
             {
                 timerValue = 0;
-                sqlFunctions.UpdateUserFromPatient(int.Parse(patientId_txt.Text), int.Parse(userId_txt.Text), patientName_txt.Text);
-                dataGridView1.DataSource = sqlFunctions.GetTableData("tbl_patient");
-                sqlFunctions.InsertAuditData(databridge.dataState.userid, $"updated patient info");
+
+                if (toolFunctions.StringSanitizer(patientName_txt.Text))
+                {
+                    MessageBox.Show("You can't do that oh oh");
+                }
+                else
+                {
+                    sqlFunctions.UpdateUserFromPatient(int.Parse(patientId_txt.Text), int.Parse(userId_txt.Text), patientName_txt.Text);
+                    dataGridView1.DataSource = sqlFunctions.GetTableData("tbl_patient");
+                    sqlFunctions.InsertAuditData(databridge.dataState.userid, $"updated patient info");
+                }
+            
             }
             catch (Exception ex)
             {

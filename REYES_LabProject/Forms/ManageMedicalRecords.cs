@@ -93,11 +93,19 @@ namespace REYES_LabProject.Forms
                 string prescription = recordPrescription_txt.Text;
                 string plan = recordTreatmentplan_txt.Text;
 
-                sqlFunctions.AddMedicalRecord(pid, did, date, diagnosis, prescription, plan);
-                sqlFunctions.InsertAuditData(databridge.dataState.userid, $"updated medical records");
+                if (toolFunctions.StringSanitizer(diagnosis, prescription, plan))
+                {
+                    MessageBox.Show("You can't do that oh oh");
+                }
+                else
+                {
+                    sqlFunctions.AddMedicalRecord(pid, did, date, diagnosis, prescription, plan);
+                    sqlFunctions.InsertAuditData(databridge.dataState.userid, $"updated medical records");
 
 
-                filterTable(databridge.dataState.userrole);
+                    filterTable(databridge.dataState.userrole);
+
+                }
 
             }
             catch (Exception ex)
@@ -138,9 +146,18 @@ namespace REYES_LabProject.Forms
                 string prescription = recordPrescription_txt.Text;
                 string plan = recordTreatmentplan_txt.Text;
 
-                sqlFunctions.UpdateMedicalRecord(rid, pid, did, date, diagnosis, prescription, plan);
-                sqlFunctions.InsertAuditData(databridge.dataState.userid, $"updated medical record");
-                filterTable(databridge.dataState.userrole);
+                if (toolFunctions.StringSanitizer(diagnosis, prescription, plan))
+                {
+                    MessageBox.Show("You can't do that oh oh");
+                }
+                else
+                {
+                    sqlFunctions.UpdateMedicalRecord(rid, pid, did, date, diagnosis, prescription, plan);
+                    sqlFunctions.InsertAuditData(databridge.dataState.userid, $"updated medical record");
+                    filterTable(databridge.dataState.userrole);
+
+                }
+
 
             }
             catch (Exception ex)

@@ -45,6 +45,10 @@ namespace REYES_LabProject
             {
                 MessageBox.Show("You have reached the maximum number of attempts. Please try again later.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            else if (toolFunctions.ContainsOtherCharacters(username))
+            {
+                MessageBox.Show("You can't do that oh oh");
+            }
             else if (sqlFunctions.LoginUser(username,hashedPassword))
             {
                 if (!sqlFunctions.IsActive(username))

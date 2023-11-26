@@ -42,13 +42,40 @@ namespace REYES_LabProject
             return hasCapital && hasSmall && hasDigit && hasSpecialChar;
         }
 
-        public static bool ContainsOtherCharacters(string input)
+        public static bool ContainsOtherCharacters(params string[] inputs)
         {
             // Regular expression pattern to match lowercase letters and digits
             string pattern = "^[a-z0-9]+$";
 
-            // Use Regex.IsMatch to check if the input does not match the pattern
-            return !Regex.IsMatch(input, pattern);
+            // Check each input string
+            foreach (string input in inputs)
+            {
+                // Use Regex.IsMatch to check if the input does not match the pattern
+                if (!Regex.IsMatch(input, pattern))
+                {
+                    return true; // Return true if any string contains other characters
+                }
+            }
+
+            return false; // Return false if all strings contain only lowercase letters and digits
+        }
+
+        public static bool StringSanitizer(params string[] inputs)
+        {
+            // Regular expression pattern to match lowercase letters and digits
+            string pattern = "^[a-z0-9]+$";
+
+            // Check each input string
+            foreach (string input in inputs)
+            {
+                // Use Regex.IsMatch to check if the input does not match the pattern
+                if (!Regex.IsMatch(input, pattern))
+                {
+                    return true; // Return true if any string contains other characters
+                }
+            }
+
+            return false; // Return false if all strings contain only lowercase letters and digits
         }
     }
 }

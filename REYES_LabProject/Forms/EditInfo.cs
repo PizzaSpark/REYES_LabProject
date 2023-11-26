@@ -32,14 +32,29 @@ namespace REYES_LabProject.Forms
 
         private void save_btn_Click(object sender, EventArgs e)
         {
-            timerValue = 0;
-            sqlFunctions.UpdateUsername(databridge.dataState.userid, username_txt.Text);
-            sqlFunctions.UpdateDisplayname(databridge.dataState.userid, displayname_txt.Text);
+            try
+            {
+                timerValue = 0;
+                if (toolFunctions.StringSanitizer(username_txt.Text, displayname_txt.Text))
+                {
+                    MessageBox.Show("You can't do that oh oh");
+                }
+                else
+                {
+                    sqlFunctions.UpdateUsername(databridge.dataState.userid, username_txt.Text);
+                    sqlFunctions.UpdateDisplayname(databridge.dataState.userid, displayname_txt.Text);
 
-            databridge.dataState.username = username_txt.Text;
-            databridge.dataState.rolename = displayname_txt.Text;
+                    databridge.dataState.username = username_txt.Text;
+                    databridge.dataState.rolename = displayname_txt.Text;
 
-            sqlFunctions.InsertAuditData(databridge.dataState.userid, $"updated their name");
+                    sqlFunctions.InsertAuditData(databridge.dataState.userid, $"updated their name");
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error");
+            }
+           
         }
 
         private void back_btn_Click(object sender, EventArgs e)
