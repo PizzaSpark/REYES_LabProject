@@ -68,7 +68,7 @@
             this.update_btn.ForeColor = System.Drawing.SystemColors.Control;
             this.update_btn.Location = new System.Drawing.Point(202, 201);
             this.update_btn.Name = "update_btn";
-            this.update_btn.Size = new System.Drawing.Size(78, 33);
+            this.update_btn.Size = new System.Drawing.Size(103, 33);
             this.update_btn.TabIndex = 63;
             this.update_btn.Text = "Update";
             this.update_btn.UseVisualStyleBackColor = false;
@@ -129,6 +129,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(118, 240);
             this.dataGridView1.Name = "dataGridView1";
