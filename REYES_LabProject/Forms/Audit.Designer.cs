@@ -100,6 +100,7 @@
             this.search_ptb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.search_ptb.TabIndex = 72;
             this.search_ptb.TabStop = false;
+            this.search_ptb.Click += new System.EventHandler(this.search_ptb_Click);
             // 
             // Audit
             // 

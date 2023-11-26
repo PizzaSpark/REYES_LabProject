@@ -45,5 +45,19 @@ namespace REYES_LabProject.Forms
                 this.Close();
             }
         }
+
+        private void search_ptb_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int id = int.Parse(searchid_txt.Text);
+                dataGridView1.DataSource = sqlFunctions.GetDataByPrimaryKey("tbl_audit", id);
+            } 
+            catch(Exception ex)
+            {
+                MessageBox.Show(Text, ex.Message);
+            }
+            
+        }
     }
 }

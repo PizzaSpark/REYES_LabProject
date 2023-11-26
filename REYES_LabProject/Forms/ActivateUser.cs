@@ -167,20 +167,6 @@ namespace REYES_LabProject.Forms
             }
         }
 
-        private void search_ptb_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                int search = int.Parse(searchid_txt.Text);
-
-                dataGridView1.DataSource = sqlFunctions.GetDataByPrimaryKey("tbl_user",search);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error: {ex}");
-            }
-        }
-
         private void unsuspend_btn_Click(object sender, EventArgs e)
         {
             try
