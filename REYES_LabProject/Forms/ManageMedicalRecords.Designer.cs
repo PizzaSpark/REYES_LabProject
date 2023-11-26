@@ -123,7 +123,6 @@
             this.doctorId_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.doctorId_txt.Location = new System.Drawing.Point(401, 78);
             this.doctorId_txt.Name = "doctorId_txt";
-            this.doctorId_txt.ReadOnly = true;
             this.doctorId_txt.Size = new System.Drawing.Size(100, 30);
             this.doctorId_txt.TabIndex = 32;
             // 
@@ -144,7 +143,6 @@
             this.patientId_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.patientId_txt.Location = new System.Drawing.Point(235, 78);
             this.patientId_txt.Name = "patientId_txt";
-            this.patientId_txt.ReadOnly = true;
             this.patientId_txt.Size = new System.Drawing.Size(100, 30);
             this.patientId_txt.TabIndex = 30;
             // 
@@ -165,7 +163,6 @@
             this.recordId_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.recordId_txt.Location = new System.Drawing.Point(82, 78);
             this.recordId_txt.Name = "recordId_txt";
-            this.recordId_txt.ReadOnly = true;
             this.recordId_txt.Size = new System.Drawing.Size(100, 30);
             this.recordId_txt.TabIndex = 28;
             // 
@@ -197,7 +194,6 @@
             this.recordPrescription_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.recordPrescription_txt.Location = new System.Drawing.Point(494, 157);
             this.recordPrescription_txt.Name = "recordPrescription_txt";
-            this.recordPrescription_txt.ReadOnly = true;
             this.recordPrescription_txt.Size = new System.Drawing.Size(228, 30);
             this.recordPrescription_txt.TabIndex = 44;
             // 
@@ -218,7 +214,6 @@
             this.recordTreatmentplan_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.recordTreatmentplan_txt.Location = new System.Drawing.Point(281, 158);
             this.recordTreatmentplan_txt.Name = "recordTreatmentplan_txt";
-            this.recordTreatmentplan_txt.ReadOnly = true;
             this.recordTreatmentplan_txt.Size = new System.Drawing.Size(207, 30);
             this.recordTreatmentplan_txt.TabIndex = 42;
             // 
@@ -239,7 +234,6 @@
             this.recordDiagnosis_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.recordDiagnosis_txt.Location = new System.Drawing.Point(79, 158);
             this.recordDiagnosis_txt.Name = "recordDiagnosis_txt";
-            this.recordDiagnosis_txt.ReadOnly = true;
             this.recordDiagnosis_txt.Size = new System.Drawing.Size(196, 30);
             this.recordDiagnosis_txt.TabIndex = 40;
             // 

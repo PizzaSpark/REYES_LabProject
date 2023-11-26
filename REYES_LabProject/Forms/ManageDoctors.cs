@@ -22,7 +22,7 @@ namespace REYES_LabProject.Forms
         private void ManageDoctors_Load(object sender, EventArgs e)
         {
             timer1.Start();
-            if (databridge.dataState.userrole == "Patient")
+            if (databridge.dataState.userrole == "Patient" || databridge.dataState.userrole == "Doctor")
             {
                 update_btn.Visible = false;
             }
@@ -45,7 +45,7 @@ namespace REYES_LabProject.Forms
             {
                 timerValue = 0;
                 sqlFunctions.UpdateUserFromDoctor(int.Parse(doctorId_txt.Text), int.Parse(userId_txt.Text), doctorName_txt.Text);
-                dataGridView1.DataSource = sqlFunctions.GetTableData("tbl_patient");
+                dataGridView1.DataSource = sqlFunctions.GetTableData("tbl_doctor");
                 sqlFunctions.InsertAuditData(databridge.dataState.userid, $"updated doctor info");
 
             }
@@ -70,6 +70,7 @@ namespace REYES_LabProject.Forms
 
             if (timerValue >= 60)
             {
+                timer1.Stop();
                 MessageBox.Show("You have timed out.");
 
                 Login frm = new Login();

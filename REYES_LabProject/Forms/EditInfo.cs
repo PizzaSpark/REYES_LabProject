@@ -55,6 +55,7 @@ namespace REYES_LabProject.Forms
 
             if (timerValue >= 60)
             {
+                timer1.Stop();
                 MessageBox.Show("You have timed out.");
 
                 Login frm = new Login();

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
@@ -354,59 +355,6 @@ namespace REYES_LabProject
                             // Check the isactive column value
                             int isActiveValue = reader.GetInt32("user_isactive");
                             return isActiveValue == 1;
-                        }
-                        else
-                        {
-                            // Username not found
-                            return false;
-                        }
-                    }
-                }
-            }
-            catch (MySqlException ex)
-            {
-                // Handle MySQL database-related exceptions
-                Console.WriteLine($"MySQL Exception: {ex.Message}");
-                return false;
-            }
-            catch (Exception ex)
-            {
-                // Handle other exceptions
-                Console.WriteLine($"Exception: {ex.Message}");
-                return false;
-            }
-            finally
-            {
-                if (connection.State == ConnectionState.Open)
-                {
-                    connection.Close();
-                }
-
-                connection.Dispose();
-            }
-        }
-
-        public static bool IsSuspended(string username)
-        {
-            try
-            {
-                connection.Open();
-
-                // SQL query to retrieve the isactive value for the given username
-                string query = "SELECT user_isactive FROM tbl_user WHERE user_name = @username";
-
-                using (MySqlCommand cmd = new MySqlCommand(query, connection))
-                {
-                    cmd.Parameters.AddWithValue("@username", username);
-
-
-                    using (MySqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            // Check the isactive column value
-                            int isActiveValue = reader.GetInt32("user_isactive");
-                            return isActiveValue == 2;
                         }
                         else
                         {
@@ -824,7 +772,7 @@ namespace REYES_LabProject
 
         public static void UpdateUserFromPatient(int patient_id, int user_id, string patient_name)
         {
-            string query = "UPDATE tbl_patient SET user_id = @userId, patient_name = @doctor_name WHERE patient_id = @patientId";
+            string query = "UPDATE tbl_patient SET user_id = @user_id, patient_name = @patient_name WHERE patient_id = @patient_id";
 
             try
             {
@@ -832,9 +780,9 @@ namespace REYES_LabProject
 
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@userId", user_id);
-                    command.Parameters.AddWithValue("@doctor_name", patient_name);
-                    command.Parameters.AddWithValue("@doctorId", patient_id);
+                    command.Parameters.AddWithValue("@patient_id", patient_id);
+                    command.Parameters.AddWithValue("@user_id", user_id);
+                    command.Parameters.AddWithValue("@patient_name", patient_name);
 
                     int rowsAffected = command.ExecuteNonQuery();
 
@@ -863,9 +811,9 @@ namespace REYES_LabProject
             }
         }
 
-        public static void AddMedicalRecord(int record_id, int patient_id, int doctor_id, string record_date, string record_diagnosis, string record_prescription, string record_treatmentplan)
+        public static void AddMedicalRecord(int patient_id, int doctor_id, string record_date, string record_diagnosis, string record_prescription, string record_treatmentplan)
         {
-            string query = "INSERT INTO tbl_medical_record (record_id, patient_id, doctor_id, record_date, record_diagnosis, record_prescription, record_treatmentplan) VALUES (@recordId, @patientId, @doctorId, @recordDate, @recordDiagnosis, @recordPrescription, @recordTreatmentPlan)";
+            string query = "INSERT INTO tbl_medical_record (patient_id, doctor_id, record_date, record_diagnosis, record_prescription, record_treatmentplan) VALUES (@patientId, @doctorId, @recordDate, @recordDiagnosis, @recordPrescription, @recordTreatmentPlan)";
 
             try
             {
@@ -873,7 +821,6 @@ namespace REYES_LabProject
 
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@recordId", record_id);
                     command.Parameters.AddWithValue("@patientId", patient_id);
                     command.Parameters.AddWithValue("@doctorId", doctor_id);
                     command.Parameters.AddWithValue("@recordDate", record_date);
@@ -992,9 +939,9 @@ namespace REYES_LabProject
             }
         }
 
-        public static void AddBilling(int billing_id, int patient_id, int doctor_id, int record_id, string billing_date, string billing_total, string billing_paymentstatus)
+        public static void AddBilling(int patient_id, int doctor_id, int record_id, string billing_date, string billing_total, string billing_paymentstatus)
         {
-            string query = "INSERT INTO tbl_billing (billing_id, patient_id, doctor_id, record_id, billing_date, billing_total, billing_paymentstatus) VALUES (@billingId, @patientId, @doctorId, @recordId, @billingDate, @billingTotal, @billingPaymentStatus)";
+            string query = "INSERT INTO tbl_billing (patient_id, doctor_id, record_id, billing_date, billing_total, billing_paymentstatus) VALUES (@patientId, @doctorId, @recordId, @billingDate, @billingTotal, @billingPaymentStatus)";
 
             try
             {
@@ -1002,7 +949,6 @@ namespace REYES_LabProject
 
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@billingId", billing_id);
                     command.Parameters.AddWithValue("@patientId", patient_id);
                     command.Parameters.AddWithValue("@doctorId", doctor_id);
                     command.Parameters.AddWithValue("@recordId", record_id);
@@ -1225,6 +1171,82 @@ namespace REYES_LabProject
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+
+                connection.Dispose();
+            }
+
+            return dataTable;
+        }
+
+        public static DataTable GetMedicalRecordsForPatient(int patientId)
+        {
+            DataTable dataTable = new DataTable();
+
+            try
+            {
+                connection.Open();
+
+                // Assuming "patient_id" is the actual column name in your table
+                string query = "SELECT * FROM tbl_medical_record WHERE patient_id = @patientId";
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@patientId", patientId);
+
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter(command))
+                    {
+                        adapter.Fill(dataTable);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+
+                connection.Dispose();
+            }
+
+            return dataTable;
+        }
+
+        public static DataTable GetBillingRecordsForPatient(int patientId)
+        {
+            DataTable dataTable = new DataTable();
+
+            try
+            {
+                connection.Open();
+
+                // Assuming "patient_id" is the actual column name in your table
+                string query = "SELECT * FROM tbl_billing WHERE patient_id = @patientId";
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@patientId", patientId);
+
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter(command))
+                    {
+                        adapter.Fill(dataTable);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
             }
             finally
             {

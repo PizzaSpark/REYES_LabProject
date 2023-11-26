@@ -80,7 +80,6 @@
             this.billingTotal_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.billingTotal_txt.Location = new System.Drawing.Point(41, 150);
             this.billingTotal_txt.Name = "billingTotal_txt";
-            this.billingTotal_txt.ReadOnly = true;
             this.billingTotal_txt.Size = new System.Drawing.Size(141, 28);
             this.billingTotal_txt.TabIndex = 61;
             // 
@@ -165,7 +164,6 @@
             this.doctorId_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.doctorId_txt.Location = new System.Drawing.Point(534, 66);
             this.doctorId_txt.Name = "doctorId_txt";
-            this.doctorId_txt.ReadOnly = true;
             this.doctorId_txt.Size = new System.Drawing.Size(139, 28);
             this.doctorId_txt.TabIndex = 52;
             // 
@@ -186,7 +184,6 @@
             this.patientId_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.patientId_txt.Location = new System.Drawing.Point(210, 66);
             this.patientId_txt.Name = "patientId_txt";
-            this.patientId_txt.ReadOnly = true;
             this.patientId_txt.Size = new System.Drawing.Size(131, 28);
             this.patientId_txt.TabIndex = 50;
             // 
@@ -207,7 +204,6 @@
             this.recordId_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.recordId_txt.Location = new System.Drawing.Point(369, 66);
             this.recordId_txt.Name = "recordId_txt";
-            this.recordId_txt.ReadOnly = true;
             this.recordId_txt.Size = new System.Drawing.Size(134, 28);
             this.recordId_txt.TabIndex = 48;
             // 
@@ -239,7 +235,6 @@
             this.billingId_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.billingId_txt.Location = new System.Drawing.Point(45, 66);
             this.billingId_txt.Name = "billingId_txt";
-            this.billingId_txt.ReadOnly = true;
             this.billingId_txt.Size = new System.Drawing.Size(133, 28);
             this.billingId_txt.TabIndex = 66;
             // 

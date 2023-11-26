@@ -88,7 +88,6 @@
             this.userId_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userId_txt.Location = new System.Drawing.Point(481, 71);
             this.userId_txt.Name = "userId_txt";
-            this.userId_txt.ReadOnly = true;
             this.userId_txt.Size = new System.Drawing.Size(150, 30);
             this.userId_txt.TabIndex = 59;
             // 
@@ -109,7 +108,6 @@
             this.doctorName_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.doctorName_txt.Location = new System.Drawing.Point(318, 71);
             this.doctorName_txt.Name = "doctorName_txt";
-            this.doctorName_txt.ReadOnly = true;
             this.doctorName_txt.Size = new System.Drawing.Size(142, 30);
             this.doctorName_txt.TabIndex = 57;
             // 

@@ -49,7 +49,6 @@
             this.patientName_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.patientName_txt.Location = new System.Drawing.Point(247, 112);
             this.patientName_txt.Name = "patientName_txt";
-            this.patientName_txt.ReadOnly = true;
             this.patientName_txt.Size = new System.Drawing.Size(161, 28);
             this.patientName_txt.TabIndex = 67;
             // 

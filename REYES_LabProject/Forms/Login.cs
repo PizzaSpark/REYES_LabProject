@@ -51,10 +51,6 @@ namespace REYES_LabProject
                 {
                     MessageBox.Show("Account not yet activated. Please contact your administator", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                else if (sqlFunctions.IsSuspended(username))
-                {
-                    MessageBox.Show("Account suspended for self actions. Please contact your administator", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
                 else
                 {
                     Dashboard dashboard = new Dashboard();

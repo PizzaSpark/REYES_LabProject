@@ -19,6 +19,18 @@ namespace REYES_LabProject.Forms
             InitializeComponent();
         }
 
+        private void filterTable(string role)
+        {
+            if (databridge.dataState.userrole == "Patient")
+            {
+                dataGridView1.DataSource = sqlFunctions.GetBillingRecordsForPatient(databridge.dataState.roleid);
+            }
+            else
+            {
+                dataGridView1.DataSource = sqlFunctions.GetTableData("tbl_billing");
+            }
+        }
+
         private void ManageBilling_Load(object sender, EventArgs e)
         {
             timer1.Start();
@@ -29,7 +41,7 @@ namespace REYES_LabProject.Forms
                 update_btn.Visible = false;
             }
 
-            dataGridView1.DataSource = sqlFunctions.GetTableData("tbl_billing");
+            filterTable(databridge.dataState.userrole);
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -73,7 +85,6 @@ namespace REYES_LabProject.Forms
             try
             {
                 timerValue = 0;
-                int bid = int.Parse(billingId_txt.Text);
                 int pid = int.Parse(patientId_txt.Text);
                 int did = int.Parse(doctorId_txt.Text);
                 int rid = int.Parse(recordId_txt.Text);
@@ -81,8 +92,10 @@ namespace REYES_LabProject.Forms
                 string total = billingTotal_txt.Text;
                 string status = billingPaymentstatus_cmb.Text;
 
-                sqlFunctions.AddBilling(bid, pid, did, rid, date, total, status);
+                sqlFunctions.AddBilling(pid, did, rid, date, total, status);
                 sqlFunctions.InsertAuditData(databridge.dataState.userid, $"added billing");
+                filterTable(databridge.dataState.userrole);
+
             }
             catch (Exception ex)
             {
@@ -99,6 +112,8 @@ namespace REYES_LabProject.Forms
 
                 sqlFunctions.DeleteBilling(bid);
                 sqlFunctions.InsertAuditData(databridge.dataState.userid, $"deleted billing");
+                filterTable(databridge.dataState.userrole);
+
             }
             catch (Exception ex)
             {
@@ -121,6 +136,7 @@ namespace REYES_LabProject.Forms
 
                 sqlFunctions.UpdateBilling(bid, pid, did, rid, date, total, status);
                 sqlFunctions.InsertAuditData(databridge.dataState.userid, $"updated billing");
+                filterTable(databridge.dataState.userrole);
             }
             catch (Exception ex)
             {
@@ -137,6 +153,7 @@ namespace REYES_LabProject.Forms
 
                 sqlFunctions.MarkBillingAsPaid(bid);
                 sqlFunctions.InsertAuditData(databridge.dataState.userid, $"paid billing");
+                filterTable(databridge.dataState.userrole);
             }
             catch (Exception ex)
             {
@@ -150,6 +167,7 @@ namespace REYES_LabProject.Forms
 
             if (timerValue >= 60)
             {
+                timer1.Stop();
                 MessageBox.Show("You have timed out.");
 
                 Login frm = new Login();

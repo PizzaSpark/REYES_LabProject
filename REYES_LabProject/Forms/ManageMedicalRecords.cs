@@ -29,7 +29,20 @@ namespace REYES_LabProject.Forms
                 update_btn.Visible = false;
             }
 
-            dataGridView1.DataSource = sqlFunctions.GetTableData("tbl_medical_record");
+            filterTable(databridge.dataState.userrole);
+
+        }
+
+        private void filterTable(string role)
+        {
+            if (databridge.dataState.userrole == "Patient")
+            {
+                dataGridView1.DataSource = sqlFunctions.GetMedicalRecordsForPatient(databridge.dataState.roleid);
+            }
+            else
+            {
+                dataGridView1.DataSource = sqlFunctions.GetTableData("tbl_medical_record");
+            }
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -73,7 +86,6 @@ namespace REYES_LabProject.Forms
             try
             {
                 timerValue = 0;
-                int rid = int.Parse(recordId_txt.Text);
                 int pid = int.Parse(patientId_txt.Text);
                 int did = int.Parse(doctorId_txt.Text);
                 string date = recordDate_dtp.Text;
@@ -81,8 +93,11 @@ namespace REYES_LabProject.Forms
                 string prescription = recordPrescription_txt.Text;
                 string plan = recordTreatmentplan_txt.Text;
 
-                sqlFunctions.AddMedicalRecord(rid, pid, did, date, diagnosis, prescription, plan);
+                sqlFunctions.AddMedicalRecord(pid, did, date, diagnosis, prescription, plan);
                 sqlFunctions.InsertAuditData(databridge.dataState.userid, $"updated medical records");
+
+
+                filterTable(databridge.dataState.userrole);
 
             }
             catch (Exception ex)
@@ -101,6 +116,8 @@ namespace REYES_LabProject.Forms
 
                 sqlFunctions.DeleteMedicalRecord(rid);
                 sqlFunctions.InsertAuditData(databridge.dataState.userid, $"deleted medical record");
+                filterTable(databridge.dataState.userrole);
+
             }
             catch (Exception ex)
             {
@@ -123,6 +140,8 @@ namespace REYES_LabProject.Forms
 
                 sqlFunctions.UpdateMedicalRecord(rid, pid, did, date, diagnosis, prescription, plan);
                 sqlFunctions.InsertAuditData(databridge.dataState.userid, $"updated medical record");
+                filterTable(databridge.dataState.userrole);
+
             }
             catch (Exception ex)
             {
@@ -136,6 +155,7 @@ namespace REYES_LabProject.Forms
 
             if (timerValue >= 60)
             {
+                timer1.Stop();
                 MessageBox.Show("You have timed out.");
 
                 Login frm = new Login();
