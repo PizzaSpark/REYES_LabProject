@@ -46,23 +46,33 @@ namespace REYES_LabProject.Forms
                 timerValue = 0;
 
                 int userId = int.Parse(userId_txt.Text);
-                sqlFunctions.ActivateUser(userId, 1);
-                dataGridView1.DataSource = sqlFunctions.GetInactiveUsers(isactive);
+                string userActive = userIsactive_txt.Text;
 
-                string userRole = sqlFunctions.GetUserRole(userId);
-                sqlFunctions.InsertAuditData(databridge.dataState.userid, $"activated userID {userId}");
-                if (userRole == "Admin")
+                if (userActive == "0")
                 {
-                    sqlFunctions.InsertUserIdIntoTable("tbl_admin", userId);
+                    sqlFunctions.ActivateUser(userId, 1);
+                    dataGridView1.DataSource = sqlFunctions.GetInactiveUsers(isactive);
+
+                    string userRole = sqlFunctions.GetUserRole(userId);
+                    sqlFunctions.InsertAuditData(databridge.dataState.userid, $"activated userID {userId}");
+                    if (userRole == "Admin")
+                    {
+                        sqlFunctions.InsertUserIdIntoTable("tbl_admin", userId);
+                    }
+                    else if (userRole == "Doctor")
+                    {
+                        sqlFunctions.InsertUserIdIntoTable("tbl_doctor", userId);
+                    }
+                    else if (userRole == "Patient")
+                    {
+                        sqlFunctions.InsertUserIdIntoTable("tbl_patient", userId);
+                    }
                 }
-                else if (userRole == "Doctor")
+                else
                 {
-                    sqlFunctions.InsertUserIdIntoTable("tbl_doctor", userId);
+                    MessageBox.Show("User is already activated/suspended");
                 }
-                else if (userRole == "Patient")
-                {
-                    sqlFunctions.InsertUserIdIntoTable("tbl_patient", userId);
-                }
+                
             }
             catch (Exception ex)
             {

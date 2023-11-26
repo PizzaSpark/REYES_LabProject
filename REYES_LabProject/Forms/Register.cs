@@ -128,6 +128,10 @@ namespace REYES_LabProject
             {
                 MessageBox.Show("Username already exists");
             }
+            else if (toolFunctions.ContainsOtherCharacters(username))
+            {
+                MessageBox.Show("Username must only consist of lowercase and digits");
+            }
             else if (username == "" || password == "" || role == "")
             {
                 MessageBox.Show("Incomplete details. Please fill in all textboxes");
