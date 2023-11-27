@@ -63,16 +63,16 @@
             this.userId_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userId_txt.Location = new System.Drawing.Point(105, 52);
             this.userId_txt.Name = "userId_txt";
-            this.userId_txt.Size = new System.Drawing.Size(143, 28);
+            this.userId_txt.Size = new System.Drawing.Size(236, 28);
             this.userId_txt.TabIndex = 1;
             // 
             // categoryId_txt
             // 
             this.categoryId_txt.Enabled = false;
             this.categoryId_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.categoryId_txt.Location = new System.Drawing.Point(260, 52);
+            this.categoryId_txt.Location = new System.Drawing.Point(347, 52);
             this.categoryId_txt.Name = "categoryId_txt";
-            this.categoryId_txt.Size = new System.Drawing.Size(143, 28);
+            this.categoryId_txt.Size = new System.Drawing.Size(251, 28);
             this.categoryId_txt.TabIndex = 3;
             // 
             // label2
@@ -81,7 +81,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label2.Location = new System.Drawing.Point(257, 21);
+            this.label2.Location = new System.Drawing.Point(343, 21);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(96, 22);
             this.label2.TabIndex = 2;
@@ -92,7 +92,7 @@
             this.username_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.username_txt.Location = new System.Drawing.Point(105, 206);
             this.username_txt.Name = "username_txt";
-            this.username_txt.Size = new System.Drawing.Size(143, 28);
+            this.username_txt.Size = new System.Drawing.Size(236, 28);
             this.username_txt.TabIndex = 5;
             // 
             // label3
@@ -112,7 +112,7 @@
             this.displayname_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.displayname_txt.Location = new System.Drawing.Point(106, 130);
             this.displayname_txt.Name = "displayname_txt";
-            this.displayname_txt.Size = new System.Drawing.Size(297, 28);
+            this.displayname_txt.Size = new System.Drawing.Size(492, 28);
             this.displayname_txt.TabIndex = 7;
             // 
             // label4
@@ -130,11 +130,11 @@
             // save_btn
             // 
             this.save_btn.BackColor = System.Drawing.Color.DarkCyan;
-            this.save_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.save_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.save_btn.ForeColor = System.Drawing.SystemColors.Control;
-            this.save_btn.Location = new System.Drawing.Point(105, 346);
+            this.save_btn.Location = new System.Drawing.Point(216, 297);
             this.save_btn.Name = "save_btn";
-            this.save_btn.Size = new System.Drawing.Size(82, 35);
+            this.save_btn.Size = new System.Drawing.Size(125, 43);
             this.save_btn.TabIndex = 8;
             this.save_btn.Text = "save";
             this.save_btn.UseVisualStyleBackColor = false;
@@ -143,11 +143,11 @@
             // back_btn
             // 
             this.back_btn.BackColor = System.Drawing.Color.DarkCyan;
-            this.back_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.back_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.back_btn.ForeColor = System.Drawing.SystemColors.Control;
-            this.back_btn.Location = new System.Drawing.Point(321, 346);
+            this.back_btn.Location = new System.Drawing.Point(346, 297);
             this.back_btn.Name = "back_btn";
-            this.back_btn.Size = new System.Drawing.Size(82, 35);
+            this.back_btn.Size = new System.Drawing.Size(125, 43);
             this.back_btn.TabIndex = 9;
             this.back_btn.Text = "back";
             this.back_btn.UseVisualStyleBackColor = false;
@@ -157,9 +157,9 @@
             // 
             this.role_txt.Enabled = false;
             this.role_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.role_txt.Location = new System.Drawing.Point(259, 206);
+            this.role_txt.Location = new System.Drawing.Point(346, 206);
             this.role_txt.Name = "role_txt";
-            this.role_txt.Size = new System.Drawing.Size(143, 28);
+            this.role_txt.Size = new System.Drawing.Size(251, 28);
             this.role_txt.TabIndex = 11;
             // 
             // label5
@@ -168,7 +168,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label5.Location = new System.Drawing.Point(256, 175);
+            this.label5.Location = new System.Drawing.Point(343, 175);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(40, 22);
             this.label5.TabIndex = 10;
@@ -185,7 +185,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(518, 415);
+            this.ClientSize = new System.Drawing.Size(691, 415);
             this.Controls.Add(this.role_txt);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.back_btn);

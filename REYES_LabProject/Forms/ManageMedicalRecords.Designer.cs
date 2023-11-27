@@ -59,9 +59,9 @@
             this.update_btn.BackColor = System.Drawing.Color.DarkCyan;
             this.update_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.update_btn.ForeColor = System.Drawing.SystemColors.Control;
-            this.update_btn.Location = new System.Drawing.Point(343, 298);
+            this.update_btn.Location = new System.Drawing.Point(453, 285);
             this.update_btn.Name = "update_btn";
-            this.update_btn.Size = new System.Drawing.Size(100, 34);
+            this.update_btn.Size = new System.Drawing.Size(121, 47);
             this.update_btn.TabIndex = 38;
             this.update_btn.Text = "Update";
             this.update_btn.UseVisualStyleBackColor = false;
@@ -72,9 +72,9 @@
             this.delete_btn.BackColor = System.Drawing.Color.DarkCyan;
             this.delete_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.delete_btn.ForeColor = System.Drawing.SystemColors.Control;
-            this.delete_btn.Location = new System.Drawing.Point(249, 298);
+            this.delete_btn.Location = new System.Drawing.Point(308, 285);
             this.delete_btn.Name = "delete_btn";
-            this.delete_btn.Size = new System.Drawing.Size(100, 34);
+            this.delete_btn.Size = new System.Drawing.Size(143, 47);
             this.delete_btn.TabIndex = 37;
             this.delete_btn.Text = "Delete";
             this.delete_btn.UseVisualStyleBackColor = false;
@@ -85,9 +85,9 @@
             this.add_btn.BackColor = System.Drawing.Color.DarkCyan;
             this.add_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.add_btn.ForeColor = System.Drawing.SystemColors.Control;
-            this.add_btn.Location = new System.Drawing.Point(158, 298);
+            this.add_btn.Location = new System.Drawing.Point(171, 285);
             this.add_btn.Name = "add_btn";
-            this.add_btn.Size = new System.Drawing.Size(100, 34);
+            this.add_btn.Size = new System.Drawing.Size(136, 47);
             this.add_btn.TabIndex = 36;
             this.add_btn.Text = "Add";
             this.add_btn.UseVisualStyleBackColor = false;
@@ -98,9 +98,9 @@
             this.clear_btn.BackColor = System.Drawing.Color.DarkCyan;
             this.clear_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clear_btn.ForeColor = System.Drawing.SystemColors.Control;
-            this.clear_btn.Location = new System.Drawing.Point(77, 298);
+            this.clear_btn.Location = new System.Drawing.Point(24, 285);
             this.clear_btn.Name = "clear_btn";
-            this.clear_btn.Size = new System.Drawing.Size(100, 34);
+            this.clear_btn.Size = new System.Drawing.Size(146, 47);
             this.clear_btn.TabIndex = 35;
             this.clear_btn.Text = "Clear";
             this.clear_btn.UseVisualStyleBackColor = false;
@@ -112,7 +112,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label4.Location = new System.Drawing.Point(77, 201);
+            this.label4.Location = new System.Drawing.Point(24, 205);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(116, 25);
             this.label4.TabIndex = 33;
@@ -121,7 +121,7 @@
             // doctorId_txt
             // 
             this.doctorId_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.doctorId_txt.Location = new System.Drawing.Point(401, 78);
+            this.doctorId_txt.Location = new System.Drawing.Point(261, 64);
             this.doctorId_txt.Name = "doctorId_txt";
             this.doctorId_txt.Size = new System.Drawing.Size(100, 30);
             this.doctorId_txt.TabIndex = 32;
@@ -132,7 +132,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label3.Location = new System.Drawing.Point(396, 50);
+            this.label3.Location = new System.Drawing.Point(256, 36);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(92, 25);
             this.label3.TabIndex = 31;
@@ -141,7 +141,7 @@
             // patientId_txt
             // 
             this.patientId_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.patientId_txt.Location = new System.Drawing.Point(235, 78);
+            this.patientId_txt.Location = new System.Drawing.Point(142, 64);
             this.patientId_txt.Name = "patientId_txt";
             this.patientId_txt.Size = new System.Drawing.Size(100, 30);
             this.patientId_txt.TabIndex = 30;
@@ -152,7 +152,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label2.Location = new System.Drawing.Point(239, 50);
+            this.label2.Location = new System.Drawing.Point(137, 36);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(96, 25);
             this.label2.TabIndex = 29;
@@ -162,7 +162,7 @@
             // 
             this.recordId_txt.Enabled = false;
             this.recordId_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.recordId_txt.Location = new System.Drawing.Point(82, 78);
+            this.recordId_txt.Location = new System.Drawing.Point(24, 64);
             this.recordId_txt.Name = "recordId_txt";
             this.recordId_txt.Size = new System.Drawing.Size(100, 30);
             this.recordId_txt.TabIndex = 28;
@@ -173,7 +173,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label1.Location = new System.Drawing.Point(77, 50);
+            this.label1.Location = new System.Drawing.Point(19, 36);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(93, 25);
             this.label1.TabIndex = 27;
@@ -182,20 +182,20 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(74, 338);
+            this.dataGridView1.Location = new System.Drawing.Point(24, 338);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(648, 249);
+            this.dataGridView1.Size = new System.Drawing.Size(765, 249);
             this.dataGridView1.TabIndex = 26;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // recordPrescription_txt
             // 
             this.recordPrescription_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.recordPrescription_txt.Location = new System.Drawing.Point(494, 157);
+            this.recordPrescription_txt.Location = new System.Drawing.Point(540, 160);
             this.recordPrescription_txt.Name = "recordPrescription_txt";
-            this.recordPrescription_txt.Size = new System.Drawing.Size(228, 30);
+            this.recordPrescription_txt.Size = new System.Drawing.Size(248, 30);
             this.recordPrescription_txt.TabIndex = 44;
             // 
             // label6
@@ -204,7 +204,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label6.Location = new System.Drawing.Point(489, 127);
+            this.label6.Location = new System.Drawing.Point(535, 130);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(178, 25);
             this.label6.TabIndex = 43;
@@ -215,7 +215,7 @@
             this.recordTreatmentplan_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.recordTreatmentplan_txt.Location = new System.Drawing.Point(281, 158);
             this.recordTreatmentplan_txt.Name = "recordTreatmentplan_txt";
-            this.recordTreatmentplan_txt.Size = new System.Drawing.Size(207, 30);
+            this.recordTreatmentplan_txt.Size = new System.Drawing.Size(253, 30);
             this.recordTreatmentplan_txt.TabIndex = 42;
             // 
             // label7
@@ -233,9 +233,9 @@
             // recordDiagnosis_txt
             // 
             this.recordDiagnosis_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.recordDiagnosis_txt.Location = new System.Drawing.Point(79, 158);
+            this.recordDiagnosis_txt.Location = new System.Drawing.Point(24, 158);
             this.recordDiagnosis_txt.Name = "recordDiagnosis_txt";
-            this.recordDiagnosis_txt.Size = new System.Drawing.Size(196, 30);
+            this.recordDiagnosis_txt.Size = new System.Drawing.Size(249, 30);
             this.recordDiagnosis_txt.TabIndex = 40;
             // 
             // label8
@@ -244,7 +244,7 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label8.Location = new System.Drawing.Point(74, 130);
+            this.label8.Location = new System.Drawing.Point(19, 130);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(161, 25);
             this.label8.TabIndex = 39;
@@ -253,9 +253,9 @@
             // recordDate_dtp
             // 
             this.recordDate_dtp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.recordDate_dtp.Location = new System.Drawing.Point(77, 229);
+            this.recordDate_dtp.Location = new System.Drawing.Point(24, 233);
             this.recordDate_dtp.Name = "recordDate_dtp";
-            this.recordDate_dtp.Size = new System.Drawing.Size(357, 30);
+            this.recordDate_dtp.Size = new System.Drawing.Size(337, 30);
             this.recordDate_dtp.TabIndex = 45;
             // 
             // back_btn
@@ -263,9 +263,9 @@
             this.back_btn.BackColor = System.Drawing.Color.DarkCyan;
             this.back_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.back_btn.ForeColor = System.Drawing.SystemColors.Control;
-            this.back_btn.Location = new System.Drawing.Point(622, 298);
+            this.back_btn.Location = new System.Drawing.Point(655, 285);
             this.back_btn.Name = "back_btn";
-            this.back_btn.Size = new System.Drawing.Size(100, 34);
+            this.back_btn.Size = new System.Drawing.Size(134, 47);
             this.back_btn.TabIndex = 88;
             this.back_btn.Text = "back";
             this.back_btn.UseVisualStyleBackColor = false;

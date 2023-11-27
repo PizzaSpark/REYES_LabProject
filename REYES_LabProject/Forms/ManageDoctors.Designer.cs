@@ -51,11 +51,11 @@
             // back_btn
             // 
             this.back_btn.BackColor = System.Drawing.Color.DarkCyan;
-            this.back_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.back_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.back_btn.ForeColor = System.Drawing.SystemColors.Control;
-            this.back_btn.Location = new System.Drawing.Point(603, 201);
+            this.back_btn.Location = new System.Drawing.Point(586, 192);
             this.back_btn.Name = "back_btn";
-            this.back_btn.Size = new System.Drawing.Size(77, 33);
+            this.back_btn.Size = new System.Drawing.Size(94, 42);
             this.back_btn.TabIndex = 64;
             this.back_btn.Text = "back";
             this.back_btn.UseVisualStyleBackColor = false;
@@ -64,11 +64,11 @@
             // update_btn
             // 
             this.update_btn.BackColor = System.Drawing.Color.DarkCyan;
-            this.update_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.update_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.update_btn.ForeColor = System.Drawing.SystemColors.Control;
-            this.update_btn.Location = new System.Drawing.Point(202, 201);
+            this.update_btn.Location = new System.Drawing.Point(233, 192);
             this.update_btn.Name = "update_btn";
-            this.update_btn.Size = new System.Drawing.Size(103, 33);
+            this.update_btn.Size = new System.Drawing.Size(103, 42);
             this.update_btn.TabIndex = 63;
             this.update_btn.Text = "Update";
             this.update_btn.UseVisualStyleBackColor = false;
@@ -77,11 +77,11 @@
             // clear_btn
             // 
             this.clear_btn.BackColor = System.Drawing.Color.DarkCyan;
-            this.clear_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clear_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clear_btn.ForeColor = System.Drawing.SystemColors.Control;
-            this.clear_btn.Location = new System.Drawing.Point(118, 201);
+            this.clear_btn.Location = new System.Drawing.Point(118, 192);
             this.clear_btn.Name = "clear_btn";
-            this.clear_btn.Size = new System.Drawing.Size(78, 33);
+            this.clear_btn.Size = new System.Drawing.Size(109, 42);
             this.clear_btn.TabIndex = 60;
             this.clear_btn.Text = "Clear";
             this.clear_btn.UseVisualStyleBackColor = false;
@@ -90,7 +90,7 @@
             // userId_txt
             // 
             this.userId_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userId_txt.Location = new System.Drawing.Point(480, 94);
+            this.userId_txt.Location = new System.Drawing.Point(500, 126);
             this.userId_txt.Name = "userId_txt";
             this.userId_txt.Size = new System.Drawing.Size(150, 30);
             this.userId_txt.TabIndex = 59;
@@ -101,7 +101,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label6.Location = new System.Drawing.Point(475, 66);
+            this.label6.Location = new System.Drawing.Point(495, 98);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(76, 25);
             this.label6.TabIndex = 58;
@@ -110,9 +110,9 @@
             // doctorName_txt
             // 
             this.doctorName_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.doctorName_txt.Location = new System.Drawing.Point(317, 94);
+            this.doctorName_txt.Location = new System.Drawing.Point(301, 126);
             this.doctorName_txt.Name = "doctorName_txt";
-            this.doctorName_txt.Size = new System.Drawing.Size(142, 30);
+            this.doctorName_txt.Size = new System.Drawing.Size(193, 30);
             this.doctorName_txt.TabIndex = 57;
             // 
             // label7
@@ -121,7 +121,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label7.Location = new System.Drawing.Point(317, 66);
+            this.label7.Location = new System.Drawing.Point(301, 98);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(126, 25);
             this.label7.TabIndex = 56;
@@ -143,10 +143,10 @@
             // 
             this.doctorId_txt.Enabled = false;
             this.doctorId_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.doctorId_txt.Location = new System.Drawing.Point(152, 94);
+            this.doctorId_txt.Location = new System.Drawing.Point(182, 126);
             this.doctorId_txt.Name = "doctorId_txt";
             this.doctorId_txt.ReadOnly = true;
-            this.doctorId_txt.Size = new System.Drawing.Size(144, 30);
+            this.doctorId_txt.Size = new System.Drawing.Size(110, 30);
             this.doctorId_txt.TabIndex = 54;
             // 
             // label3
@@ -155,7 +155,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label3.Location = new System.Drawing.Point(152, 66);
+            this.label3.Location = new System.Drawing.Point(182, 98);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(92, 25);
             this.label3.TabIndex = 53;
@@ -191,7 +191,7 @@
             // 
             this.search_ptb.BackColor = System.Drawing.Color.Transparent;
             this.search_ptb.Image = global::REYES_LabProject.Properties.Resources.search_icon;
-            this.search_ptb.Location = new System.Drawing.Point(758, 38);
+            this.search_ptb.Location = new System.Drawing.Point(731, 38);
             this.search_ptb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.search_ptb.Name = "search_ptb";
             this.search_ptb.Size = new System.Drawing.Size(21, 22);

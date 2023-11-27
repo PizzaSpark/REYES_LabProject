@@ -60,7 +60,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(648, 249);
+            this.dataGridView1.Size = new System.Drawing.Size(663, 249);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -68,102 +68,103 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label1.Location = new System.Drawing.Point(52, 46);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 22);
+            this.label1.Size = new System.Drawing.Size(76, 25);
             this.label1.TabIndex = 1;
             this.label1.Text = "user_id";
             // 
             // userId_txt
             // 
             this.userId_txt.Enabled = false;
-            this.userId_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userId_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userId_txt.Location = new System.Drawing.Point(52, 71);
             this.userId_txt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.userId_txt.Name = "userId_txt";
             this.userId_txt.ReadOnly = true;
-            this.userId_txt.Size = new System.Drawing.Size(100, 28);
+            this.userId_txt.Size = new System.Drawing.Size(100, 30);
             this.userId_txt.TabIndex = 2;
             // 
             // userName_txt
             // 
             this.userName_txt.Enabled = false;
-            this.userName_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userName_txt.Location = new System.Drawing.Point(217, 71);
+            this.userName_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userName_txt.Location = new System.Drawing.Point(180, 71);
             this.userName_txt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.userName_txt.Name = "userName_txt";
             this.userName_txt.ReadOnly = true;
-            this.userName_txt.Size = new System.Drawing.Size(228, 28);
+            this.userName_txt.Size = new System.Drawing.Size(333, 30);
             this.userName_txt.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label2.Location = new System.Drawing.Point(217, 46);
+            this.label2.Location = new System.Drawing.Point(180, 46);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 22);
+            this.label2.Size = new System.Drawing.Size(110, 25);
             this.label2.TabIndex = 3;
             this.label2.Text = "user_name";
             // 
             // userRole_txt
             // 
             this.userRole_txt.Enabled = false;
-            this.userRole_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userRole_txt.Location = new System.Drawing.Point(52, 138);
+            this.userRole_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userRole_txt.Location = new System.Drawing.Point(52, 143);
             this.userRole_txt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.userRole_txt.Name = "userRole_txt";
             this.userRole_txt.ReadOnly = true;
-            this.userRole_txt.Size = new System.Drawing.Size(140, 28);
+            this.userRole_txt.Size = new System.Drawing.Size(301, 30);
             this.userRole_txt.TabIndex = 6;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label3.Location = new System.Drawing.Point(52, 113);
+            this.label3.Location = new System.Drawing.Point(52, 118);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 22);
+            this.label3.Size = new System.Drawing.Size(93, 25);
             this.label3.TabIndex = 5;
             this.label3.Text = "user_role";
             // 
             // userIsactive_txt
             // 
             this.userIsactive_txt.Enabled = false;
-            this.userIsactive_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userIsactive_txt.Location = new System.Drawing.Point(217, 138);
+            this.userIsactive_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userIsactive_txt.Location = new System.Drawing.Point(381, 143);
             this.userIsactive_txt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.userIsactive_txt.Name = "userIsactive_txt";
             this.userIsactive_txt.ReadOnly = true;
-            this.userIsactive_txt.Size = new System.Drawing.Size(128, 28);
+            this.userIsactive_txt.Size = new System.Drawing.Size(132, 30);
             this.userIsactive_txt.TabIndex = 8;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label4.Location = new System.Drawing.Point(217, 113);
+            this.label4.Location = new System.Drawing.Point(381, 118);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(115, 22);
+            this.label4.Size = new System.Drawing.Size(126, 25);
             this.label4.TabIndex = 7;
             this.label4.Text = "user_isactive";
             // 
             // clear_btn
             // 
             this.clear_btn.BackColor = System.Drawing.Color.DarkCyan;
+            this.clear_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clear_btn.ForeColor = System.Drawing.SystemColors.Control;
-            this.clear_btn.Location = new System.Drawing.Point(20, 238);
+            this.clear_btn.Location = new System.Drawing.Point(56, 233);
             this.clear_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.clear_btn.Name = "clear_btn";
-            this.clear_btn.Size = new System.Drawing.Size(63, 37);
+            this.clear_btn.Size = new System.Drawing.Size(104, 42);
             this.clear_btn.TabIndex = 9;
             this.clear_btn.Text = "Clear";
             this.clear_btn.UseVisualStyleBackColor = false;
@@ -172,11 +173,12 @@
             // activate_btn
             // 
             this.activate_btn.BackColor = System.Drawing.Color.DarkCyan;
+            this.activate_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.activate_btn.ForeColor = System.Drawing.SystemColors.Control;
-            this.activate_btn.Location = new System.Drawing.Point(101, 238);
+            this.activate_btn.Location = new System.Drawing.Point(166, 233);
             this.activate_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.activate_btn.Name = "activate_btn";
-            this.activate_btn.Size = new System.Drawing.Size(75, 37);
+            this.activate_btn.Size = new System.Drawing.Size(115, 42);
             this.activate_btn.TabIndex = 10;
             this.activate_btn.Text = "Activate";
             this.activate_btn.UseVisualStyleBackColor = false;
@@ -185,11 +187,12 @@
             // back_btn
             // 
             this.back_btn.BackColor = System.Drawing.Color.DarkCyan;
+            this.back_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.back_btn.ForeColor = System.Drawing.SystemColors.Control;
-            this.back_btn.Location = new System.Drawing.Point(589, 238);
+            this.back_btn.Location = new System.Drawing.Point(867, 233);
             this.back_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.back_btn.Name = "back_btn";
-            this.back_btn.Size = new System.Drawing.Size(63, 37);
+            this.back_btn.Size = new System.Drawing.Size(92, 42);
             this.back_btn.TabIndex = 11;
             this.back_btn.Text = "Back";
             this.back_btn.UseVisualStyleBackColor = false;
@@ -198,11 +201,12 @@
             // deactivate_btn
             // 
             this.deactivate_btn.BackColor = System.Drawing.Color.DarkCyan;
+            this.deactivate_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deactivate_btn.ForeColor = System.Drawing.SystemColors.Control;
-            this.deactivate_btn.Location = new System.Drawing.Point(181, 238);
+            this.deactivate_btn.Location = new System.Drawing.Point(287, 233);
             this.deactivate_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.deactivate_btn.Name = "deactivate_btn";
-            this.deactivate_btn.Size = new System.Drawing.Size(100, 37);
+            this.deactivate_btn.Size = new System.Drawing.Size(131, 42);
             this.deactivate_btn.TabIndex = 12;
             this.deactivate_btn.Text = "Suspend";
             this.deactivate_btn.UseVisualStyleBackColor = false;
@@ -211,11 +215,12 @@
             // viewActivated_btn
             // 
             this.viewActivated_btn.BackColor = System.Drawing.Color.DarkCyan;
+            this.viewActivated_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.viewActivated_btn.ForeColor = System.Drawing.SystemColors.Control;
-            this.viewActivated_btn.Location = new System.Drawing.Point(499, 133);
+            this.viewActivated_btn.Location = new System.Drawing.Point(705, 382);
             this.viewActivated_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.viewActivated_btn.Name = "viewActivated_btn";
-            this.viewActivated_btn.Size = new System.Drawing.Size(155, 37);
+            this.viewActivated_btn.Size = new System.Drawing.Size(254, 49);
             this.viewActivated_btn.TabIndex = 13;
             this.viewActivated_btn.Text = "View Activated";
             this.viewActivated_btn.UseVisualStyleBackColor = false;
@@ -224,11 +229,12 @@
             // viewDeactivated_btn
             // 
             this.viewDeactivated_btn.BackColor = System.Drawing.Color.DarkCyan;
+            this.viewDeactivated_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.viewDeactivated_btn.ForeColor = System.Drawing.SystemColors.Control;
-            this.viewDeactivated_btn.Location = new System.Drawing.Point(499, 98);
+            this.viewDeactivated_btn.Location = new System.Drawing.Point(705, 315);
             this.viewDeactivated_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.viewDeactivated_btn.Name = "viewDeactivated_btn";
-            this.viewDeactivated_btn.Size = new System.Drawing.Size(155, 37);
+            this.viewDeactivated_btn.Size = new System.Drawing.Size(254, 49);
             this.viewDeactivated_btn.TabIndex = 14;
             this.viewDeactivated_btn.Text = "View Deactivated";
             this.viewDeactivated_btn.UseVisualStyleBackColor = false;
@@ -237,11 +243,12 @@
             // viewSuspended_btn
             // 
             this.viewSuspended_btn.BackColor = System.Drawing.Color.DarkCyan;
+            this.viewSuspended_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.viewSuspended_btn.ForeColor = System.Drawing.SystemColors.Control;
-            this.viewSuspended_btn.Location = new System.Drawing.Point(499, 167);
+            this.viewSuspended_btn.Location = new System.Drawing.Point(705, 451);
             this.viewSuspended_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.viewSuspended_btn.Name = "viewSuspended_btn";
-            this.viewSuspended_btn.Size = new System.Drawing.Size(155, 37);
+            this.viewSuspended_btn.Size = new System.Drawing.Size(254, 49);
             this.viewSuspended_btn.TabIndex = 15;
             this.viewSuspended_btn.Text = "View Suspended";
             this.viewSuspended_btn.UseVisualStyleBackColor = false;
@@ -255,11 +262,12 @@
             // unsuspend_btn
             // 
             this.unsuspend_btn.BackColor = System.Drawing.Color.DarkCyan;
+            this.unsuspend_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.unsuspend_btn.ForeColor = System.Drawing.SystemColors.Control;
-            this.unsuspend_btn.Location = new System.Drawing.Point(287, 238);
+            this.unsuspend_btn.Location = new System.Drawing.Point(424, 233);
             this.unsuspend_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.unsuspend_btn.Name = "unsuspend_btn";
-            this.unsuspend_btn.Size = new System.Drawing.Size(100, 37);
+            this.unsuspend_btn.Size = new System.Drawing.Size(178, 43);
             this.unsuspend_btn.TabIndex = 19;
             this.unsuspend_btn.Text = "UnSuspend";
             this.unsuspend_btn.UseVisualStyleBackColor = false;
@@ -271,7 +279,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(681, 550);
+            this.ClientSize = new System.Drawing.Size(976, 547);
             this.Controls.Add(this.unsuspend_btn);
             this.Controls.Add(this.viewSuspended_btn);
             this.Controls.Add(this.viewDeactivated_btn);

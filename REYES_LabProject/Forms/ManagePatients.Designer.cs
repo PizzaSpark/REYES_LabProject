@@ -51,9 +51,9 @@
             // patientName_txt
             // 
             this.patientName_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.patientName_txt.Location = new System.Drawing.Point(247, 112);
+            this.patientName_txt.Location = new System.Drawing.Point(224, 158);
             this.patientName_txt.Name = "patientName_txt";
-            this.patientName_txt.Size = new System.Drawing.Size(161, 28);
+            this.patientName_txt.Size = new System.Drawing.Size(257, 28);
             this.patientName_txt.TabIndex = 67;
             // 
             // label4
@@ -62,7 +62,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label4.Location = new System.Drawing.Point(243, 87);
+            this.label4.Location = new System.Drawing.Point(220, 133);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(118, 22);
             this.label4.TabIndex = 66;
@@ -71,7 +71,7 @@
             // userId_txt
             // 
             this.userId_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userId_txt.Location = new System.Drawing.Point(38, 46);
+            this.userId_txt.Location = new System.Drawing.Point(12, 92);
             this.userId_txt.Name = "userId_txt";
             this.userId_txt.ReadOnly = true;
             this.userId_txt.Size = new System.Drawing.Size(133, 28);
@@ -83,7 +83,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label1.Location = new System.Drawing.Point(34, 21);
+            this.label1.Location = new System.Drawing.Point(8, 67);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(69, 22);
             this.label1.TabIndex = 64;
@@ -92,11 +92,11 @@
             // update_btn
             // 
             this.update_btn.BackColor = System.Drawing.Color.DarkCyan;
-            this.update_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.update_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.update_btn.ForeColor = System.Drawing.SystemColors.Control;
-            this.update_btn.Location = new System.Drawing.Point(99, 215);
+            this.update_btn.Location = new System.Drawing.Point(121, 207);
             this.update_btn.Name = "update_btn";
-            this.update_btn.Size = new System.Drawing.Size(88, 37);
+            this.update_btn.Size = new System.Drawing.Size(116, 45);
             this.update_btn.TabIndex = 63;
             this.update_btn.Text = "Update";
             this.update_btn.UseVisualStyleBackColor = false;
@@ -105,11 +105,11 @@
             // clear_btn
             // 
             this.clear_btn.BackColor = System.Drawing.Color.DarkCyan;
-            this.clear_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clear_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clear_btn.ForeColor = System.Drawing.SystemColors.Control;
-            this.clear_btn.Location = new System.Drawing.Point(15, 215);
+            this.clear_btn.Location = new System.Drawing.Point(15, 207);
             this.clear_btn.Name = "clear_btn";
-            this.clear_btn.Size = new System.Drawing.Size(88, 37);
+            this.clear_btn.Size = new System.Drawing.Size(107, 45);
             this.clear_btn.TabIndex = 60;
             this.clear_btn.Text = "Clear";
             this.clear_btn.UseVisualStyleBackColor = false;
@@ -118,10 +118,10 @@
             // patientId_txt
             // 
             this.patientId_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.patientId_txt.Location = new System.Drawing.Point(38, 112);
+            this.patientId_txt.Location = new System.Drawing.Point(12, 158);
             this.patientId_txt.Name = "patientId_txt";
             this.patientId_txt.ReadOnly = true;
-            this.patientId_txt.Size = new System.Drawing.Size(161, 28);
+            this.patientId_txt.Size = new System.Drawing.Size(206, 28);
             this.patientId_txt.TabIndex = 59;
             // 
             // label2
@@ -130,7 +130,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label2.Location = new System.Drawing.Point(34, 87);
+            this.label2.Location = new System.Drawing.Point(8, 133);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(88, 22);
             this.label2.TabIndex = 58;
@@ -140,22 +140,22 @@
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(15, 258);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 257);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(414, 249);
+            this.dataGridView1.Size = new System.Drawing.Size(469, 249);
             this.dataGridView1.TabIndex = 57;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // back_btn
             // 
             this.back_btn.BackColor = System.Drawing.Color.DarkCyan;
-            this.back_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.back_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.back_btn.ForeColor = System.Drawing.SystemColors.Control;
-            this.back_btn.Location = new System.Drawing.Point(342, 215);
+            this.back_btn.Location = new System.Drawing.Point(375, 207);
             this.back_btn.Name = "back_btn";
-            this.back_btn.Size = new System.Drawing.Size(87, 37);
+            this.back_btn.Size = new System.Drawing.Size(110, 45);
             this.back_btn.TabIndex = 68;
             this.back_btn.Text = "back";
             this.back_btn.UseVisualStyleBackColor = false;
@@ -172,7 +172,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label5.Location = new System.Drawing.Point(273, 9);
+            this.label5.Location = new System.Drawing.Point(320, 9);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(88, 22);
             this.label5.TabIndex = 71;
@@ -181,17 +181,17 @@
             // searchid_txt
             // 
             this.searchid_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchid_txt.Location = new System.Drawing.Point(276, 41);
+            this.searchid_txt.Location = new System.Drawing.Point(323, 41);
             this.searchid_txt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.searchid_txt.Name = "searchid_txt";
-            this.searchid_txt.Size = new System.Drawing.Size(100, 28);
+            this.searchid_txt.Size = new System.Drawing.Size(131, 28);
             this.searchid_txt.TabIndex = 70;
             // 
             // search_ptb
             // 
             this.search_ptb.BackColor = System.Drawing.Color.Transparent;
             this.search_ptb.Image = global::REYES_LabProject.Properties.Resources.search_icon;
-            this.search_ptb.Location = new System.Drawing.Point(409, 41);
+            this.search_ptb.Location = new System.Drawing.Point(460, 41);
             this.search_ptb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.search_ptb.Name = "search_ptb";
             this.search_ptb.Size = new System.Drawing.Size(21, 22);
@@ -206,7 +206,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(446, 518);
+            this.ClientSize = new System.Drawing.Size(497, 518);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.searchid_txt);
             this.Controls.Add(this.search_ptb);

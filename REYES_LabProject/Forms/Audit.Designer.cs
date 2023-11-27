@@ -45,9 +45,9 @@
             this.back_btn.BackColor = System.Drawing.Color.DarkCyan;
             this.back_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.back_btn.ForeColor = System.Drawing.SystemColors.Control;
-            this.back_btn.Location = new System.Drawing.Point(812, 25);
+            this.back_btn.Location = new System.Drawing.Point(783, 23);
             this.back_btn.Name = "back_btn";
-            this.back_btn.Size = new System.Drawing.Size(84, 39);
+            this.back_btn.Size = new System.Drawing.Size(119, 41);
             this.back_btn.TabIndex = 12;
             this.back_btn.Text = "Back";
             this.back_btn.UseVisualStyleBackColor = false;
@@ -75,7 +75,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label5.Location = new System.Drawing.Point(20, 4);
+            this.label5.Location = new System.Drawing.Point(59, 42);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(88, 22);
             this.label5.TabIndex = 74;
@@ -84,17 +84,17 @@
             // searchid_txt
             // 
             this.searchid_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchid_txt.Location = new System.Drawing.Point(23, 36);
+            this.searchid_txt.Location = new System.Drawing.Point(153, 36);
             this.searchid_txt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.searchid_txt.Name = "searchid_txt";
-            this.searchid_txt.Size = new System.Drawing.Size(100, 28);
+            this.searchid_txt.Size = new System.Drawing.Size(130, 28);
             this.searchid_txt.TabIndex = 73;
             // 
             // search_ptb
             // 
             this.search_ptb.BackColor = System.Drawing.Color.Transparent;
             this.search_ptb.Image = global::REYES_LabProject.Properties.Resources.search_icon;
-            this.search_ptb.Location = new System.Drawing.Point(156, 36);
+            this.search_ptb.Location = new System.Drawing.Point(301, 36);
             this.search_ptb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.search_ptb.Name = "search_ptb";
             this.search_ptb.Size = new System.Drawing.Size(21, 22);

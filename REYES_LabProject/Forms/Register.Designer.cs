@@ -70,7 +70,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkCyan;
-            this.label3.Location = new System.Drawing.Point(123, 499);
+            this.label3.Location = new System.Drawing.Point(129, 525);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(149, 25);
             this.label3.TabIndex = 19;
@@ -81,7 +81,7 @@
             this.signin_txt.AutoSize = true;
             this.signin_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.signin_txt.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.signin_txt.Location = new System.Drawing.Point(279, 499);
+            this.signin_txt.Location = new System.Drawing.Point(285, 525);
             this.signin_txt.Name = "signin_txt";
             this.signin_txt.Size = new System.Drawing.Size(67, 25);
             this.signin_txt.TabIndex = 6;
@@ -104,9 +104,9 @@
             this.register_btn.BackColor = System.Drawing.Color.DarkCyan;
             this.register_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.register_btn.ForeColor = System.Drawing.SystemColors.Control;
-            this.register_btn.Location = new System.Drawing.Point(310, 448);
+            this.register_btn.Location = new System.Drawing.Point(294, 443);
             this.register_btn.Name = "register_btn";
-            this.register_btn.Size = new System.Drawing.Size(97, 38);
+            this.register_btn.Size = new System.Drawing.Size(122, 40);
             this.register_btn.TabIndex = 5;
             this.register_btn.Text = "Create";
             this.register_btn.UseVisualStyleBackColor = false;
@@ -254,7 +254,7 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(503, -1);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(409, 536);
+            this.pictureBox1.Size = new System.Drawing.Size(409, 585);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 27;
             this.pictureBox1.TabStop = false;
@@ -287,7 +287,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(912, 533);
+            this.ClientSize = new System.Drawing.Size(912, 581);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.pictureBox1);

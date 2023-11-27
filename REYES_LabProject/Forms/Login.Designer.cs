@@ -110,9 +110,9 @@
             this.login_btn.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.login_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.login_btn.ForeColor = System.Drawing.SystemColors.Control;
-            this.login_btn.Location = new System.Drawing.Point(538, 368);
+            this.login_btn.Location = new System.Drawing.Point(499, 356);
             this.login_btn.Name = "login_btn";
-            this.login_btn.Size = new System.Drawing.Size(97, 38);
+            this.login_btn.Size = new System.Drawing.Size(129, 50);
             this.login_btn.TabIndex = 5;
             this.login_btn.Text = "Login";
             this.login_btn.UseVisualStyleBackColor = false;
@@ -123,9 +123,9 @@
             this.exit_btn.BackColor = System.Drawing.Color.DarkCyan;
             this.exit_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exit_btn.ForeColor = System.Drawing.SystemColors.Control;
-            this.exit_btn.Location = new System.Drawing.Point(652, 368);
+            this.exit_btn.Location = new System.Drawing.Point(649, 356);
             this.exit_btn.Name = "exit_btn";
-            this.exit_btn.Size = new System.Drawing.Size(97, 38);
+            this.exit_btn.Size = new System.Drawing.Size(129, 50);
             this.exit_btn.TabIndex = 6;
             this.exit_btn.Text = "Exit";
             this.exit_btn.UseVisualStyleBackColor = false;
@@ -147,7 +147,7 @@
             this.signup_txt.AutoSize = true;
             this.signup_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.signup_txt.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.signup_txt.Location = new System.Drawing.Point(660, 489);
+            this.signup_txt.Location = new System.Drawing.Point(658, 469);
             this.signup_txt.Name = "signup_txt";
             this.signup_txt.Size = new System.Drawing.Size(74, 25);
             this.signup_txt.TabIndex = 8;
@@ -160,7 +160,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkCyan;
-            this.label3.Location = new System.Drawing.Point(537, 489);
+            this.label3.Location = new System.Drawing.Point(535, 469);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(117, 25);
             this.label3.TabIndex = 9;

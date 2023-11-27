@@ -86,7 +86,7 @@
             this.patientToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(998, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(998, 30);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -98,7 +98,7 @@
             this.logoutToolStripMenuItem});
             this.profileToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Control;
             this.profileToolStripMenuItem.Name = "profileToolStripMenuItem";
-            this.profileToolStripMenuItem.Size = new System.Drawing.Size(76, 24);
+            this.profileToolStripMenuItem.Size = new System.Drawing.Size(76, 26);
             this.profileToolStripMenuItem.Text = "Settings";
             // 
             // userInfoToolStripMenuItem
@@ -106,7 +106,7 @@
             this.userInfoToolStripMenuItem.BackColor = System.Drawing.Color.DarkCyan;
             this.userInfoToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Control;
             this.userInfoToolStripMenuItem.Name = "userInfoToolStripMenuItem";
-            this.userInfoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.userInfoToolStripMenuItem.Size = new System.Drawing.Size(148, 26);
             this.userInfoToolStripMenuItem.Text = "Edit Info";
             this.userInfoToolStripMenuItem.Click += new System.EventHandler(this.userInfoToolStripMenuItem_Click);
             // 
@@ -115,7 +115,7 @@
             this.aboutToolStripMenuItem.BackColor = System.Drawing.Color.DarkCyan;
             this.aboutToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Control;
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(148, 26);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -124,7 +124,7 @@
             this.logoutToolStripMenuItem.BackColor = System.Drawing.Color.DarkCyan;
             this.logoutToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Control;
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(148, 26);
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
@@ -141,7 +141,7 @@
             this.restoreToolStripMenuItem});
             this.adminToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Control;
             this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
-            this.adminToolStripMenuItem.Size = new System.Drawing.Size(67, 24);
+            this.adminToolStripMenuItem.Size = new System.Drawing.Size(67, 26);
             this.adminToolStripMenuItem.Text = "Admin";
             // 
             // activateUserToolStripMenuItem
@@ -226,7 +226,7 @@
             this.viewAuditToolStripMenuItem1});
             this.doctorToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Control;
             this.doctorToolStripMenuItem.Name = "doctorToolStripMenuItem";
-            this.doctorToolStripMenuItem.Size = new System.Drawing.Size(69, 24);
+            this.doctorToolStripMenuItem.Size = new System.Drawing.Size(69, 26);
             this.doctorToolStripMenuItem.Text = "Doctor";
             // 
             // managePatientsListToolStripMenuItem
@@ -282,7 +282,7 @@
             this.manageBillsToolStripMenuItem});
             this.patientToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Control;
             this.patientToolStripMenuItem.Name = "patientToolStripMenuItem";
-            this.patientToolStripMenuItem.Size = new System.Drawing.Size(68, 24);
+            this.patientToolStripMenuItem.Size = new System.Drawing.Size(68, 26);
             this.patientToolStripMenuItem.Text = "Patient";
             // 
             // viewDoctorsToolStripMenuItem
@@ -336,40 +336,42 @@
             this.dateDisplay_txt,
             this.toolStripStatusLabel5,
             this.timerDisplay_txt});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 517);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 509);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(998, 26);
+            this.statusStrip1.Size = new System.Drawing.Size(998, 34);
             this.statusStrip1.TabIndex = 9;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // toolStripStatusLabel4
             // 
-            this.toolStripStatusLabel4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripStatusLabel4.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripStatusLabel4.ForeColor = System.Drawing.SystemColors.Control;
             this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
-            this.toolStripStatusLabel4.Size = new System.Drawing.Size(57, 20);
+            this.toolStripStatusLabel4.Size = new System.Drawing.Size(69, 28);
             this.toolStripStatusLabel4.Text = "UserID";
             // 
             // userIdDisplay_txt
             // 
+            this.userIdDisplay_txt.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userIdDisplay_txt.ForeColor = System.Drawing.SystemColors.Control;
             this.userIdDisplay_txt.Name = "userIdDisplay_txt";
-            this.userIdDisplay_txt.Size = new System.Drawing.Size(15, 20);
+            this.userIdDisplay_txt.Size = new System.Drawing.Size(15, 28);
             this.userIdDisplay_txt.Text = "-";
             // 
             // toolStripStatusLabel1
             // 
-            this.toolStripStatusLabel1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripStatusLabel1.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripStatusLabel1.ForeColor = System.Drawing.SystemColors.Control;
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(80, 20);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(97, 28);
             this.toolStripStatusLabel1.Text = "Username";
             // 
             // usernameDisplay_txt
             // 
+            this.usernameDisplay_txt.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usernameDisplay_txt.ForeColor = System.Drawing.SystemColors.Control;
             this.usernameDisplay_txt.Name = "usernameDisplay_txt";
-            this.usernameDisplay_txt.Size = new System.Drawing.Size(15, 20);
+            this.usernameDisplay_txt.Size = new System.Drawing.Size(19, 28);
             this.usernameDisplay_txt.Text = "-";
             // 
             // toolStripStatusLabel3
@@ -377,74 +379,79 @@
             this.toolStripStatusLabel3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripStatusLabel3.ForeColor = System.Drawing.SystemColors.Control;
             this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
-            this.toolStripStatusLabel3.Size = new System.Drawing.Size(40, 20);
+            this.toolStripStatusLabel3.Size = new System.Drawing.Size(40, 28);
             this.toolStripStatusLabel3.Text = "Role";
             // 
             // roleDisplay_txt
             // 
+            this.roleDisplay_txt.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.roleDisplay_txt.ForeColor = System.Drawing.SystemColors.Control;
             this.roleDisplay_txt.Name = "roleDisplay_txt";
-            this.roleDisplay_txt.Size = new System.Drawing.Size(15, 20);
+            this.roleDisplay_txt.Size = new System.Drawing.Size(19, 28);
             this.roleDisplay_txt.Text = "-";
             // 
             // toolStripStatusLabel6
             // 
-            this.toolStripStatusLabel6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripStatusLabel6.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripStatusLabel6.ForeColor = System.Drawing.SystemColors.Control;
             this.toolStripStatusLabel6.Name = "toolStripStatusLabel6";
-            this.toolStripStatusLabel6.Size = new System.Drawing.Size(56, 20);
+            this.toolStripStatusLabel6.Size = new System.Drawing.Size(69, 28);
             this.toolStripStatusLabel6.Text = "RoleID";
             // 
             // categoryIdDisplay_txt
             // 
+            this.categoryIdDisplay_txt.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.categoryIdDisplay_txt.ForeColor = System.Drawing.SystemColors.Control;
             this.categoryIdDisplay_txt.Name = "categoryIdDisplay_txt";
-            this.categoryIdDisplay_txt.Size = new System.Drawing.Size(15, 20);
+            this.categoryIdDisplay_txt.Size = new System.Drawing.Size(19, 28);
             this.categoryIdDisplay_txt.Text = "-";
             // 
             // toolStripStatusLabel7
             // 
-            this.toolStripStatusLabel7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripStatusLabel7.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripStatusLabel7.ForeColor = System.Drawing.SystemColors.Control;
             this.toolStripStatusLabel7.Name = "toolStripStatusLabel7";
-            this.toolStripStatusLabel7.Size = new System.Drawing.Size(79, 20);
+            this.toolStripStatusLabel7.Size = new System.Drawing.Size(97, 28);
             this.toolStripStatusLabel7.Text = "Rolename";
             // 
             // categoryNameDisplay_txt
             // 
+            this.categoryNameDisplay_txt.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.categoryNameDisplay_txt.ForeColor = System.Drawing.SystemColors.Control;
             this.categoryNameDisplay_txt.Name = "categoryNameDisplay_txt";
-            this.categoryNameDisplay_txt.Size = new System.Drawing.Size(15, 20);
+            this.categoryNameDisplay_txt.Size = new System.Drawing.Size(19, 28);
             this.categoryNameDisplay_txt.Text = "-";
             // 
             // toolStripStatusLabel2
             // 
-            this.toolStripStatusLabel2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripStatusLabel2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripStatusLabel2.ForeColor = System.Drawing.SystemColors.Control;
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(42, 20);
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(52, 28);
             this.toolStripStatusLabel2.Text = "Date";
             // 
             // dateDisplay_txt
             // 
+            this.dateDisplay_txt.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateDisplay_txt.ForeColor = System.Drawing.SystemColors.Control;
             this.dateDisplay_txt.Name = "dateDisplay_txt";
-            this.dateDisplay_txt.Size = new System.Drawing.Size(15, 20);
+            this.dateDisplay_txt.Size = new System.Drawing.Size(20, 28);
             this.dateDisplay_txt.Text = "-";
             // 
             // toolStripStatusLabel5
             // 
-            this.toolStripStatusLabel5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripStatusLabel5.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripStatusLabel5.ForeColor = System.Drawing.SystemColors.Control;
             this.toolStripStatusLabel5.Name = "toolStripStatusLabel5";
-            this.toolStripStatusLabel5.Size = new System.Drawing.Size(68, 20);
+            this.toolStripStatusLabel5.Size = new System.Drawing.Size(83, 28);
             this.toolStripStatusLabel5.Text = "Timeout";
             // 
             // timerDisplay_txt
             // 
+            this.timerDisplay_txt.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.timerDisplay_txt.ForeColor = System.Drawing.SystemColors.Control;
             this.timerDisplay_txt.Name = "timerDisplay_txt";
-            this.timerDisplay_txt.Size = new System.Drawing.Size(15, 20);
+            this.timerDisplay_txt.Size = new System.Drawing.Size(19, 28);
             this.timerDisplay_txt.Text = "-";
             // 
             // label1
