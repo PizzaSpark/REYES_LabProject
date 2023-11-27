@@ -21,7 +21,7 @@ namespace REYES_LabProject
         public Login()
         {
             InitializeComponent();
-        }
+        } 
 
         public void openMainForm()
         {
@@ -30,7 +30,6 @@ namespace REYES_LabProject
 
         private void LOGIN_Load(object sender, EventArgs e)
         {
-            //dataGridView1.DataSource = sqlFunctions.GetDataByPrimaryKey("tbl_admin",9);
             passwordEye_ptb.Image = imageList1.Images[0];
             detectCapslockChange();
         }
