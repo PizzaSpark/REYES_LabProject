@@ -1346,5 +1346,27 @@ namespace REYES_LabProject
                 MessageBox.Show($"Error during restore: {ex.Message}");
             }
         }
+
+        public static bool TestDatabaseConnection()
+        {
+            try
+            {
+                connection.Open();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+                return false;
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+            }
+        }
+
     }
 }
