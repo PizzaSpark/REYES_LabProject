@@ -33,13 +33,14 @@ namespace REYES_LabProject
             //dataGridView1.DataSource = sqlFunctions.GetDataByPrimaryKey("tbl_admin",9);
             if (sqlFunctions.TestDatabaseConnection())
             {
-                MessageBox.Show("There is a connection");
+                MessageBox.Show("Welcome!");
+                passwordEye_ptb.Image = imageList1.Images[0];
+                detectCapslockChange();
             } else
             {
-                MessageBox.Show("Wala nga ang kulit eh");
+                MessageBox.Show("Please check your MySQL connection and try again");
+                this.Close();
             }
-            passwordEye_ptb.Image = imageList1.Images[0];
-            detectCapslockChange();
         }
 
         private void login_btn_Click(object sender, EventArgs e)

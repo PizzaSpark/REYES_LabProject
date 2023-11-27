@@ -1273,7 +1273,7 @@ namespace REYES_LabProject
             try
             {
                 // Show the save file dialog to get the backup file path
-                saveFileDialog.Filter = "SQL Files (.sql)|.sql|All Files (.)|.";
+                saveFileDialog.Filter = "SQL Files (.sql)|*.sql|All Files (.)|*.*";
                 saveFileDialog.FileName = "backup.sql";
 
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
@@ -1281,7 +1281,7 @@ namespace REYES_LabProject
                     string backupFilePath = saveFileDialog.FileName;
 
                     // Build the mysqldump command
-                    string command = $"--host={Server} --user={User} --password={Password} --databases {Database} --result-file={backupFilePath}";
+                    string command = $"--host={Server} --user={User} --password={Password} --databases {Database} --routines --result-file={backupFilePath}";
 
                     // Execute the mysqldump command
                     ProcessStartInfo processStartInfo = new ProcessStartInfo(mysqlDumpPath, command)
@@ -1316,7 +1316,7 @@ namespace REYES_LabProject
             string mysqlPath = @"C:\Program Files\MySQL\MySQL Server 8.0\bin\mysql.exe";
             try
             {
-                openFileDialog.Filter = "SQL Files (.sql)|.sql|All Files (.)|*.*";
+                openFileDialog.Filter = "SQL Files (.sql)|*.sql|All Files (.)|*.*";
 
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
