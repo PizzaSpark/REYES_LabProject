@@ -34,6 +34,9 @@ namespace REYES_LabProject
             if (sqlFunctions.TestDatabaseConnection())
             {
                 MessageBox.Show("There is a connection");
+            } else
+            {
+                MessageBox.Show("Wala nga ang kulit eh");
             }
             passwordEye_ptb.Image = imageList1.Images[0];
             detectCapslockChange();
