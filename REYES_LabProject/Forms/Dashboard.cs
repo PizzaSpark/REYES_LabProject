@@ -257,5 +257,12 @@ namespace REYES_LabProject
             Program.OpenNewForm(frm);
             this.Close();
         }
+
+        private void manageUsersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ManageUsers frm = new ManageUsers();
+            Program.OpenNewForm(frm);
+            this.Close();
+        }
     }
 }

@@ -63,7 +63,7 @@ namespace REYES_LabProject
         public static bool StringSanitizer(params string[] inputs)
         {
             // Regular expression pattern to match lowercase letters and digits
-            string pattern = "^[a-z0-9]+$";
+            string pattern = "^[a-zA-Z0-9]+$";
 
             // Check each input string
             foreach (string input in inputs)

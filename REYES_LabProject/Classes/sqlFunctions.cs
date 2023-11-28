@@ -334,6 +334,43 @@ namespace REYES_LabProject
             return userRole;
         }
 
+        public static string GetUsername(int userId)
+        {
+            string query = "SELECT user_name FROM tbl_user WHERE user_id = @userId";
+            string userName = null;
+
+            try
+            {
+                connection.Open();
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@userId", userId);
+                    object result = command.ExecuteScalar();
+
+                    if (result != null)
+                    {
+                        userName = result.ToString();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+
+                connection.Dispose();
+            }
+
+            return userName;
+        }
+
         public static bool IsActive(string username)
         {
             try
@@ -658,6 +695,46 @@ namespace REYES_LabProject
                     else
                     {
                         Console.WriteLine("Username not updated.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+
+                connection.Dispose();
+            }
+        }
+
+        public static void UpdatePassword(int userid, string password)
+        {
+            string query = "UPDATE tbl_user SET user_password = @user_password WHERE user_id = @user_id";
+
+            try
+            {
+                connection.Open();
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@user_password", password);
+                    command.Parameters.AddWithValue("@user_id", userid);
+
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        Console.WriteLine("Password updated successfully.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Password not updated.");
                     }
                 }
             }

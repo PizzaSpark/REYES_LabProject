@@ -279,9 +279,9 @@
             this.label9.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label9.Location = new System.Drawing.Point(110, 9);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(267, 40);
+            this.label9.Size = new System.Drawing.Size(301, 40);
             this.label9.TabIndex = 28;
-            this.label9.Text = "paSEAN Care! ";
+            this.label9.Text = "paSEANte Care! ";
             // 
             // Register
             // 

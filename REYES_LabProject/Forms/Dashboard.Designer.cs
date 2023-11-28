@@ -39,6 +39,7 @@
             this.activateUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageDoctorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.managePatientsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.manageUsersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageMedicalRecordsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageBillingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.auditLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -134,6 +135,7 @@
             this.activateUserToolStripMenuItem,
             this.manageDoctorsToolStripMenuItem,
             this.managePatientsToolStripMenuItem,
+            this.manageUsersToolStripMenuItem,
             this.manageMedicalRecordsToolStripMenuItem,
             this.manageBillingToolStripMenuItem,
             this.auditLogToolStripMenuItem,
@@ -170,6 +172,15 @@
             this.managePatientsToolStripMenuItem.Size = new System.Drawing.Size(260, 26);
             this.managePatientsToolStripMenuItem.Text = "Manage Patients";
             this.managePatientsToolStripMenuItem.Click += new System.EventHandler(this.managePatientsToolStripMenuItem_Click);
+            // 
+            // manageUsersToolStripMenuItem
+            // 
+            this.manageUsersToolStripMenuItem.BackColor = System.Drawing.Color.DarkCyan;
+            this.manageUsersToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.manageUsersToolStripMenuItem.Name = "manageUsersToolStripMenuItem";
+            this.manageUsersToolStripMenuItem.Size = new System.Drawing.Size(260, 26);
+            this.manageUsersToolStripMenuItem.Text = "Manage Users";
+            this.manageUsersToolStripMenuItem.Click += new System.EventHandler(this.manageUsersToolStripMenuItem_Click);
             // 
             // manageMedicalRecordsToolStripMenuItem
             // 
@@ -462,9 +473,9 @@
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label1.Location = new System.Drawing.Point(215, 242);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(590, 47);
+            this.label1.Size = new System.Drawing.Size(631, 47);
             this.label1.TabIndex = 10;
-            this.label1.Text = "paSEAN care is here for you!";
+            this.label1.Text = "paSEANte care is here for you!";
             // 
             // Dashboard
             // 
@@ -534,5 +545,6 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel7;
         private System.Windows.Forms.ToolStripStatusLabel categoryNameDisplay_txt;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripMenuItem manageUsersToolStripMenuItem;
     }
 }
