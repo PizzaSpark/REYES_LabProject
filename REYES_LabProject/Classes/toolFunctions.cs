@@ -42,6 +42,7 @@ namespace REYES_LabProject
             return hasCapital && hasSmall && hasDigit && hasSpecialChar;
         }
 
+        //this is for username only small characters and digits
         public static bool ContainsOtherCharacters(params string[] inputs)
         {
             // Regular expression pattern to match lowercase letters and digits
@@ -60,6 +61,7 @@ namespace REYES_LabProject
             return false; // Return false if all strings contain only lowercase letters and digits
         }
 
+        //anti hack caps small digits only
         public static bool StringSanitizer(params string[] inputs)
         {
             // Regular expression pattern to match lowercase letters and digits
