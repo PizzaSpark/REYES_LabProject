@@ -87,7 +87,7 @@
             this.patientToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(998, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1208, 30);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -347,9 +347,9 @@
             this.dateDisplay_txt,
             this.toolStripStatusLabel5,
             this.timerDisplay_txt});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 509);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 512);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(998, 34);
+            this.statusStrip1.Size = new System.Drawing.Size(1208, 31);
             this.statusStrip1.TabIndex = 9;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -358,15 +358,15 @@
             this.toolStripStatusLabel4.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripStatusLabel4.ForeColor = System.Drawing.SystemColors.Control;
             this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
-            this.toolStripStatusLabel4.Size = new System.Drawing.Size(69, 28);
+            this.toolStripStatusLabel4.Size = new System.Drawing.Size(69, 25);
             this.toolStripStatusLabel4.Text = "UserID";
             // 
             // userIdDisplay_txt
             // 
-            this.userIdDisplay_txt.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userIdDisplay_txt.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userIdDisplay_txt.ForeColor = System.Drawing.SystemColors.Control;
             this.userIdDisplay_txt.Name = "userIdDisplay_txt";
-            this.userIdDisplay_txt.Size = new System.Drawing.Size(15, 28);
+            this.userIdDisplay_txt.Size = new System.Drawing.Size(19, 25);
             this.userIdDisplay_txt.Text = "-";
             // 
             // toolStripStatusLabel1
@@ -374,7 +374,7 @@
             this.toolStripStatusLabel1.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripStatusLabel1.ForeColor = System.Drawing.SystemColors.Control;
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(97, 28);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(97, 25);
             this.toolStripStatusLabel1.Text = "Username";
             // 
             // usernameDisplay_txt
@@ -382,15 +382,15 @@
             this.usernameDisplay_txt.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usernameDisplay_txt.ForeColor = System.Drawing.SystemColors.Control;
             this.usernameDisplay_txt.Name = "usernameDisplay_txt";
-            this.usernameDisplay_txt.Size = new System.Drawing.Size(19, 28);
+            this.usernameDisplay_txt.Size = new System.Drawing.Size(19, 25);
             this.usernameDisplay_txt.Text = "-";
             // 
             // toolStripStatusLabel3
             // 
-            this.toolStripStatusLabel3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripStatusLabel3.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripStatusLabel3.ForeColor = System.Drawing.SystemColors.Control;
             this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
-            this.toolStripStatusLabel3.Size = new System.Drawing.Size(40, 28);
+            this.toolStripStatusLabel3.Size = new System.Drawing.Size(50, 25);
             this.toolStripStatusLabel3.Text = "Role";
             // 
             // roleDisplay_txt
@@ -398,7 +398,7 @@
             this.roleDisplay_txt.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.roleDisplay_txt.ForeColor = System.Drawing.SystemColors.Control;
             this.roleDisplay_txt.Name = "roleDisplay_txt";
-            this.roleDisplay_txt.Size = new System.Drawing.Size(19, 28);
+            this.roleDisplay_txt.Size = new System.Drawing.Size(19, 25);
             this.roleDisplay_txt.Text = "-";
             // 
             // toolStripStatusLabel6
@@ -406,7 +406,7 @@
             this.toolStripStatusLabel6.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripStatusLabel6.ForeColor = System.Drawing.SystemColors.Control;
             this.toolStripStatusLabel6.Name = "toolStripStatusLabel6";
-            this.toolStripStatusLabel6.Size = new System.Drawing.Size(69, 28);
+            this.toolStripStatusLabel6.Size = new System.Drawing.Size(69, 25);
             this.toolStripStatusLabel6.Text = "RoleID";
             // 
             // categoryIdDisplay_txt
@@ -414,7 +414,7 @@
             this.categoryIdDisplay_txt.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.categoryIdDisplay_txt.ForeColor = System.Drawing.SystemColors.Control;
             this.categoryIdDisplay_txt.Name = "categoryIdDisplay_txt";
-            this.categoryIdDisplay_txt.Size = new System.Drawing.Size(19, 28);
+            this.categoryIdDisplay_txt.Size = new System.Drawing.Size(19, 25);
             this.categoryIdDisplay_txt.Text = "-";
             // 
             // toolStripStatusLabel7
@@ -422,7 +422,7 @@
             this.toolStripStatusLabel7.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripStatusLabel7.ForeColor = System.Drawing.SystemColors.Control;
             this.toolStripStatusLabel7.Name = "toolStripStatusLabel7";
-            this.toolStripStatusLabel7.Size = new System.Drawing.Size(97, 28);
+            this.toolStripStatusLabel7.Size = new System.Drawing.Size(97, 25);
             this.toolStripStatusLabel7.Text = "Rolename";
             // 
             // categoryNameDisplay_txt
@@ -430,7 +430,7 @@
             this.categoryNameDisplay_txt.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.categoryNameDisplay_txt.ForeColor = System.Drawing.SystemColors.Control;
             this.categoryNameDisplay_txt.Name = "categoryNameDisplay_txt";
-            this.categoryNameDisplay_txt.Size = new System.Drawing.Size(19, 28);
+            this.categoryNameDisplay_txt.Size = new System.Drawing.Size(19, 25);
             this.categoryNameDisplay_txt.Text = "-";
             // 
             // toolStripStatusLabel2
@@ -438,15 +438,15 @@
             this.toolStripStatusLabel2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripStatusLabel2.ForeColor = System.Drawing.SystemColors.Control;
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(52, 28);
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(52, 25);
             this.toolStripStatusLabel2.Text = "Date";
             // 
             // dateDisplay_txt
             // 
-            this.dateDisplay_txt.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateDisplay_txt.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateDisplay_txt.ForeColor = System.Drawing.SystemColors.Control;
             this.dateDisplay_txt.Name = "dateDisplay_txt";
-            this.dateDisplay_txt.Size = new System.Drawing.Size(20, 28);
+            this.dateDisplay_txt.Size = new System.Drawing.Size(19, 25);
             this.dateDisplay_txt.Text = "-";
             // 
             // toolStripStatusLabel5
@@ -454,7 +454,7 @@
             this.toolStripStatusLabel5.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripStatusLabel5.ForeColor = System.Drawing.SystemColors.Control;
             this.toolStripStatusLabel5.Name = "toolStripStatusLabel5";
-            this.toolStripStatusLabel5.Size = new System.Drawing.Size(83, 28);
+            this.toolStripStatusLabel5.Size = new System.Drawing.Size(83, 25);
             this.toolStripStatusLabel5.Text = "Timeout";
             // 
             // timerDisplay_txt
@@ -462,7 +462,7 @@
             this.timerDisplay_txt.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.timerDisplay_txt.ForeColor = System.Drawing.SystemColors.Control;
             this.timerDisplay_txt.Name = "timerDisplay_txt";
-            this.timerDisplay_txt.Size = new System.Drawing.Size(19, 28);
+            this.timerDisplay_txt.Size = new System.Drawing.Size(19, 25);
             this.timerDisplay_txt.Text = "-";
             // 
             // label1
@@ -471,7 +471,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("MS UI Gothic", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label1.Location = new System.Drawing.Point(215, 242);
+            this.label1.Location = new System.Drawing.Point(320, 221);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(631, 47);
             this.label1.TabIndex = 10;
@@ -483,7 +483,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(998, 543);
+            this.ClientSize = new System.Drawing.Size(1208, 543);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
