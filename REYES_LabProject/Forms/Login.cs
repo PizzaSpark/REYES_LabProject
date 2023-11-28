@@ -31,15 +31,15 @@ namespace REYES_LabProject
         private void LOGIN_Load(object sender, EventArgs e)
         {
             //dataGridView1.DataSource = sqlFunctions.GetDataByPrimaryKey("tbl_admin",9);
-            if (sqlFunctions.TestDatabaseConnection())
-            {
-                MessageBox.Show("Welcome!");
-                passwordEye_ptb.Image = imageList1.Images[0];
-                detectCapslockChange();
-            } else
+            if (sqlFunctions.TestDatabaseConnection() == false)
             {
                 MessageBox.Show("Please check your MySQL connection and try again");
                 this.Close();
+            } 
+            else
+            {
+                passwordEye_ptb.Image = imageList1.Images[0];
+                detectCapslockChange();
             }
         }
 
