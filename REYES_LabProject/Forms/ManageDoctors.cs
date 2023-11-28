@@ -115,8 +115,16 @@ namespace REYES_LabProject.Forms
         {
             try
             {
-                int id = int.Parse(searchid_txt.Text);
-                dataGridView1.DataSource = sqlFunctions.GetDataByPrimaryKey("tbl_doctor", id);
+                if (searchid_txt.Text == "")
+                {
+                    dataGridView1.DataSource = sqlFunctions.GetTableData("tbl_doctor");
+                }
+                else
+                {
+                    int id = int.Parse(searchid_txt.Text);
+                    dataGridView1.DataSource = sqlFunctions.GetDataByPrimaryKey("tbl_doctor", id);
+                }
+                    
             }
             catch (Exception ex)
             {
